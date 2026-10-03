@@ -262,6 +262,16 @@ button,input,select,textarea{font:inherit}
 .contact-details{display:grid;gap:12px;margin-top:28px}
 .contact-details a{display:flex;align-items:center;gap:18px}
 .contact-details span{width:58px;color:#554d46;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+.social-block{margin-top:28px}
+.social-heading{display:block;margin-bottom:11px;color:#554d46;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.social-links{display:flex;flex-wrap:wrap;gap:9px}
+.social-links a{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.34);font-size:.75rem;font-weight:600;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.social-links a:hover{background:#fff;border-color:var(--taupe);transform:translateY(-1px)}
+.social-mark{display:grid;place-items:center;min-width:24px;height:24px;padding:0 5px;border-radius:50%;background:#171512;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:0;text-transform:none}
+.social-arrow{font-size:.8rem;color:var(--taupe)}
+.footer-socials{display:flex;align-items:center;gap:16px}
+.footer-socials a{color:var(--stone);font-size:.72rem;transition:color .2s ease}
+.footer-socials a:hover{color:#fff}
 .signup-card{padding:30px;border-radius:26px;background:#fff;box-shadow:var(--shadow)}
 .signup-card h3{font-family:"Cormorant Garamond",serif;font-size:2.2rem;line-height:1;margin:10px 0 24px}
 .signup-card form{display:grid;gap:14px}
@@ -273,7 +283,7 @@ button,input,select,textarea{font:inherit}
 
 /* Footer */
 .site-footer{background:#171512;color:#fff}
-.footer-inner{min-height:112px;display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:center}
+.footer-inner{min-height:112px;display:grid;grid-template-columns:1fr auto auto auto;gap:24px;align-items:center}
 .footer-inner p{color:var(--stone);font-size:.72rem}
 .site-footer .brand-logo{width:60px;height:60px;background:#fff;border-radius:50%}
 
@@ -463,6 +473,7 @@ section[id],#home{scroll-margin-top:96px}
   .testimonial-card{min-height:auto}.testimonial-card blockquote{font-size:1.45rem}
   .contact-section{padding:62px 0}.signup-card{padding:24px}
   .footer-inner{grid-template-columns:1fr;text-align:center;justify-items:center;padding:24px 0}
+  .footer-socials{flex-wrap:wrap;justify-content:center}
   section[id],#home{scroll-margin-top:78px}
 }
 
@@ -708,6 +719,14 @@ section[id],#home{scroll-margin-top:96px}
           <a href="mailto:lqfalsario@gmail.com"><span>Email</span>lqfalsario@gmail.com</a>
           <a href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener"><span>Calendly</span>Book a strategy session ↗</a>
         </div>
+        <div class="social-block" aria-label="Social media profiles">
+          <span class="social-heading">Connect with me</span>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on LinkedIn"><span class="social-mark">in</span><span>LinkedIn</span><span class="social-arrow">↗</span></a>
+            <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Instagram"><span class="social-mark">IG</span><span>Instagram</span><span class="social-arrow">↗</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Facebook"><span class="social-mark">f</span><span>Facebook</span><span class="social-arrow">↗</span></a>
+          </div>
+        </div>
       </div>
       <div class="signup-card">
         <p class="signup-eyebrow">QUICK INQUIRY</p>
@@ -739,6 +758,11 @@ section[id],#home{scroll-margin-top:96px}
   <div class="shell footer-inner">
     <a class="brand" href="#home"><img class="brand-logo" src="assets/lq-synergy-logo.webp" alt="LQ Virtual Assistant Synergy logo"></a>
     <p>Lawrence Falsario · Lead Generation & Email Marketing Specialist</p>
+    <nav class="footer-socials" aria-label="Social media">
+      <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </nav>
     <p>© <span id="year"></span></p>
   </div>
 </footer>
