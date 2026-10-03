@@ -117,20 +117,15 @@ button,input,select,textarea{font:inherit}
   isolation:isolate;
   transform:translateX(30px);
 }
-.hero-visual::before,.hero-visual::after{content:"";position:absolute;border-radius:50%;z-index:-2}
-.hero-visual::before{width:330px;height:330px;right:10px;top:18px;background:var(--stone);opacity:.55}
-.hero-visual::after{width:230px;height:230px;left:72px;bottom:12px;background:var(--taupe);opacity:.17}
-.portrait-frame{
-  width:min(455px,84%);
-  aspect-ratio:1/1.03;
-  overflow:hidden;
-  border-radius:48% 48% 28px 28px;
-  background:#eae5df;
-  border:9px solid var(--paper);
-  box-shadow:var(--shadow);
+.hero-visual::before,.hero-visual::after{display:none!important}
+.hero-portrait-art{
+  width:min(560px,100%);
+  height:auto;
+  display:block;
+  object-fit:contain;
+  filter:drop-shadow(0 22px 35px rgba(0,0,0,.10));
   z-index:1;
 }
-.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 24%}
 .floating-card{
   position:absolute;
   z-index:3;
@@ -515,9 +510,7 @@ section[id],#home{scroll-margin-top:96px}
       </div>
     </div>
     <div class="hero-visual" aria-label="Portrait of Lawrence Falsario">
-      <div class="portrait-frame">
-        <img src="assets/profile-photo.webp" alt="Lawrence Falsario">
-      </div>
+      <img class="hero-portrait-art" src="assets/hero-standing.webp" alt="Lawrence Falsario standing in a white polo">
     </div>
   </section>
 
