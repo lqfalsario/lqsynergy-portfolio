@@ -794,6 +794,23 @@ if (form) {
   }
 })();
 
+
+(async () => {
+  const hero = document.getElementById('heroPortrait');
+  if (!hero) return;
+  try {
+    const chunks = await Promise.all(
+      [1,2,3,4,5,6].map(async (part) => {
+        const response = await fetch(`assets/hero-data/part${part}.txt`, {cache: 'force-cache'});
+        if (!response.ok) throw new Error(`Hero image part ${part} failed`);
+        return (await response.text()).trim();
+      })
+    );
+    hero.src = 'data:image/webp;base64,' + chunks.join('');
+  } catch (error) {
+    console.error('Hero image failed to load', error);
+  }
+})();
 </script>
 </body>
 </html>
