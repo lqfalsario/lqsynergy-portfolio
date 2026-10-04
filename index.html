@@ -987,6 +987,33 @@ section[id],#home{scroll-margin-top:96px}
   .form-gallery a{max-width:100%!important}
 }
 
+
+/* Email campaign card crop — show the message only, not the Mailchimp footer */
+.email-stage{
+  padding:24px!important;
+}
+.email-stage a{
+  width:min(100%,500px)!important;
+  aspect-ratio:492 / 647;
+  overflow:hidden;
+  border-radius:18px;
+  background:#fff;
+}
+.email-stage img{
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:top center!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+@media(max-width:650px){
+  .email-stage{padding:12px!important}
+  .email-stage a{width:100%!important}
+}
+
 </style>
 </head>
 <body>
