@@ -254,16 +254,17 @@ button,input,select,textarea{font:inherit}
 .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
 .dark-kicker{color:#000}
 .contact-copy p:not(.kicker){max-width:640px;margin-top:22px;color:#403b37}
-.contact-details{display:grid;gap:12px;margin-top:28px}
-.contact-details a{display:flex;align-items:center;gap:18px}
-.contact-details span{width:58px;color:#554d46;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+.contact-details{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.contact-details a{display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;padding:10px 14px;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.34);font-size:.78rem;font-weight:600;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.contact-details a:hover{background:#fff;border-color:var(--taupe);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.contact-details span{width:auto;color:#554d46;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
 .social-block{margin-top:28px}
 .social-heading{display:block;margin-bottom:11px;color:#554d46;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .social-links{display:flex;flex-wrap:wrap;gap:9px}
 .social-links a{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.34);font-size:.75rem;font-weight:600;transition:background .2s ease,border-color .2s ease,transform .2s ease}
 .social-links a:hover{background:#fff;border-color:var(--taupe);transform:translateY(-1px)}
 .social-mark{display:grid;place-items:center;min-width:24px;height:24px;padding:0 5px;border-radius:50%;background:#171512;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:0;text-transform:none}
-.social-arrow{font-size:.8rem;color:var(--taupe)}
+
 .footer-socials{display:flex;align-items:center;gap:16px}
 .footer-socials a{color:var(--stone);font-size:.72rem;transition:color .2s ease}
 .footer-socials a:hover{color:#fff}
@@ -559,7 +560,7 @@ section[id],#home{scroll-margin-top:96px}
 }
 .contact-details a:hover,
 .social-links a:hover{
-  transform:translateX(5px);
+  transform:translateY(-2px);
   border-color:var(--taupe);
   box-shadow:0 10px 26px rgba(0,0,0,.08);
 }
@@ -893,15 +894,15 @@ section[id],#home{scroll-margin-top:96px}
         <div class="contact-details">
           <a href="tel:+639940667291"><span>Phone</span>+63 994 066 7291</a>
           <a href="mailto:lqfalsario@gmail.com"><span>Email</span>lqfalsario@gmail.com</a>
-          <a href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener"><span>Calendly</span>Book a strategy session ↗</a>
-          <a href="resume.html"><span>Resume</span>View my résumé ↗</a>
+          <a href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener"><span>Calendly</span>Book a strategy session</a>
+          <a href="resume.html"><span>Resume</span>View my résumé</a>
         </div>
         <div class="social-block" aria-label="Social media profiles">
           <span class="social-heading">Connect with me</span>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on LinkedIn"><span class="social-mark">in</span><span>LinkedIn</span><span class="social-arrow">↗</span></a>
-            <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Instagram"><span class="social-mark">IG</span><span>Instagram</span><span class="social-arrow">↗</span></a>
-            <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Facebook"><span class="social-mark">f</span><span>Facebook</span><span class="social-arrow">↗</span></a>
+            <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on LinkedIn"><span class="social-mark">in</span><span>LinkedIn</span></a>
+            <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Instagram"><span class="social-mark">IG</span><span>Instagram</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Facebook"><span class="social-mark">f</span><span>Facebook</span></a>
           </div>
         </div>
       </div>
@@ -922,7 +923,7 @@ section[id],#home{scroll-margin-top:96px}
             </select>
           </label>
           <label>Message<textarea id="message" name="message" rows="4" placeholder="A short description of your project"></textarea></label>
-          <button class="btn dark full" type="submit">Send inquiry ↗</button>
+          <button class="btn dark full" type="submit">Send inquiry</button>
           <a class="btn outline full calendly-button" href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener">Book a strategy session</a>
         </form>
       </div>
