@@ -1220,6 +1220,44 @@ section[id],#home{scroll-margin-top:96px}
   }
 }
 
+
+/* Exact original LinkedIn outreach image card */
+.linkedin-feature-card{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:18px!important;
+  overflow:hidden!important;
+}
+.linkedin-feature-card .sample-preview{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+}
+.linkedin-feature-card .sample-preview img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  border-radius:16px!important;
+  filter:none!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+.linkedin-feature-card .sample-preview:hover img{
+  transform:none!important;
+  box-shadow:none!important;
+}
+@media(max-width:650px){
+  .linkedin-feature-card{padding:10px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1353,17 +1391,9 @@ section[id],#home{scroll-margin-top:96px}
         <div class="case-tags"><span>LinkedIn</span><span>Prospecting</span><span>Personalized Outreach</span><span>Follow-up</span></div>
       </div>
       <div class="linkedin-gallery output-stage linkedin-feature-card" aria-label="LinkedIn outreach conversation preview">
-        <div class="linkedin-composite-card">
-          <a href="assets/linkedin-1.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation sample one">
-            <img loading="lazy" decoding="async" src="assets/linkedin-1.webp" alt="LinkedIn outreach conversation with Rebecca Pappas Dupont">
-          </a>
-          <a href="assets/linkedin-2.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation sample two">
-            <img loading="lazy" decoding="async" src="assets/linkedin-2.webp" alt="LinkedIn outreach conversation with Chandra Sanders">
-          </a>
-          <a href="assets/linkedin-3.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation sample three">
-            <img loading="lazy" decoding="async" src="assets/linkedin-3.webp" alt="LinkedIn outreach conversation with Sergi Mata">
-          </a>
-        </div>
+        <a class="sample-preview" href="assets/linkedin-outreach-original.png" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation sample">
+          <img loading="lazy" decoding="async" src="assets/linkedin-outreach-original.png" alt="LinkedIn outreach conversation mockup showing Rebecca Pappas Dupont and Chandra Sanders message threads">
+        </a>
       </div>
     </article>
 
