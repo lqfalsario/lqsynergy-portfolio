@@ -959,6 +959,34 @@ section[id],#home{scroll-margin-top:96px}
   box-shadow:0 16px 34px rgba(0,0,0,.10)!important;
 }
 
+
+/* Final exact lead-capture screenshot sizing */
+.form-gallery{
+  min-height:0!important;
+  padding:22px!important;
+}
+.form-gallery a{
+  width:100%!important;
+  max-width:720px!important;
+  margin-inline:auto!important;
+}
+.form-gallery img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  aspect-ratio:4 / 3;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:18px!important;
+  background:#fff!important;
+}
+@media(max-width:650px){
+  .form-gallery{padding:12px!important}
+  .form-gallery a{max-width:100%!important}
+}
+
 </style>
 </head>
 <body>
