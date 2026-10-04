@@ -1014,6 +1014,74 @@ section[id],#home{scroll-margin-top:96px}
   .email-stage a{width:100%!important}
 }
 
+
+/* Crisp email campaign preview card */
+.email-stage{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:24px!important;
+}
+.email-stage .email-preview-link{
+  display:block!important;
+  width:min(100%,430px)!important;
+  height:auto!important;
+  max-width:430px!important;
+  margin-inline:auto!important;
+  text-decoration:none!important;
+  color:#111!important;
+}
+.email-preview-card{
+  width:100%;
+  background:#fff;
+  border:1px solid rgba(127,111,96,.18);
+  border-radius:18px;
+  box-shadow:0 18px 44px rgba(0,0,0,.08);
+  padding:26px 24px 24px;
+  overflow:hidden;
+}
+.email-preview-logo{
+  display:block!important;
+  width:74px!important;
+  height:74px!important;
+  object-fit:contain!important;
+  margin:0 auto 26px!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+.email-preview-body{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12.2px;
+  line-height:1.45;
+  color:#111;
+  text-align:left;
+}
+.email-preview-body p{margin:0 0 15px}
+.email-preview-body p:last-child{margin-bottom:0}
+.email-preview-cta{
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  margin-top:2px!important;
+}
+.email-preview-signoff{margin-top:20px!important}
+.email-preview-card{
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.email-preview-link:hover .email-preview-card{
+  transform:translateY(-4px);
+  box-shadow:0 24px 50px rgba(0,0,0,.12);
+  border-color:rgba(127,111,96,.38);
+}
+@media(max-width:650px){
+  .email-stage{padding:12px!important}
+  .email-stage .email-preview-link{width:100%!important;max-width:100%!important}
+  .email-preview-card{padding:22px 18px}
+  .email-preview-body{font-size:11.8px}
+  .email-preview-logo{width:66px!important;height:66px!important;margin-bottom:22px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1162,7 +1230,23 @@ section[id],#home{scroll-margin-top:96px}
         <a class="text-link" href="https://mailchi.mp/7324a45f2634/less-searching-more-focus" target="_blank" rel="noopener">View live email campaign ↗</a>
       </div>
       <div class="email-stage output-stage">
-        <a href="https://mailchi.mp/7324a45f2634/less-searching-more-focus" target="_blank" rel="noopener" aria-label="Open the live Mailchimp email campaign"><img loading="lazy" decoding="async" src="assets/email-campaign.webp" alt="Mailchimp email campaign by Lawrence Falsario"></a>
+        <a class="email-preview-link" href="https://mailchi.mp/7324a45f2634/less-searching-more-focus" target="_blank" rel="noopener" aria-label="Open the live Mailchimp email campaign">
+          <div class="email-preview-card">
+            <img class="email-preview-logo" src="assets/lq-synergy-logo.png" alt="LQ Synergy">
+            <div class="email-preview-body">
+              <p>Hi Lawrence Falsario,</p>
+              <p>Ever spent hours searching LinkedIn, checking websites, and reviewing profiles, only to realize that several contacts don't match what you're looking for?</p>
+              <p>One person has the wrong role. Another is outside your target industry. A few details are missing.</p>
+              <p>Suddenly, prospect research becomes an entire task on its own.</p>
+              <p>I'm Lawrence, founder of LQ SYNERGY, and I help professionals and growing teams make that process more manageable.</p>
+              <p>I can help research prospects and companies based on your preferred roles, industries, locations, and other requirements, then organize the available information into a structured list.</p>
+              <p>You define who matters. I focus the research around those criteria.</p>
+              <p class="email-preview-cta">Share Your Target Criteria</p>
+              <p>Tell me who you're trying to reach, and we can start with a clearer direction.</p>
+              <p class="email-preview-signoff">Best,<br>Lawrence Falsario<br>LQ SYNERGY</p>
+            </div>
+          </div>
+        </a>
       </div>
     </article>
 
