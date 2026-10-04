@@ -1120,6 +1120,42 @@ section[id],#home{scroll-margin-top:96px}
   .email-preview-body p{margin-bottom:18px!important}
 }
 
+
+/* LinkedIn outreach single-card refinement */
+.linkedin-feature-card{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:22px!important;
+  overflow:hidden!important;
+}
+.linkedin-feature-card a{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  flex:1 1 auto!important;
+}
+.linkedin-feature-card img,
+.linkedin-feature-card a:nth-child(2) img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  border-radius:16px!important;
+  filter:none!important;
+  box-shadow:0 18px 38px rgba(0,0,0,.08)!important;
+  transition:transform .25s ease,box-shadow .25s ease!important;
+}
+.linkedin-feature-card a:hover img{
+  transform:scale(1.015);
+  box-shadow:0 22px 44px rgba(0,0,0,.12)!important;
+}
+@media(max-width:650px){
+  .linkedin-feature-card{padding:12px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1252,10 +1288,10 @@ section[id],#home{scroll-margin-top:96px}
         <p>Direct LinkedIn outreach used to connect with decision-makers, communicate an offer clearly, continue conversations, and move interested prospects toward a next step.</p>
         <div class="case-tags"><span>LinkedIn</span><span>Prospecting</span><span>Personalized Outreach</span><span>Follow-up</span></div>
       </div>
-      <div class="linkedin-gallery output-stage" aria-label="LinkedIn outreach screenshots">
-        <a href="assets/linkedin-1.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/linkedin-1.webp" alt="LinkedIn outreach conversation sample"></a>
-        <a href="assets/linkedin-2.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/linkedin-2.webp" alt="LinkedIn outreach follow-up sample"></a>
-        <a href="assets/linkedin-3.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/linkedin-3.webp" alt="LinkedIn outreach message sample"></a>
+      <div class="linkedin-gallery output-stage linkedin-feature-card" aria-label="LinkedIn outreach conversation preview">
+        <a href="assets/linkedin-outreach-card.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation sample">
+          <img loading="lazy" decoding="async" src="assets/linkedin-outreach-card.webp" alt="LinkedIn prospecting and conversation outreach samples">
+        </a>
       </div>
     </article>
 
