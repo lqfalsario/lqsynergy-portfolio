@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Lawrence Falsario is a Lead Generation & Email Marketing Specialist helping businesses with prospect research, LinkedIn outreach, CRM organization, and email campaigns.">
+  <meta name="description" content="Lawrence Falsario is a Lead Generation & Email Marketing Specialist focused on verified prospect databases, B2B/B2C targeting, LinkedIn outreach, CRM organization, and email campaign execution.">
   <meta name="theme-color" content="#7f6f60">
   <meta property="og:title" content="Lawrence Falsario | Lead Generation & Email Marketing Specialist">
   <meta property="og:description" content="Lead generation, LinkedIn outreach, email marketing, CRM organization, and campaign support.">
@@ -658,6 +658,141 @@ section[id],#home{scroll-margin-top:96px}
   .hero-portrait-art{width:min(390px,100%)}
 }
 
+
+/* Professional portfolio refresh */
+.hero-lead{font-size:1.08rem;max-width:690px}
+.hero-actions{gap:10px}
+.mini-proof span{background:var(--paper);border-color:rgba(127,111,96,.34);color:#544d47}
+.stat-strip b{letter-spacing:-.01em}
+.stat-strip span{max-width:210px}
+
+#about.section{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:76px max(24px,calc((100vw - var(--content))/2)) 84px;
+  background:#000;
+  color:#fff;
+  border-bottom:0;
+}
+#about .section-label{color:var(--stone)}
+#about h2{color:#fff;max-width:980px}
+#about .about-copy p{color:#cfc9c2;font-size:1rem;line-height:1.8}
+
+.service-card{
+  min-height:390px;
+  box-shadow:0 12px 32px rgba(0,0,0,.035);
+}
+.service-card h3{margin:34px 0 22px}
+.service-card li{line-height:1.45}
+.service-card li::before{content:"•";font-size:.8rem;vertical-align:1px}
+
+.tools-section{
+  background:linear-gradient(145deg,#0c0b0a,#171412);
+}
+.tool-groups>div{
+  background:rgba(255,255,255,.025);
+  transition:transform .24s ease,border-color .24s ease,background .24s ease;
+}
+.tool-groups>div:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.34);
+  background:rgba(255,255,255,.05);
+}
+
+.process-grid article{
+  padding:22px 18px 22px 0;
+}
+.process-grid h3{font-size:1.7rem}
+.process-grid p{font-size:.82rem;line-height:1.65}
+
+.experience-section{background:#fff}
+.experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.experience-card{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:26px;
+  min-height:270px;
+  padding:30px;
+  border:1px solid var(--stone);
+  border-radius:24px;
+  background:var(--paper);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.experience-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 42px rgba(0,0,0,.09);
+  border-color:var(--taupe);
+}
+.experience-card.featured-experience{
+  background:#171512;
+  color:#fff;
+  border-color:#171512;
+}
+.experience-meta span,.experience-meta strong{display:block}
+.experience-meta span{
+  color:var(--taupe);
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.featured-experience .experience-meta span{color:var(--stone)}
+.experience-meta strong{
+  margin-top:10px;
+  font-size:.8rem;
+  line-height:1.45;
+}
+.experience-role{
+  color:var(--taupe);
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.featured-experience .experience-role{color:var(--stone)}
+.experience-card h3{
+  margin:10px 0 12px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:2rem;
+  line-height:1.05;
+}
+.experience-card>div:last-child>p:last-child{
+  color:var(--gray);
+  font-size:.88rem;
+  line-height:1.7;
+}
+.featured-experience>div:last-child>p:last-child{color:#d9d2cc}
+.experience-actions{display:flex;justify-content:flex-end;margin-top:22px}
+
+.contact-copy h2{max-width:720px}
+.contact-details{justify-content:flex-start}
+.social-links{gap:8px}
+
+@media (min-width:1200px){
+  #about.section{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:82px max(28px,calc((100vw - var(--content))/2)) 90px;
+    background:#000;
+    color:#fff;
+    border-bottom:0;
+  }
+  #about .section-label{color:var(--stone)}
+  #about h2{color:#fff}
+  #about .about-copy p{color:#cfc9c2}
+}
+@media (max-width:980px){
+  .experience-grid{grid-template-columns:1fr}
+  .experience-card{grid-template-columns:130px 1fr}
+}
+@media (max-width:650px){
+  .experience-card{grid-template-columns:1fr;gap:16px;padding:24px}
+  .experience-actions{justify-content:stretch}
+  .experience-actions .btn{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -670,7 +805,7 @@ section[id],#home{scroll-margin-top:96px}
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#work">Work</a>
-    <a href="resume.html">Resume</a>
+    <a href="#experience">Experience</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -683,14 +818,14 @@ section[id],#home{scroll-margin-top:96px}
     <div class="hero-copy">
       <p class="kicker">LEAD GENERATION · EMAIL MARKETING</p>
       <h1>Hello, I’m <span>Lawrence.</span></h1>
-      <p class="hero-lead">I help startups, entrepreneurs, and growing businesses build qualified prospect lists, organize outreach, manage email campaigns, and keep sales pipelines moving.</p>
+      <p class="hero-lead">I build verified prospect databases, targeted B2B/B2C outreach, and email campaigns across LinkedIn, CRM, and email platforms—helping teams move from research to organized follow-up.</p>
       <div class="hero-actions">
         <a class="btn dark" href="#work">View my work</a>
         <a class="btn outline" href="resume.html">View résumé</a>
         <a class="btn outline" href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener">Book a strategy session</a>
       </div>
       <div class="mini-proof">
-        <span>Lead research</span><span>LinkedIn outreach</span><span>Email campaigns</span><span>CRM support</span>
+        <span>Verified lead databases</span><span>B2B/B2C targeting</span><span>SureContact campaigns</span><span>CRM & tracking</span>
       </div>
     </div>
     <div class="hero-visual" aria-label="Portrait of Lawrence Falsario">
@@ -698,20 +833,20 @@ section[id],#home{scroll-margin-top:96px}
     </div>
   </section>
 
-  <section class="stat-strip">
-    <div><b>B2B & B2C</b><span>Lead Generation</span></div>
-    <div><b>LinkedIn</b><span>Prospecting & Outreach</span></div>
-    <div><b>Email</b><span>Campaign Setup & Support</span></div>
-    <div><b>CRM</b><span>Organization & Follow-up</span></div>
+  <section class="stat-strip" aria-label="Professional focus">
+    <div><b>B2B & B2C</b><span>Prospect Targeting</span></div>
+    <div><b>Verified Data</b><span>Lead Lists & Contact Validation</span></div>
+    <div><b>LinkedIn + Email</b><span>Multi-channel Outreach</span></div>
+    <div><b>5,800+</b><span>Recipients Supported in Campaign Sends</span></div>
   </section>
 
   <section id="about" class="section shell about-grid">
     <div class="section-label">01 / ABOUT</div>
     <div>
-      <h2>Smarter outreach starts with better systems.</h2>
+      <h2>Research, targeting, and campaign execution—built into one reliable workflow.</h2>
       <div class="about-copy">
-        <p>I help businesses find the right prospects, organize reliable lead data, and turn research into outreach-ready lists for LinkedIn, email, and CRM workflows.</p>
-        <p>From list building and campaign setup to follow-ups and pipeline tracking, I keep the process structured so teams can spend more time on conversations, opportunities, and growth.</p>
+        <p>I’m a Lead Generation and Email Marketing Specialist focused on building verified prospect databases, identifying the right decision-makers, and preparing outreach-ready data for LinkedIn, email, and CRM workflows.</p>
+        <p>My work spans B2B/B2C targeting, contact validation, segmentation, campaign execution, database maintenance, and workflow documentation—keeping outreach organized from research through follow-up.</p>
       </div>
     </div>
   </section>
@@ -724,40 +859,38 @@ section[id],#home{scroll-margin-top:96px}
     <div class="service-grid">
       <article class="service-card">
         <span class="service-number">01</span>
-        <h3>Lead Generation & Marketing</h3>
+        <h3>Lead Generation & Prospect Research</h3>
         <ul>
-          <li>B2B and B2C Lead Generation</li>
-          <li>Lead Research and Prospect List Building</li>
-          <li>LinkedIn Sales Navigator Outreach</li>
-          <li>Email Outreach Campaigns</li>
-          <li>Contact Verification and Data Enrichment</li>
-          <li>CRM Management and Organization</li>
-          <li>Market Research and Competitor Analysis</li>
-          <li>Database Management</li>
+          <li>B2B and B2C prospect targeting</li>
+          <li>Decision-maker research and list building</li>
+          <li>LinkedIn Sales Navigator prospecting</li>
+          <li>Contact validation and data enrichment</li>
+          <li>Market segmentation and qualification</li>
+          <li>Google Sheets and CRM-ready databases</li>
         </ul>
       </article>
       <article class="service-card featured">
         <span class="service-number">02</span>
         <h3>Email Marketing</h3>
         <ul>
-          <li>Email Campaign Setup and Management</li>
-          <li>Newsletter Creation and Distribution</li>
-          <li>Email List Building and Segmentation</li>
-          <li>Email Automation Support</li>
-          <li>Landing Page and Sign-Up Form Creation</li>
-          <li>Campaign Performance Tracking and Reporting</li>
+          <li>Email campaign setup and execution</li>
+          <li>B2B/B2C list segmentation</li>
+          <li>Email sequences and campaign content</li>
+          <li>Newsletter and broadcast support</li>
+          <li>Unsubscribe and compliance workflow support</li>
+          <li>Campaign tracking and documentation</li>
         </ul>
       </article>
       <article class="service-card">
         <span class="service-number">03</span>
-        <h3>Sales & Admin Support</h3>
+        <h3>CRM & Outreach Operations</h3>
         <ul>
-          <li>CRM Updates and Pipeline Tracking</li>
-          <li>Follow-up Organization</li>
-          <li>Spreadsheet and Database Cleanup</li>
-          <li>Cold Calling Support</li>
-          <li>Calendar and Workflow Support</li>
-          <li>Campaign Documentation</li>
+          <li>CRM updates and pipeline tracking</li>
+          <li>Lead status and follow-up organization</li>
+          <li>Spreadsheet and database cleanup</li>
+          <li>Custom Notion tracking systems</li>
+          <li>Campaign workflow documentation</li>
+          <li>Administrative outreach support</li>
         </ul>
       </article>
     </div>
@@ -766,8 +899,8 @@ section[id],#home{scroll-margin-top:96px}
   <section id="work" class="section shell portfolio-section">
     <div class="section-top">
       <div class="section-label">03 / SELECTED OUTPUTS</div>
-      <h2>Real examples from my portfolio.</h2>
-      <p class="section-intro">These are working samples of the systems, outreach, campaigns, and forms I build—not placeholder mockups.</p>
+      <h2>Selected work built for real outreach.</h2>
+      <p class="section-intro">A selection of prospecting systems, outreach conversations, email campaigns, and lead-capture workflows from hands-on project work.</p>
     </div>
 
     <article class="case-study">
@@ -831,15 +964,15 @@ section[id],#home{scroll-margin-top:96px}
     <div class="shell">
       <div class="section-top compact">
         <div class="section-label light">04 / TOOLBOX</div>
-        <h2>Tools I use to get the work done.</h2>
+        <h2>A practical stack for research, campaigns, and workflow management.</h2>
       </div>
       <div class="tool-groups">
-        <div><h3>Lead Generation</h3><p>Apollo.io · Snov.io · LinkedIn Sales Navigator · ContactOut · Instant Data Scraper</p></div>
-        <div><h3>Email Marketing</h3><p>Mailchimp · MailerLite · ActiveCampaign · SureContact</p></div>
+        <div><h3>Lead Intelligence</h3><p>Apollo.io · Snov.io · ContactOut · LinkedIn Sales Navigator · Instant Data Scraper</p></div>
+        <div><h3>Email Marketing</h3><p>SureContact · ActiveCampaign · Mailchimp · MailerLite</p></div>
         <div><h3>Database & Workspace</h3><p>Notion · Google Sheets · Google Workspace</p></div>
-        <div><h3>Project & Communication</h3><p>Trello · Clockify · Calendly · Slack · Discord · Zoom · Teams · Gmail</p></div>
+        <div><h3>Project & Communication</h3><p>Trello · Clockify · Google Calendar · Slack · Discord · Zoom · WhatsApp · Google Meet</p></div>
         <div><h3>Design & Content</h3><p>Canva · CapCut</p></div>
-        <div><h3>AI Support</h3><p>ChatGPT · Grammarly · Claude</p></div>
+        <div><h3>AI Support</h3><p>ChatGPT · Grammarly · Jasper</p></div>
       </div>
     </div>
   </section>
@@ -847,21 +980,82 @@ section[id],#home{scroll-margin-top:96px}
   <section class="section shell process-section">
     <div class="section-top">
       <div class="section-label">05 / PROCESS</div>
-      <h2>A simple workflow from target to follow-up.</h2>
+      <h2>A clear operating workflow from ICP to follow-up.</h2>
     </div>
     <div class="process-grid">
-      <article><span>01</span><h3>Define</h3><p>Clarify the offer, audience, ICP, targeting filters, and campaign goal.</p></article>
-      <article><span>02</span><h3>Research</h3><p>Identify relevant companies, decision-makers, contact data, and useful context.</p></article>
-      <article><span>03</span><h3>Organize</h3><p>Clean and structure lead data for outreach, segmentation, and CRM use.</p></article>
-      <article><span>04</span><h3>Outreach</h3><p>Support LinkedIn and email campaigns with clear messaging and follow-up.</p></article>
-      <article><span>05</span><h3>Track</h3><p>Keep lead status, replies, next steps, and campaign activity organized.</p></article>
+      <article><span>01</span><h3>Define ICP</h3><p>Clarify the audience, offer, qualification criteria, and campaign objective.</p></article>
+      <article><span>02</span><h3>Source</h3><p>Find relevant companies and decision-makers across trusted prospecting sources.</p></article>
+      <article><span>03</span><h3>Verify</h3><p>Validate contacts, clean records, and segment data before outreach begins.</p></article>
+      <article><span>04</span><h3>Launch</h3><p>Support LinkedIn and email campaigns with organized lists and clear messaging.</p></article>
+      <article><span>05</span><h3>Track</h3><p>Document status, replies, next steps, and workflow updates for consistent follow-up.</p></article>
     </div>
   </section>
 
 
+
+  <section id="experience" class="section shell experience-section">
+    <div class="section-top">
+      <div class="section-label">06 / EXPERIENCE</div>
+      <h2>Hands-on experience across prospecting, email campaigns, and training.</h2>
+      <p class="section-intro">Selected recent roles that reflect how I work with lead data, outreach systems, email campaigns, and team support.</p>
+    </div>
+    <div class="experience-grid">
+      <article class="experience-card featured-experience">
+        <div class="experience-meta">
+          <span>Sep 2025 — Present</span>
+          <strong>The VA Bar</strong>
+        </div>
+        <div>
+          <p class="experience-role">Coach</p>
+          <h3>Training aspiring Virtual Assistants in lead generation and email marketing.</h3>
+          <p>Provide mentorship, hands-on training support, and coursework evaluation focused on practical field readiness.</p>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span>Mar 2023 — Mar 2026</span>
+          <strong>DMS · Remote</strong>
+        </div>
+        <div>
+          <p class="experience-role">Lead Generation Specialist</p>
+          <h3>Qualified lead research, verified data, and database maintenance.</h3>
+          <p>Researched prospects across industries, sourced decision-makers, verified contact information, and maintained campaign-ready Google Sheets and CRM records.</p>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span>Jul 2026 — Aug 2026</span>
+          <strong>AromaServe, LLC · Remote</strong>
+        </div>
+        <div>
+          <p class="experience-role">Email Marketing Intern</p>
+          <h3>SureContact campaign execution with segmentation, sequences, and compliance support.</h3>
+          <p>Built B2B/B2C campaigns from scratch, documented campaign workflows, and supported large sends reaching 5,800+ recipients.</p>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span>Feb 2026 — Mar 2026</span>
+          <strong>Heels &amp; Hustle Media · Remote</strong>
+        </div>
+        <div>
+          <p class="experience-role">Lead Generation Specialist</p>
+          <h3>Startup founder targeting for HR tech and healthcare tech outreach.</h3>
+          <p>Built structured lead databases and qualified founders by industry and funding stage, including Pre-seed, Seed, and Series B.</p>
+        </div>
+      </article>
+    </div>
+    <div class="experience-actions">
+      <a class="btn dark" href="resume.html">View full résumé</a>
+    </div>
+  </section>
+
   <section id="testimonials" class="section shell testimonial-section">
     <div class="section-top">
-      <div class="section-label">06 / TESTIMONIALS</div>
+      <div class="section-label">07 / TESTIMONIALS</div>
       <h2>What people I’ve worked with say.</h2>
       <p class="section-intro">Recommendations highlighting my lead generation, database management, content, communication, and reliability.</p>
     </div>
@@ -889,8 +1083,8 @@ section[id],#home{scroll-margin-top:96px}
     <div class="shell contact-grid">
       <div class="contact-copy">
         <p class="kicker dark-kicker">LET'S WORK TOGETHER</p>
-        <h2>Need more qualified leads—or a cleaner email outreach system?</h2>
-        <p>Tell me what you’re working on. I’m available for lead generation, prospect research, LinkedIn outreach, email marketing, CRM organization, and campaign support.</p>
+        <h2>Need a cleaner prospecting or email marketing workflow?</h2>
+        <p>Share your target audience, campaign goals, and current process. I can support prospect research, verified list building, segmentation, email campaign execution, CRM organization, and follow-up systems.</p>
         <div class="contact-details">
           <a href="tel:+639940667291"><span>Phone</span>+63 994 066 7291</a>
           <a href="mailto:lqfalsario@gmail.com"><span>Email</span>lqfalsario@gmail.com</a>
@@ -977,23 +1171,6 @@ if (form) {
   }
 })();
 
-
-(async () => {
-  const hero = document.getElementById('heroPortrait');
-  if (!hero) return;
-  try {
-    const chunks = await Promise.all(
-      [1,2,3,4,5,6].map(async (part) => {
-        const response = await fetch(`assets/hero-data/part${part}.txt`, {cache: 'force-cache'});
-        if (!response.ok) throw new Error(`Hero image part ${part} failed`);
-        return (await response.text()).trim();
-      })
-    );
-    hero.src = 'data:image/webp;base64,' + chunks.join('');
-  } catch (error) {
-    console.error('Hero image failed to load', error);
-  }
-})();
 </script>
 </body>
 </html>
