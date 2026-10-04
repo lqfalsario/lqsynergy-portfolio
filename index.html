@@ -264,10 +264,9 @@ button,input,select,textarea{font:inherit}
 .social-links a:hover{background:#fff;border-color:var(--taupe);transform:translateY(-1px)}
 .social-mark{display:grid;place-items:center;min-width:24px;height:24px;padding:0 5px;border-radius:50%;background:#171512;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:0;text-transform:none}
 .social-arrow{font-size:.8rem;color:var(--taupe)}
-.footer-socials{display:flex;align-items:center;gap:12px}
-.footer-socials a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;transition:transform .2s ease,opacity .2s ease}
-.footer-socials a:hover{transform:translateY(-2px);opacity:.88}
-.footer-socials img{display:block;width:30px;height:30px;object-fit:contain}
+.footer-socials{display:flex;align-items:center;gap:16px}
+.footer-socials a{color:var(--stone);font-size:.72rem;transition:color .2s ease}
+.footer-socials a:hover{color:#fff}
 .signup-card{padding:30px;border-radius:26px;background:#fff;box-shadow:var(--shadow)}
 .signup-card h3{font-family:"Cormorant Garamond",serif;font-size:2.2rem;line-height:1;margin:10px 0 24px}
 .signup-card form{display:grid;gap:14px}
@@ -484,21 +483,12 @@ section[id],#home{scroll-margin-top:96px}
   background:transparent;
   border-radius:0;
 }
-.site-footer .brand{
-  display:inline-grid;
-  place-items:center;
+.site-footer .brand-logo{
   width:72px;
   height:72px;
-  border-radius:50%;
-  overflow:hidden;
-  background:#fff;
-}
-.site-footer .brand-logo{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  background:#fff;
-  border-radius:50%;
+  object-fit:contain;
+  background:transparent;
+  border-radius:0;
 }
 .hero-visual{
   overflow:visible;
@@ -815,15 +805,9 @@ section[id],#home{scroll-margin-top:96px}
     <a class="brand" href="#home"><img class="brand-logo" src="assets/lq-synergy-logo.svg" alt="LQ Virtual Assistant Synergy logo"></a>
     <p>Lawrence Falsario · Lead Generation & Email Marketing Specialist</p>
     <nav class="footer-socials" aria-label="Social media">
-      <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-        <img src="assets/social-linkedin.png" alt="">
-      </a>
-      <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-        <img src="assets/social-instagram.png" alt="">
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-        <img src="assets/social-facebook.png" alt="">
-      </a>
+      <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer">Facebook</a>
     </nav>
     <p>© <span id="year"></span></p>
   </div>
