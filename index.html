@@ -906,6 +906,35 @@ section[id],#home{scroll-margin-top:96px}
   .linkedin-gallery a{padding:6px}
 }
 
+
+/* Sign-up form image fix */
+.form-gallery{
+  min-height:0!important;
+  padding:28px!important;
+}
+.form-gallery a{
+  width:100%!important;
+  max-width:620px!important;
+}
+.form-gallery img{
+  width:auto!important;
+  height:720px!important;
+  max-width:100%!important;
+  max-height:72vh!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:18px!important;
+  background:#d0d0d0!important;
+}
+@media(max-width:650px){
+  .form-gallery{padding:14px!important}
+  .form-gallery img{
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1067,7 +1096,7 @@ section[id],#home{scroll-margin-top:96px}
         <a class="text-link" href="https://preview.mailerlite.io/forms/2631348/198766236903933273/share" target="_blank" rel="noopener">Open live sign-up form ↗</a>
       </div>
       <div class="form-gallery output-stage">
-        <a href="assets/signup-form-1.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/signup-form-1.webp" alt="Lead capture sign-up form sample"></a>
+        <a href="https://preview.mailerlite.io/forms/2631348/198766236903933273/share" target="_blank" rel="noopener" aria-label="Open the live MailerLite lead capture form"><img loading="lazy" decoding="async" src="assets/signup-form-1.webp" alt="MailerLite lead capture form preview"></a>
       </div>
     </article>
   </section>
