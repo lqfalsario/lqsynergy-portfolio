@@ -1258,6 +1258,107 @@ section[id],#home{scroll-margin-top:96px}
   .linkedin-feature-card{padding:10px!important}
 }
 
+
+/* FINAL PROFESSIONAL POLISH */
+body{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+
+/* Refined capability band */
+.stat-strip{
+  position:relative;
+  min-height:116px!important;
+  padding:0 max(28px,calc((100vw - var(--content))/2))!important;
+  align-items:stretch!important;
+  background:
+    radial-gradient(circle at 18% 0%,rgba(127,111,96,.16),transparent 34%),
+    linear-gradient(180deg,#090909 0%,#000 100%)!important;
+  border-top:1px solid rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.stat-strip div{
+  min-height:116px!important;
+  padding:25px 34px!important;
+  justify-content:center!important;
+  border-right:1px solid rgba(255,255,255,.14)!important;
+  transition:background .2s ease;
+}
+.stat-strip div:first-child{padding-left:0!important}
+.stat-strip div:last-child{padding-right:0!important;border-right:0!important}
+.stat-strip div:hover{background:rgba(255,255,255,.018)}
+.stat-strip b{
+  font-size:clamp(1.3rem,1.35vw,1.55rem)!important;
+  line-height:1!important;
+  letter-spacing:-.018em;
+  font-weight:600!important;
+}
+.stat-strip span{
+  margin-top:8px!important;
+  color:#c9c2ba!important;
+  font-size:.72rem!important;
+  line-height:1.35!important;
+  letter-spacing:.015em;
+  max-width:220px;
+}
+
+/* Subtle premium interaction treatment */
+.service-card,
+.case-copy,
+.output-stage,
+.testimonial-card,
+.tool-groups>div{
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+@media (hover:hover){
+  .service-card:hover,
+  .case-copy:hover,
+  .testimonial-card:hover,
+  .tool-groups>div:hover{
+    transform:translateY(-3px);
+  }
+  .service-card:hover,
+  .case-copy:hover,
+  .testimonial-card:hover{
+    box-shadow:0 16px 38px rgba(0,0,0,.055);
+  }
+  .tool-groups>div:hover{
+    border-color:rgba(255,255,255,.28);
+  }
+}
+.text-link{
+  transition:color .18s ease,text-decoration-color .18s ease;
+}
+.text-link:hover{color:var(--taupe)}
+
+@media(max-width:900px){
+  .stat-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    min-height:0!important;
+    padding:0 24px!important;
+  }
+  .stat-strip div{
+    min-height:96px!important;
+    padding:22px 20px!important;
+  }
+  .stat-strip div:first-child{padding-left:20px!important}
+  .stat-strip div:nth-child(2){border-right:0!important}
+  .stat-strip div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.14)}
+  .stat-strip div:last-child{padding-right:20px!important}
+}
+@media(max-width:560px){
+  .stat-strip{padding:0 16px!important}
+  .stat-strip div{
+    min-height:90px!important;
+    padding:20px 14px!important;
+  }
+  .stat-strip div:first-child{padding-left:14px!important}
+  .stat-strip div:last-child{padding-right:14px!important}
+  .stat-strip b{font-size:1.28rem!important}
+  .stat-strip span{font-size:.67rem!important}
+}
+
 </style>
 </head>
 <body>
@@ -1302,7 +1403,7 @@ section[id],#home{scroll-margin-top:96px}
     <div><b>B2B & B2C</b><span>Prospect Targeting</span></div>
     <div><b>Verified Data</b><span>Lead Lists & Contact Validation</span></div>
     <div><b>LinkedIn + Email</b><span>Multi-channel Outreach</span></div>
-    <div><b>5,800+</b><span>Recipients Supported in Campaign Sends</span></div>
+    <div><b>5,800+</b><span>Campaign Recipients Supported</span></div>
   </section>
 
   <section id="about" class="section shell about-grid">
