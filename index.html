@@ -1359,6 +1359,102 @@ body{
   .stat-strip span{font-size:.67rem!important}
 }
 
+
+/* LinkedIn outreach auto-slider */
+.linkedin-slider{
+  display:grid!important;
+  gap:16px!important;
+  align-content:center!important;
+  padding:22px!important;
+}
+.linkedin-slider-frame{
+  position:relative;
+  min-height:520px;
+  overflow:hidden;
+  border:1px solid rgba(127,111,96,.18);
+  border-radius:20px;
+  background:#fff;
+}
+.linkedin-slide{
+  position:absolute;
+  inset:20px;
+  display:grid!important;
+  place-items:center!important;
+  opacity:0;
+  pointer-events:none;
+  transform:translateX(18px);
+  transition:opacity .38s ease,transform .38s ease;
+}
+.linkedin-slide.active{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(0);
+}
+.linkedin-slide img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:480px!important;
+  object-fit:contain!important;
+  border-radius:18px!important;
+  box-shadow:0 14px 36px rgba(0,0,0,.09)!important;
+  filter:none!important;
+}
+.linkedin-slider-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+.linkedin-slider-btn{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(127,111,96,.30);
+  border-radius:999px;
+  background:#fff;
+  color:#171512;
+  font:600 1.2rem/1 Arial,sans-serif;
+  cursor:pointer;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.linkedin-slider-btn:hover{
+  transform:translateY(-1px);
+  border-color:#7f6f60;
+  background:#f7f5f2;
+}
+.linkedin-slider-dots{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.linkedin-dot{
+  width:8px;
+  height:8px;
+  padding:0;
+  border:0;
+  border-radius:999px;
+  background:#c0bbb3;
+  cursor:pointer;
+  transition:width .2s ease,background .2s ease;
+}
+.linkedin-dot.active{
+  width:22px;
+  background:#7f6f60;
+}
+@media(max-width:980px){
+  .linkedin-slider-frame{min-height:460px}
+  .linkedin-slide img{max-height:420px!important}
+}
+@media(max-width:650px){
+  .linkedin-slider{padding:12px!important}
+  .linkedin-slider-frame{min-height:430px}
+  .linkedin-slide{inset:12px}
+  .linkedin-slide img{max-height:400px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1491,11 +1587,23 @@ body{
         <p>Direct LinkedIn outreach used to connect with decision-makers, communicate an offer clearly, continue conversations, and move interested prospects toward a next step.</p>
         <div class="case-tags"><span>LinkedIn</span><span>Prospecting</span><span>Personalized Outreach</span><span>Follow-up</span></div>
       </div>
-      <!-- Original LinkedIn outreach image: 2026-10-04 13:54:16 -->
-      <div class="linkedin-gallery output-stage linkedin-feature-card" aria-label="LinkedIn outreach conversation preview">
-        <a class="sample-preview" href="assets/linkedin-outreach-original.png" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation sample">
-          <img loading="lazy" decoding="async" src="assets/linkedin-outreach-original.png?v=20261004-135416" alt="LinkedIn outreach conversation mockup showing Rebecca Pappas Dupont and Chandra Sanders message threads">
-        </a>
+      <div class="linkedin-gallery output-stage linkedin-slider" aria-label="LinkedIn outreach conversation slider">
+        <div class="linkedin-slider-frame">
+          <a class="linkedin-slide active" href="assets/linkedin-2.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Chandra Sanders" data-slide="0">
+            <img loading="lazy" decoding="async" src="assets/linkedin-2.webp" alt="LinkedIn outreach conversation with Chandra Sanders">
+          </a>
+          <a class="linkedin-slide" href="assets/linkedin-1.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Rebecca Pappas Dupont" data-slide="1">
+            <img loading="lazy" decoding="async" src="assets/linkedin-1.webp" alt="LinkedIn outreach conversation with Rebecca Pappas Dupont">
+          </a>
+        </div>
+        <div class="linkedin-slider-controls" aria-label="LinkedIn outreach image navigation">
+          <button class="linkedin-slider-btn prev" type="button" aria-label="Previous LinkedIn conversation">‹</button>
+          <div class="linkedin-slider-dots" role="tablist" aria-label="Choose LinkedIn conversation">
+            <button class="linkedin-dot active" type="button" aria-label="Show Chandra Sanders conversation" aria-selected="true" data-slide="0"></button>
+            <button class="linkedin-dot" type="button" aria-label="Show Rebecca Pappas Dupont conversation" aria-selected="false" data-slide="1"></button>
+          </div>
+          <button class="linkedin-slider-btn next" type="button" aria-label="Next LinkedIn conversation">›</button>
+        </div>
       </div>
     </article>
 
@@ -1751,6 +1859,53 @@ if (form) {
     console.error('Hero image failed to load:', error);
   }
 })();
+
+
+const linkedinSlides = document.querySelectorAll('.linkedin-slide');
+const linkedinDots = document.querySelectorAll('.linkedin-dot');
+const linkedinPrev = document.querySelector('.linkedin-slider-btn.prev');
+const linkedinNext = document.querySelector('.linkedin-slider-btn.next');
+let linkedinIndex = 0;
+let linkedinTimer;
+
+function showLinkedinSlide(index) {
+  if (!linkedinSlides.length) return;
+  linkedinIndex = (index + linkedinSlides.length) % linkedinSlides.length;
+  linkedinSlides.forEach((slide, i) => slide.classList.toggle('active', i === linkedinIndex));
+  linkedinDots.forEach((dot, i) => {
+    const active = i === linkedinIndex;
+    dot.classList.toggle('active', active);
+    dot.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+}
+
+function startLinkedinAutoplay() {
+  if (!linkedinSlides.length) return;
+  clearInterval(linkedinTimer);
+  linkedinTimer = setInterval(() => showLinkedinSlide(linkedinIndex + 1), 5000);
+}
+
+if (linkedinSlides.length) {
+  linkedinPrev?.addEventListener('click', () => {
+    showLinkedinSlide(linkedinIndex - 1);
+    startLinkedinAutoplay();
+  });
+  linkedinNext?.addEventListener('click', () => {
+    showLinkedinSlide(linkedinIndex + 1);
+    startLinkedinAutoplay();
+  });
+  linkedinDots.forEach((dot) => dot.addEventListener('click', () => {
+    showLinkedinSlide(Number(dot.dataset.slide));
+    startLinkedinAutoplay();
+  }));
+  const linkedinSlider = document.querySelector('.linkedin-slider');
+  linkedinSlider?.addEventListener('mouseenter', () => clearInterval(linkedinTimer));
+  linkedinSlider?.addEventListener('mouseleave', startLinkedinAutoplay);
+  linkedinSlider?.addEventListener('focusin', () => clearInterval(linkedinTimer));
+  linkedinSlider?.addEventListener('focusout', startLinkedinAutoplay);
+  showLinkedinSlide(0);
+  startLinkedinAutoplay();
+}
 
 </script>
 </body>
