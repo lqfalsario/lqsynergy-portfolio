@@ -1458,40 +1458,70 @@ body{
 
 
 
-/* Final LinkedIn slide sizing */
-.linkedin-slider .linkedin-slide{
+
+
+/* Final LinkedIn two-phone showcase */
+.linkedin-duo{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:22px!important;
+  overflow:hidden!important;
+}
+.linkedin-duo-card{
+  width:100%;
+  min-height:650px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:end;
+  justify-items:center;
+  gap:30px;
+  padding:28px 34px;
+  background:#fbfaf8;
+  border:1px solid rgba(127,111,96,.22);
+  border-radius:28px;
+  box-shadow:0 18px 45px rgba(0,0,0,.06);
+}
+.linkedin-duo-card a{
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+  width:100%!important;
   max-width:none!important;
-  width:auto!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:visible!important;
 }
-.linkedin-slider .linkedin-slider-frame{
-  min-height:780px!important;
-  height:780px!important;
-}
-.linkedin-slider .linkedin-slide img{
+.linkedin-duo-card img,
+.linkedin-duo-card a:nth-child(2) img{
+  display:block!important;
   width:auto!important;
-  height:730px!important;
-  max-width:94%!important;
-  max-height:calc(100% - 34px)!important;
+  height:590px!important;
+  max-width:100%!important;
+  max-height:590px!important;
   object-fit:contain!important;
+  border-radius:24px!important;
+  filter:none!important;
+  box-shadow:0 18px 38px rgba(0,0,0,.10)!important;
+  transform:none!important;
+  transition:transform .25s ease,box-shadow .25s ease!important;
+}
+.linkedin-duo-card a:hover img{
+  transform:translateY(-4px)!important;
+  box-shadow:0 24px 46px rgba(0,0,0,.13)!important;
 }
 @media(max-width:1100px){
-  .linkedin-slider .linkedin-slider-frame{
-    min-height:680px!important;
-    height:680px!important;
-  }
-  .linkedin-slider .linkedin-slide img{
-    height:630px!important;
-  }
+  .linkedin-duo-card{min-height:560px;gap:22px;padding:24px}
+  .linkedin-duo-card img,
+  .linkedin-duo-card a:nth-child(2) img{height:510px!important;max-height:510px!important}
 }
 @media(max-width:767px){
-  .linkedin-slider .linkedin-slider-frame{
-    min-height:520px!important;
-    height:520px!important;
-  }
-  .linkedin-slider .linkedin-slide img{
-    height:480px!important;
-    max-width:96%!important;
-  }
+  .linkedin-duo{padding:12px!important;overflow-x:auto!important;justify-content:flex-start!important}
+  .linkedin-duo-card{min-width:680px;min-height:500px;gap:18px;padding:18px 20px}
+  .linkedin-duo-card img,
+  .linkedin-duo-card a:nth-child(2) img{height:455px!important;max-height:455px!important;border-radius:18px!important}
 }
 
 </style>
@@ -1626,22 +1656,14 @@ body{
         <p>Direct LinkedIn outreach used to connect with decision-makers, communicate an offer clearly, continue conversations, and move interested prospects toward a next step.</p>
         <div class="case-tags"><span>LinkedIn</span><span>Prospecting</span><span>Personalized Outreach</span><span>Follow-up</span></div>
       </div>
-      <div class="linkedin-gallery output-stage linkedin-slider" aria-label="LinkedIn outreach conversation slider">
-        <div class="linkedin-slider-frame">
-          <a class="linkedin-slide active" href="assets/linkedin-2.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Chandra Sanders" data-slide="0">
+      <div class="linkedin-gallery output-stage linkedin-duo" aria-label="LinkedIn outreach conversation examples">
+        <div class="linkedin-duo-card">
+          <a href="assets/linkedin-2.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Chandra Sanders">
             <img loading="lazy" decoding="async" src="assets/linkedin-2.webp" alt="LinkedIn outreach conversation with Chandra Sanders">
           </a>
-          <a class="linkedin-slide" href="assets/linkedin-1.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Rebecca Pappas Dupont" data-slide="1">
+          <a href="assets/linkedin-1.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Rebecca Pappas Dupont">
             <img loading="lazy" decoding="async" src="assets/linkedin-1.webp" alt="LinkedIn outreach conversation with Rebecca Pappas Dupont">
           </a>
-        </div>
-        <div class="linkedin-slider-controls" aria-label="LinkedIn outreach image navigation">
-          <button class="linkedin-slider-btn prev" type="button" aria-label="Previous LinkedIn conversation">‹</button>
-          <div class="linkedin-slider-dots" role="tablist" aria-label="Choose LinkedIn conversation">
-            <button class="linkedin-dot active" type="button" aria-label="Show Chandra Sanders conversation" aria-selected="true" data-slide="0"></button>
-            <button class="linkedin-dot" type="button" aria-label="Show Rebecca Pappas Dupont conversation" aria-selected="false" data-slide="1"></button>
-          </div>
-          <button class="linkedin-slider-btn next" type="button" aria-label="Next LinkedIn conversation">›</button>
         </div>
       </div>
     </article>
