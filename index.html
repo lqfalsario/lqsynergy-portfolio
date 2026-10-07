@@ -1524,6 +1524,50 @@ body{
   .linkedin-duo-card a:nth-child(2) img{height:455px!important;max-height:455px!important;border-radius:18px!important}
 }
 
+
+/* Crisp LinkedIn outreach composite */
+.linkedin-static-card{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:16px!important;
+  overflow:hidden!important;
+  background:#fbfaf8!important;
+}
+.linkedin-static-card a{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  background:transparent!important;
+  border-radius:22px!important;
+  overflow:hidden!important;
+}
+.linkedin-static-card img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  border-radius:22px!important;
+  box-shadow:none!important;
+  filter:none!important;
+  transform:none!important;
+  image-rendering:auto!important;
+}
+.linkedin-static-card:hover img{
+  transform:none!important;
+  filter:none!important;
+  box-shadow:none!important;
+}
+@media(max-width:650px){
+  .linkedin-static-card{padding:10px!important}
+  .linkedin-static-card img{border-radius:16px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1656,15 +1700,10 @@ body{
         <p>Direct LinkedIn outreach used to connect with decision-makers, communicate an offer clearly, continue conversations, and move interested prospects toward a next step.</p>
         <div class="case-tags"><span>LinkedIn</span><span>Prospecting</span><span>Personalized Outreach</span><span>Follow-up</span></div>
       </div>
-      <div class="linkedin-gallery output-stage linkedin-duo" aria-label="LinkedIn outreach conversation examples">
-        <div class="linkedin-duo-card">
-          <a href="assets/linkedin-2.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Chandra Sanders">
-            <img loading="lazy" decoding="async" src="assets/linkedin-2.webp" alt="LinkedIn outreach conversation with Chandra Sanders">
-          </a>
-          <a href="assets/linkedin-1.webp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation with Rebecca Pappas Dupont">
-            <img loading="lazy" decoding="async" src="assets/linkedin-1.webp" alt="LinkedIn outreach conversation with Rebecca Pappas Dupont">
-          </a>
-        </div>
+      <div class="linkedin-gallery output-stage linkedin-static-card" aria-label="LinkedIn outreach conversation examples">
+        <a href="assets/linkedin-outreach-original.png?v=20261007-crisp" target="_blank" rel="noopener" aria-label="View LinkedIn outreach conversation examples">
+          <img loading="lazy" decoding="async" src="assets/linkedin-outreach-original.png?v=20261007-crisp" alt="LinkedIn outreach conversations with Chandra Sanders and Rebecca Pappas Dupont">
+        </a>
       </div>
     </article>
 
