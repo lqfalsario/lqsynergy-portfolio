@@ -263,7 +263,7 @@ button,input,select,textarea{font:inherit}
 .social-links{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
 .social-links a{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.34);font-size:.75rem;font-weight:600;transition:background .2s ease,border-color .2s ease,transform .2s ease}
 .social-links a:hover{background:#fff;border-color:var(--taupe);transform:translateY(-1px)}
-.social-mark{display:grid;place-items:center;min-width:24px;height:24px;padding:0 5px;border-radius:50%;background:#171512;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:0;text-transform:none}
+.social-mark{display:grid;place-items:center;width:26px;height:26px;min-width:26px;padding:5px;border-radius:50%;color:#fff;overflow:hidden}.social-mark svg{display:block;width:100%;height:100%;fill:currentColor}.social-linkedin{background:#0A66C2}.social-instagram{background:radial-gradient(circle at 30% 110%,#feda75 0 22%,#fa7e1e 35%,#d62976 58%,#962fbf 78%,#4f5bd5 100%)}.social-facebook{background:#1877F2}
 
 .footer-socials{display:flex;align-items:center;gap:16px}
 .footer-socials a{color:var(--stone);font-size:.72rem;transition:color .2s ease}
@@ -1984,9 +1984,24 @@ body{
         <div class="social-block" aria-label="Social media profiles">
           <span class="social-heading">Connect with me</span>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on LinkedIn"><span class="social-mark">in</span><span>LinkedIn</span></a>
-            <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Instagram"><span class="social-mark">IG</span><span>Instagram</span></a>
-            <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Facebook"><span class="social-mark">f</span><span>Facebook</span></a>
+            <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on LinkedIn">
+              <span class="social-mark social-linkedin" aria-hidden="true">
+                <svg viewBox="0 0 16 16" focusable="false"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708C16 15.487 15.474 16 14.825 16H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.521-1.248-1.342-1.248S2.4 3.225 2.4 3.934c0 .694.521 1.248 1.327 1.248h.016zm3.908 8.212h2.4V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.4V9.251c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193h.016V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Instagram">
+              <span class="social-mark social-instagram" aria-hidden="true">
+                <svg viewBox="0 0 16 16" focusable="false"><path d="M8 3.892A4.108 4.108 0 1 0 8 12.108 4.108 4.108 0 0 0 8 3.892zm0 6.775a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334z"/><path d="M12.27 3.105a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0z"/><path d="M8 0C5.827 0 5.555.01 4.7.048 3.85.087 3.268.222 2.76.42A5.412 5.412 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8s.01 2.445.048 3.3c.039.85.174 1.432.372 1.94a5.412 5.412 0 0 0 2.34 2.34c.508.198 1.09.333 1.94.372C5.555 15.99 5.827 16 8 16s2.445-.01 3.3-.048c.85-.039 1.432-.174 1.94-.372a5.412 5.412 0 0 0 2.34-2.34c.198-.508.333-1.09.372-1.94C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.3c-.039-.85-.174-1.432-.372-1.94a5.412 5.412 0 0 0-2.34-2.34c-.508-.198-1.09-.333-1.94-.372C10.445.01 10.173 0 8 0zm0 1.442c2.136 0 2.389.008 3.232.047.78.036 1.204.166 1.486.276.373.145.64.319.92.599.28.28.454.547.599.92.11.282.24.705.276 1.486.039.844.047 1.097.047 3.232s-.008 2.389-.047 3.232c-.036.78-.166 1.204-.276 1.486-.145.373-.319.64-.599.92-.28.28-.547.454-.92.599-.282.11-.705.24-1.486.276-.844.039-1.097.047-3.232.047s-2.389-.008-3.232-.047c-.78-.036-1.204-.166-1.486-.276a3.97 3.97 0 0 1-.92-.599 3.97 3.97 0 0 1-.599-.92c-.11-.282-.24-.705-.276-1.486C1.45 10.389 1.442 10.136 1.442 8s.008-2.389.047-3.232c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.547-.454.92-.599.282-.11.705-.24 1.486-.276C5.611 1.45 5.864 1.442 8 1.442z"/></svg>
+              </span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Facebook">
+              <span class="social-mark social-facebook" aria-hidden="true">
+                <svg viewBox="0 0 16 16" focusable="false"><path d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049C0 12.067 2.925 15.396 6.75 16v-5.625H4.719V8.05H6.75V6.276c0-2.017 1.194-3.131 3.022-3.131.875 0 1.791.157 1.791.157v1.98h-1.009c-.994 0-1.304.621-1.304 1.258v1.51h2.219l-.355 2.326H9.25V16C13.075 15.396 16 12.067 16 8.049z"/></svg>
+              </span>
+              <span>Facebook</span>
+            </a>
           </div>
         </div>
       </div>
