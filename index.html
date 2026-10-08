@@ -1953,6 +1953,50 @@ body{
   }
 }
 
+
+/* Refined hero proof points */
+.mini-proof{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  width:min(100%,520px);
+  margin-top:20px;
+}
+.mini-proof span{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  min-height:34px;
+  padding:7px 11px;
+  border:1px solid rgba(127,111,96,.28);
+  border-radius:10px;
+  background:#faf8f5;
+  color:#544d47;
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+.mini-proof span::before{
+  content:"";
+  width:6px;
+  height:6px;
+  margin-right:8px;
+  border-radius:50%;
+  background:var(--taupe);
+  flex:0 0 auto;
+}
+.mini-proof span:hover{
+  transform:none;
+  border-color:rgba(127,111,96,.45);
+  color:#2b2724;
+}
+@media(max-width:700px){
+  .mini-proof{
+    width:100%;
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1985,7 +2029,7 @@ body{
         <a class="btn outline" href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener">Book a strategy session</a>
       </div>
       <div class="mini-proof">
-        <span>Verified lead databases</span><span>B2B/B2C targeting</span><span>SureContact campaigns</span><span>CRM & tracking</span>
+        <span>Verified Lead Lists</span><span>B2B/B2C Targeting</span><span>Email Campaigns</span><span>CRM & Tracking</span>
       </div>
     </div>
     <div class="hero-visual" aria-label="Portrait of Lawrence Falsario">
