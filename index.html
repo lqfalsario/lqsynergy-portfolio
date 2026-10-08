@@ -258,6 +258,12 @@ button,input,select,textarea{font:inherit}
 .contact-details a{display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;padding:10px 14px;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.34);font-size:.78rem;font-weight:600;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
 .contact-details a:hover{background:#fff;border-color:var(--taupe);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
 .contact-details span{width:auto;color:#554d46;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.social-block{margin-top:30px;text-align:center}
+.social-heading{display:block;margin-bottom:11px;color:#554d46;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.social-links{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
+.social-links a{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.34);font-size:.75rem;font-weight:600;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.social-links a:hover{background:#fff;border-color:var(--taupe);transform:translateY(-1px)}
+.social-mark{display:grid;place-items:center;min-width:24px;height:24px;padding:0 5px;border-radius:50%;background:#171512;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:0;text-transform:none}
 
 .footer-socials{display:flex;align-items:center;gap:16px}
 .footer-socials a{color:var(--stone);font-size:.72rem;transition:color .2s ease}
@@ -549,7 +555,15 @@ section[id],#home{scroll-margin-top:96px}
 }
 
 .contact-details a,
+.social-links a{
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,background-color .24s ease;
+}
 .contact-details a:hover,
+.social-links a:hover{
+  transform:translateY(-2px);
+  border-color:var(--taupe);
+  box-shadow:0 10px 26px rgba(0,0,0,.08);
+}
 
 .footer-socials a{
   position:relative;
@@ -584,7 +598,10 @@ section[id],#home{scroll-margin-top:96px}
   .output-stage:hover,
   .output-stage:hover img,
   .contact-details a:hover,
+  .social-links a:hover{
+    transform:none;
   }
+}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
@@ -750,6 +767,7 @@ section[id],#home{scroll-margin-top:96px}
 
 .contact-copy h2{max-width:720px}
 .contact-details{justify-content:flex-start}
+.social-links{gap:8px}
 
 @media (min-width:1200px){
   #about.section{
@@ -1857,9 +1875,18 @@ body{
         <h2>Need a cleaner prospecting or email marketing workflow?</h2>
         <p>Share your target audience, campaign goals, and current process. I can support prospect research, verified list building, segmentation, email campaign execution, CRM organization, and follow-up systems.</p>
         <div class="contact-details">
+          <a href="tel:+639940667291"><span>Phone</span>+63 994 066 7291</a>
           <a href="mailto:lqfalsario@gmail.com"><span>Email</span>lqfalsario@gmail.com</a>
           <a href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener"><span>Calendly</span>Book a strategy session</a>
-          <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span>Connect with me</a>
+          <a class="resume-contact-btn" href="resume.html">View my résumé</a>
+        </div>
+        <div class="social-block" aria-label="Social media profiles">
+          <span class="social-heading">Connect with me</span>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/falsario-lawrence" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on LinkedIn"><span class="social-mark">in</span><span>LinkedIn</span></a>
+            <a href="https://www.instagram.com/its.me_ren.ren" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Instagram"><span class="social-mark">IG</span><span>Instagram</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61574242201405" target="_blank" rel="noopener noreferrer" aria-label="Lawrence Falsario on Facebook"><span class="social-mark">f</span><span>Facebook</span></a>
+          </div>
         </div>
       </div>
     </div>
