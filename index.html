@@ -227,9 +227,13 @@ button,input,select,textarea{font:inherit}
 .tools-section .section-label{color:var(--stone)}
 .tools-section h2{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,4.8vw,5rem);line-height:.94;letter-spacing:-.045em}
 .tool-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.tool-groups>div{min-height:138px;padding:22px;border:1px solid rgba(255,255,255,.17);border-radius:18px}
+.tool-groups>div{min-height:168px;padding:22px;border:1px solid rgba(255,255,255,.17);border-radius:18px;background:rgba(255,255,255,.015)}
 .tool-groups h3{font-family:"Cormorant Garamond",serif;font-size:1.65rem}
-.tool-groups p{margin-top:12px;color:var(--stone);font-size:.8rem}
+.tool-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tool-item{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:6px 10px 6px 7px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.045);color:#ded9d3;font-size:.72rem;line-height:1.2;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.tool-item:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.075)}
+.tool-logo{display:grid;place-items:center;width:22px;height:22px;min-width:22px;border-radius:6px;background:#fff;overflow:hidden}
+.tool-logo img{width:16px;height:16px;object-fit:contain}
 
 /* Process */
 .process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
@@ -1857,12 +1861,61 @@ body{
         <h2>A practical stack for research, campaigns, and workflow management.</h2>
       </div>
       <div class="tool-groups">
-        <div><h3>Lead Intelligence</h3><p>Apollo.io · Snov.io · ContactOut · LinkedIn Sales Navigator · Instant Data Scraper</p></div>
-        <div><h3>Email Marketing</h3><p>SureContact · ActiveCampaign · Mailchimp · MailerLite</p></div>
-        <div><h3>Database & Workspace</h3><p>Notion · Google Sheets · Google Workspace</p></div>
-        <div><h3>Project & Communication</h3><p>Trello · Clockify · Google Calendar · Slack · Discord · Zoom · WhatsApp · Google Meet</p></div>
-        <div><h3>Design & Content</h3><p>Canva · CapCut</p></div>
-        <div><h3>AI Support</h3><p>ChatGPT · Grammarly · Jasper</p></div>
+        <div>
+          <h3>Lead Intelligence</h3>
+          <div class="tool-list">
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=apollo.io" alt=""></span>Apollo.io</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=snov.io" alt=""></span>Snov.io</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=contactout.com" alt=""></span>ContactOut</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=linkedin.com" alt=""></span>LinkedIn Sales Navigator</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=webrobots.io" alt=""></span>Instant Data Scraper</span>
+          </div>
+        </div>
+        <div>
+          <h3>Email Marketing</h3>
+          <div class="tool-list">
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=surecontact.com" alt=""></span>SureContact</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=activecampaign.com" alt=""></span>ActiveCampaign</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=mailchimp.com" alt=""></span>Mailchimp</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=mailerlite.com" alt=""></span>MailerLite</span>
+          </div>
+        </div>
+        <div>
+          <h3>Database & Workspace</h3>
+          <div class="tool-list">
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=notion.so" alt=""></span>Notion</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=docs.google.com" alt=""></span>Google Sheets</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=workspace.google.com" alt=""></span>Google Workspace</span>
+          </div>
+        </div>
+        <div>
+          <h3>Project & Communication</h3>
+          <div class="tool-list">
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=trello.com" alt=""></span>Trello</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=clockify.me" alt=""></span>Clockify</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=calendar.google.com" alt=""></span>Google Calendar</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=slack.com" alt=""></span>Slack</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=discord.com" alt=""></span>Discord</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=zoom.us" alt=""></span>Zoom</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=whatsapp.com" alt=""></span>WhatsApp</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=meet.google.com" alt=""></span>Google Meet</span>
+          </div>
+        </div>
+        <div>
+          <h3>Design & Content</h3>
+          <div class="tool-list">
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=canva.com" alt=""></span>Canva</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=capcut.com" alt=""></span>CapCut</span>
+          </div>
+        </div>
+        <div>
+          <h3>AI Support</h3>
+          <div class="tool-list">
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=chatgpt.com" alt=""></span>ChatGPT</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=grammarly.com" alt=""></span>Grammarly</span>
+            <span class="tool-item"><span class="tool-logo"><img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?sz=64&domain=jasper.ai" alt=""></span>Jasper</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
