@@ -1673,6 +1673,78 @@ body{
   }
 }
 
+
+/* Lead generation + email marketing process tracks */
+.process-section .section-top{margin-bottom:34px}
+.process-tracks{display:grid;gap:20px}
+.process-track{
+  padding:30px;
+  border:1px solid var(--stone);
+  border-radius:26px;
+  background:var(--paper);
+}
+.process-track-head{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+  gap:34px;
+  align-items:end;
+  padding-bottom:24px;
+  margin-bottom:4px;
+  border-bottom:1px solid rgba(0,0,0,.09);
+}
+.process-track-label{
+  color:var(--taupe);
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.14em;
+}
+.process-track-head h3{
+  margin-top:5px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(2rem,2.5vw,2.7rem);
+  line-height:1;
+  letter-spacing:-.025em;
+}
+.process-track-head>p{
+  max-width:500px;
+  justify-self:end;
+  color:var(--gray);
+  font-size:.86rem;
+  line-height:1.65;
+}
+.process-track .process-grid{margin-top:20px}
+.process-track .process-grid article{
+  min-height:190px;
+  padding:18px 16px 10px 0;
+}
+.email-process-track{
+  background:#171512;
+  color:#fff;
+  border-color:#171512;
+}
+.email-process-track .process-track-head{
+  border-bottom-color:rgba(255,255,255,.13);
+}
+.email-process-track .process-track-label,
+.email-process-track .process-grid span{
+  color:#c9b9aa;
+}
+.email-process-track .process-track-head>p,
+.email-process-track .process-grid p{
+  color:#cfc9c2;
+}
+.email-process-track .process-grid article{
+  border-top-color:rgba(255,255,255,.22);
+}
+@media(max-width:980px){
+  .process-track-head{grid-template-columns:1fr;gap:10px;align-items:start}
+  .process-track-head>p{justify-self:start}
+}
+@media(max-width:700px){
+  .process-track{padding:24px}
+  .process-track .process-grid article{min-height:auto;padding-right:0}
+}
+
 </style>
 </head>
 <body>
@@ -1923,14 +1995,44 @@ body{
   <section class="section shell process-section">
     <div class="section-top">
       <div class="section-label">05 / PROCESS</div>
-      <h2>A clear operating workflow from ICP to follow-up.</h2>
+      <h2>Clear workflows for lead generation and email marketing.</h2>
+      <p class="section-intro">Two connected systems that move from audience definition and data preparation to campaign execution, follow-up, and performance review.</p>
     </div>
-    <div class="process-grid">
-      <article><span>01</span><h3>Define ICP</h3><p>Clarify the audience, offer, qualification criteria, and campaign objective.</p></article>
-      <article><span>02</span><h3>Source</h3><p>Find relevant companies and decision-makers across trusted prospecting sources.</p></article>
-      <article><span>03</span><h3>Verify</h3><p>Validate contacts, clean records, and segment data before outreach begins.</p></article>
-      <article><span>04</span><h3>Launch</h3><p>Support LinkedIn and email campaigns with organized lists and clear messaging.</p></article>
-      <article><span>05</span><h3>Track</h3><p>Document status, replies, next steps, and workflow updates for consistent follow-up.</p></article>
+
+    <div class="process-tracks">
+      <div class="process-track">
+        <div class="process-track-head">
+          <div>
+            <p class="process-track-label">LEAD GENERATION</p>
+            <h3>From ICP to campaign-ready leads.</h3>
+          </div>
+          <p>Research, verify, organize, and prepare the right contacts for focused outreach.</p>
+        </div>
+        <div class="process-grid">
+          <article><span>01</span><h3>Define ICP</h3><p>Clarify the audience, industry, location, role, qualification criteria, and campaign objective.</p></article>
+          <article><span>02</span><h3>Source</h3><p>Find relevant companies and decision-makers across trusted prospecting sources.</p></article>
+          <article><span>03</span><h3>Verify</h3><p>Validate available contact information, remove poor-fit records, and improve list quality.</p></article>
+          <article><span>04</span><h3>Organize</h3><p>Structure and segment the database so records are clear, usable, and ready for outreach.</p></article>
+          <article><span>05</span><h3>Track</h3><p>Document status, replies, next steps, and updates to support consistent follow-up.</p></article>
+        </div>
+      </div>
+
+      <div class="process-track email-process-track">
+        <div class="process-track-head">
+          <div>
+            <p class="process-track-label">EMAIL MARKETING</p>
+            <h3>From campaign strategy to optimization.</h3>
+          </div>
+          <p>Build focused campaigns with clear messaging, clean setup, testing, and performance review.</p>
+        </div>
+        <div class="process-grid">
+          <article><span>01</span><h3>Plan</h3><p>Define the campaign goal, audience, offer, send type, and the action each email should drive.</p></article>
+          <article><span>02</span><h3>Segment</h3><p>Group contacts by relevant criteria so messaging is more targeted and useful.</p></article>
+          <article><span>03</span><h3>Create</h3><p>Develop the subject line, email copy, CTA, and layout around one clear campaign objective.</p></article>
+          <article><span>04</span><h3>Build & Launch</h3><p>Set up the campaign, check links and formatting, complete QA, and schedule or send.</p></article>
+          <article><span>05</span><h3>Analyze</h3><p>Review engagement and response signals, document learnings, and improve the next campaign.</p></article>
+        </div>
+      </div>
     </div>
   </section>
 
