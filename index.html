@@ -1956,30 +1956,33 @@ body{
 
 /* Refined hero proof points */
 .mini-proof{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px;
-  width:min(100%,520px);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px;
+  width:100%;
   margin-top:20px;
 }
 .mini-proof span{
-  display:flex;
+  display:inline-flex;
   align-items:center;
-  justify-content:flex-start;
+  width:auto;
   min-height:34px;
-  padding:7px 11px;
-  border:1px solid rgba(127,111,96,.28);
-  border-radius:10px;
-  background:#faf8f5;
+  padding:7px 13px;
+  border:1px solid rgba(127,111,96,.34);
+  border-radius:999px;
+  background:#fff;
   color:#544d47;
   font-size:.68rem;
-  font-weight:600;
-  letter-spacing:.01em;
+  font-weight:500;
+  letter-spacing:0;
+  white-space:nowrap;
+  box-shadow:none;
 }
 .mini-proof span::before{
   content:"";
-  width:6px;
-  height:6px;
+  width:5px;
+  height:5px;
   margin-right:8px;
   border-radius:50%;
   background:var(--taupe);
@@ -1987,13 +1990,17 @@ body{
 }
 .mini-proof span:hover{
   transform:none;
-  border-color:rgba(127,111,96,.45);
+  background:var(--paper);
+  border-color:rgba(127,111,96,.5);
   color:#2b2724;
 }
 @media(max-width:700px){
   .mini-proof{
-    width:100%;
-    grid-template-columns:1fr;
+    gap:7px;
+  }
+  .mini-proof span{
+    padding:6px 11px;
+    font-size:.66rem;
   }
 }
 
