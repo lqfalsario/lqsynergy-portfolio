@@ -1811,6 +1811,65 @@ body{
   .process-track{padding:24px}
 }
 
+
+/* Final About section alignment + spacing */
+#about.section{
+  padding:76px max(28px,calc((100vw - var(--content))/2)) 82px !important;
+}
+#about.about-grid{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:42px;
+  align-items:start;
+}
+#about .section-label{
+  padding-top:10px;
+}
+#about h2{
+  max-width:860px !important;
+  margin:0;
+  font-size:clamp(3.25rem,4.15vw,4.65rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+}
+#about .about-copy{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:46px;
+  max-width:980px;
+  margin-top:32px;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.16);
+}
+#about .about-copy p{
+  margin:0;
+  color:#d2ccc6;
+  font-size:.94rem;
+  line-height:1.75;
+}
+@media(max-width:1199px){
+  #about.about-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  #about .section-label{padding-top:0}
+  #about h2{max-width:820px !important}
+}
+@media(max-width:760px){
+  #about.section{
+    padding:58px 16px 64px !important;
+  }
+  #about h2{
+    font-size:clamp(2.75rem,12vw,3.85rem);
+  }
+  #about .about-copy{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:26px;
+    padding-top:20px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1861,7 +1920,7 @@ body{
   <section id="about" class="section shell about-grid">
     <div class="section-label">01 / ABOUT</div>
     <div>
-      <h2>Research, targeting, and campaign execution—built into one reliable workflow.</h2>
+      <h2>Research, targeting, and campaigns—organized into one reliable workflow.</h2>
       <div class="about-copy">
         <p>I’m a Lead Generation and Email Marketing Specialist focused on building verified prospect databases, identifying the right decision-makers, and preparing outreach-ready data for LinkedIn, email, and CRM workflows.</p>
         <p>My work spans B2B/B2C targeting, contact validation, segmentation, campaign execution, database maintenance, and workflow documentation—keeping outreach organized from research through follow-up.</p>
