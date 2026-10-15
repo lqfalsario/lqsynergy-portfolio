@@ -2859,11 +2859,11 @@ body{
       <div class="gh-panel">
         <div class="gh-clocks" aria-label="Live international clocks">
           <div class="gh-clock"><div class="gh-region">Philippines · PHT</div><time data-zone="Asia/Manila">--:--:--</time><div class="gh-sub">Operational Days Active</div></div>
-          <div class="gh-clock"><div class="gh-region">US Pacific · PT</div><time data-zone="America/Los_Angeles">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
-          <div class="gh-clock"><div class="gh-region">US Mountain · MT</div><time data-zone="America/Denver">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
-          <div class="gh-clock"><div class="gh-region">US Central · CT</div><time data-zone="America/Chicago">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
-          <div class="gh-clock"><div class="gh-region">US Eastern · ET</div><time data-zone="America/New_York">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
-          <div class="gh-clock"><div class="gh-region">Australia · AEST/AEDT</div><time data-zone="Australia/Sydney">--:--:--</time><div class="gh-sub">AU Market Coverage</div></div>
+          <div class="gh-clock"><div class="gh-region">US Pacific · <span class="gh-tz" data-tz-label="America/Los_Angeles">PDT</span></div><time data-zone="America/Los_Angeles">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">US Mountain · <span class="gh-tz" data-tz-label="America/Denver">MDT</span></div><time data-zone="America/Denver">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">US Central · <span class="gh-tz" data-tz-label="America/Chicago">CDT</span></div><time data-zone="America/Chicago">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">US Eastern · <span class="gh-tz" data-tz-label="America/New_York">EDT</span></div><time data-zone="America/New_York">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">Australia · <span class="gh-tz" data-tz-label="Australia/Sydney">AEDT</span></div><time data-zone="Australia/Sydney">--:--:--</time><div class="gh-sub">AU Market Coverage</div></div>
         </div>
         <div class="gh-availability">
           <h3>My weekly availability</h3>
@@ -3013,7 +3013,33 @@ if (linkedinSlides.length) {
   clocks.forEach(node => formatters.set(node.dataset.zone, new Intl.DateTimeFormat('en-US',{
     timeZone:node.dataset.zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true
   })));
-  function refresh(){const now=new Date();clocks.forEach(node=>{node.textContent=formatters.get(node.dataset.zone).format(now);node.dateTime=now.toISOString()})}
+  const labels = document.querySelectorAll('.gh-tz[data-tz-label]');
+  const abbreviations = {
+    'America/Los_Angeles':['PST','PDT'],
+    'America/Denver':['MST','MDT'],
+    'America/Chicago':['CST','CDT'],
+    'America/New_York':['EST','EDT'],
+    'Australia/Sydney':['AEST','AEDT']
+  };
+  function utcOffsetMinutes(zone, date){
+    const parts = new Intl.DateTimeFormat('en-US',{timeZone:zone,timeZoneName:'longOffset'}).formatToParts(date);
+    const offset = parts.find(p=>p.type==='timeZoneName')?.value || 'GMT';
+    const m = offset.match(/GMT([+-])(\\d{1,2})(?::(\\d{2}))?/);
+    return m ? (m[1]==='-'?-1:1)*(Number(m[2])*60+Number(m[3]||0)) : 0;
+  }
+  function refresh(){
+    const now=new Date();
+    clocks.forEach(node=>{node.textContent=formatters.get(node.dataset.zone).format(now);node.dateTime=now.toISOString()});
+    labels.forEach(label=>{
+      const zone=label.dataset.tzLabel;
+      const [standard,daylight]=abbreviations[zone];
+      const year=Number(new Intl.DateTimeFormat('en-US',{timeZone:zone,year:'numeric'}).format(now));
+      const jan=utcOffsetMinutes(zone,new Date(Date.UTC(year,0,15)));
+      const jul=utcOffsetMinutes(zone,new Date(Date.UTC(year,6,15)));
+      const current=utcOffsetMinutes(zone,now);
+      label.textContent = current>Math.min(jan,jul) ? daylight : standard;
+    });
+  }
   refresh();setInterval(refresh,1000);
 })();
 
