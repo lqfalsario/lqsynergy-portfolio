@@ -2345,6 +2345,20 @@ body{
 @media(max-width:680px){.contact-section .contact-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.contact-section .contact-actions .contact-details a,.contact-section .contact-actions .social-links a{font-size:.72rem;padding:10px 8px}}
 @media(max-width:340px){.contact-section .contact-actions{grid-template-columns:1fr}}
 
+/* Readable weekly availability and responsive schedule details */
+.gh-availability .gh-intro{max-width:680px;margin:8px auto 20px;font-size:.86rem;line-height:1.65}
+.gh-week{gap:10px}
+.gh-day{min-height:82px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 7px}
+.gh-day strong{font-size:.83rem}
+.gh-day span{font-size:.74rem}
+.gh-schedule-details{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;text-align:left}
+.gh-schedule-detail{display:flex;flex-direction:column;gap:8px;padding:17px 19px;border:1px solid #ded8d0;border-radius:12px;background:#fff;color:#5f5750;font-size:.83rem;line-height:1.5}
+.gh-schedule-detail strong{font-size:.86rem;color:#302923}
+.gh-schedule-detail b{color:#302923;font-weight:700}
+.gh-schedule-detail small{font-size:.75rem;color:#776d64}
+.gh-schedule-detail .gh-pht{color:#6c5c4d}
+@media(max-width:650px){.gh-schedule-details{grid-template-columns:1fr}.gh-week{gap:8px}}
+
 </style>
 </head>
 <body>
@@ -2903,7 +2917,7 @@ body{
         </div>
         <div class="gh-availability">
           <h3>My weekly availability</h3>
-          <p>Availability is shown using Philippine Time (PHT) and US time zones. Live clocks and PST/PDT, MST/MDT, CST/CDT, EST/EDT, and AEST/AEDT labels automatically adjust for daylight saving time.</p>
+          <p class="gh-intro">Weekly schedule follows US Central Time (CT). Time-zone clocks update automatically for daylight saving.</p>
 
           <div class="gh-week" aria-label="Weekly availability">
             <div class="gh-day"><strong>Mon</strong><span>Full shift</span></div>
@@ -2914,7 +2928,18 @@ body{
             <div class="gh-day partial"><strong>Sat</strong><span>Partial</span></div>
             <div class="gh-day partial"><strong>Sun</strong><span>Partial</span></div>
           </div>
-          <p class="gh-legend" id="gh-schedule-note">Partial days (Central Time): unavailable 12:00 PM–10:00 PM CT; other hours open. Full-shift days: available for scheduling.</p>
+          <div class="gh-schedule-details" id="gh-schedule-note" aria-label="Weekly schedule details">
+            <div class="gh-schedule-detail">
+              <strong>Partial days · Wed, Sat &amp; Sun</strong>
+              <span>Unavailable: <b>12:00 PM–10:00 PM <span id="gh-ct-label">CT</span></b></span>
+              <span class="gh-pht">Philippine Time: <b id="gh-pht-hours">Automatically adjusting</b> (next day)</span>
+              <small>Available outside these hours.</small>
+            </div>
+            <div class="gh-schedule-detail">
+              <strong>Full shifts · Mon, Tue, Thu &amp; Fri</strong>
+              <span>Available for scheduling.</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="gh-cta">
@@ -3068,15 +3093,12 @@ if (linkedinSlides.length) {
   function refresh(){
     const now=new Date();
     clocks.forEach(node=>{node.textContent=formatters.get(node.dataset.zone).format(now);node.dateTime=now.toISOString()});
-    // Keep the weekly Central Time availability note aligned with US daylight saving.
-    const note=document.getElementById('gh-schedule-note');
-    if(note){
-      const centralOffset=utcOffsetMinutes('America/Chicago',now);
-      const isDaylight=centralOffset===-300;
-      const centralLabel=isDaylight?'CDT':'CST';
-      const phHours=isDaylight?'1:00 AM–11:00 AM':'2:00 AM–12:00 PM';
-      note.textContent='Partial days (Central Time): unavailable 12:00 PM–10:00 PM '+centralLabel+' ('+phHours+' PHT the following day); other hours open. Full-shift days: available for scheduling.';
-    }
+    // Update the schedule's Central Time label and Philippine-time equivalent.
+    const centralOffset=utcOffsetMinutes('America/Chicago',now);
+    const ctLabel=document.getElementById('gh-ct-label');
+    const phtHours=document.getElementById('gh-pht-hours');
+    if(ctLabel) ctLabel.textContent=centralOffset===-300?'CDT':'CST';
+    if(phtHours) phtHours.textContent=centralOffset===-300?'1:00 AM–11:00 AM':'2:00 AM–12:00 PM';
     labels.forEach(label=>{
       const zone=label.dataset.tzLabel;
       const [standard,daylight]=abbreviations[zone];
