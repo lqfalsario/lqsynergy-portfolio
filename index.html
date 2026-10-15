@@ -2309,6 +2309,32 @@ body{
 .company-logo-card span{font-size:.76rem;font-weight:600;color:var(--taupe)}
 @media(max-width:860px){.company-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.company-logo-grid{gap:10px}.company-logo-card{padding:15px 8px;min-height:172px}.company-logo-card img{height:90px}.company-logo-card span{font-size:.67rem}}
+
+/* Contact action bar: consistent alignment and spacing */
+.contact-section .contact-actions{
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:12px;margin:30px auto 0;
+}
+.contact-section .contact-actions .contact-details,
+.contact-section .contact-actions .social-block{
+  width:auto;max-width:none;margin:0;display:flex;align-items:center;
+}
+.contact-section .contact-actions .social-heading{display:none}
+.contact-section .contact-actions .social-links{display:flex;align-items:center;justify-content:center;gap:12px}
+.contact-section .contact-actions .contact-details a,
+.contact-section .contact-actions .social-links a{
+  min-height:43px;display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 17px;border:1px solid rgba(72,58,46,.30);border-radius:999px;
+  background:rgba(255,255,255,.48);font-size:.78rem;line-height:1.2;
+}
+.contact-section .contact-actions .resume-contact-btn{background:var(--taupe)!important;color:#fff!important;border-color:var(--taupe)!important}
+@media(max-width:650px){
+  .contact-section .contact-actions{gap:12px}
+  .contact-section .contact-actions .contact-details{display:flex;justify-content:center;width:100%}
+  .contact-section .contact-actions .social-block{width:100%;justify-content:center}
+  .contact-section .contact-actions .social-links{flex-wrap:wrap;gap:9px}
+}
+
 </style>
 </head>
 <body>
@@ -2894,6 +2920,7 @@ body{
         <p class="kicker dark-kicker">LET'S WORK TOGETHER</p>
         <h2>Need a cleaner prospecting or email marketing workflow?</h2>
         <p>Tell me who you want to reach and what you want to achieve. I can help with prospect research, verified lead lists, segmentation, email campaigns, CRM organization, and follow-up.</p>
+        <div class="contact-actions">
         <div class="contact-details">
           <a class="resume-contact-btn" href="resume.html">View my résumé</a>
         </div>
@@ -2919,6 +2946,7 @@ body{
               <span>Facebook</span>
             </a>
           </div>
+        </div>
         </div>
       </div>
     </div>
