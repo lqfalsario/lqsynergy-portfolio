@@ -2914,7 +2914,7 @@ body{
             <div class="gh-day partial"><strong>Sat</strong><span>Partial</span></div>
             <div class="gh-day partial"><strong>Sun</strong><span>Partial</span></div>
           </div>
-          <p class="gh-legend">Partial days: unavailable 12:00 PM–10:00 PM CT; other hours open. Full-shift days: available for scheduling.</p>
+          <p class="gh-legend" id="gh-schedule-note">Partial days (Central Time): unavailable 12:00 PM–10:00 PM CT; other hours open. Full-shift days: available for scheduling.</p>
         </div>
       </div>
       <div class="gh-cta">
@@ -3068,6 +3068,15 @@ if (linkedinSlides.length) {
   function refresh(){
     const now=new Date();
     clocks.forEach(node=>{node.textContent=formatters.get(node.dataset.zone).format(now);node.dateTime=now.toISOString()});
+    // Keep the weekly Central Time availability note aligned with US daylight saving.
+    const note=document.getElementById('gh-schedule-note');
+    if(note){
+      const centralOffset=utcOffsetMinutes('America/Chicago',now);
+      const isDaylight=centralOffset===-300;
+      const centralLabel=isDaylight?'CDT':'CST';
+      const phHours=isDaylight?'1:00 AM–11:00 AM':'2:00 AM–12:00 PM';
+      note.textContent='Partial days (Central Time): unavailable 12:00 PM–10:00 PM '+centralLabel+' ('+phHours+' PHT the following day); other hours open. Full-shift days: available for scheduling.';
+    }
     labels.forEach(label=>{
       const zone=label.dataset.tzLabel;
       const [standard,daylight]=abbreviations[zone];
