@@ -2931,7 +2931,7 @@ body{
           <div class="gh-schedule-details" id="gh-schedule-note" aria-label="Weekly schedule details">
             <div class="gh-schedule-detail">
               <strong>Partial days · Wed, Sat &amp; Sun</strong>
-              <span>US Time · Unavailable: <b>12:00 PM–10:00 PM</b></span>
+              <span>US Time · Unavailable: <b>1:00 PM–10:00 PM</b></span>
               <span class="gh-pht">Philippine Time: <b id="gh-pht-hours">Automatically adjusting</b> (next day)</span>
               <small>Available outside these hours.</small>
             </div>
@@ -3095,10 +3095,8 @@ if (linkedinSlides.length) {
     clocks.forEach(node=>{node.textContent=formatters.get(node.dataset.zone).format(now);node.dateTime=now.toISOString()});
     // Update the schedule's Central Time label and Philippine-time equivalent.
     const centralOffset=utcOffsetMinutes('America/Chicago',now);
-    const ctLabel=document.getElementById('gh-ct-label');
     const phtHours=document.getElementById('gh-pht-hours');
-    if(ctLabel) ctLabel.textContent=centralOffset===-300?'CDT':'CST';
-    if(phtHours) phtHours.textContent=centralOffset===-300?'1:00 AM–11:00 AM':'2:00 AM–12:00 PM';
+    if(phtHours) phtHours.textContent=centralOffset===-300?'2:00 AM–11:00 AM':'3:00 AM–12:00 PM';
     labels.forEach(label=>{
       const zone=label.dataset.tzLabel;
       const [standard,daylight]=abbreviations[zone];
