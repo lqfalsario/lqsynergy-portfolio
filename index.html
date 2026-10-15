@@ -2267,6 +2267,36 @@ body{
   .certificate-card:hover{transform:none}
 }
 
+
+/* Global time and availability */
+.global-hours{background:#101c29;color:#f5f8ff;padding:85px 0 78px}
+.global-hours .gh-wrap{max-width:1180px;margin:auto;background:linear-gradient(145deg,#1d2d3d,#152332);border:1px solid #304458;border-radius:23px;padding:clamp(24px,4vw,48px);box-shadow:0 20px 70px rgba(0,0,0,.15)}
+.global-hours .gh-eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#73dfbb;font-weight:700;text-align:center}
+.global-hours h2{font:600 clamp(2.5rem,4.7vw,4rem)/1.03 "Cormorant Garamond",serif;text-align:center;margin:12px 0 12px;letter-spacing:-.025em}
+.global-hours .gh-lead{color:#c1d0dc;text-align:center;max-width:620px;margin:0 auto 28px;font-size:.94rem}
+.gh-panel{background:#111d2b;border:1px solid #314354;border-radius:17px;padding:clamp(16px,3vw,28px)}
+.gh-clocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.gh-clock{background:#1b2939;border:1px solid #304558;border-radius:12px;padding:22px 12px;text-align:center;transition:transform .2s,border-color .2s}
+.gh-clock:hover{transform:translateY(-3px);border-color:#72debb}
+.gh-clock .gh-region{font-size:.72rem;letter-spacing:.045em;color:#b2c9df;text-transform:uppercase}
+.gh-clock time{display:block;font-size:clamp(1.25rem,2.3vw,1.8rem);font-weight:700;color:#72dfb7;font-variant-numeric:tabular-nums;margin:10px 0 5px;white-space:nowrap}
+.gh-clock .gh-sub{color:#9db7d1;font-size:.71rem}
+.gh-availability{margin-top:19px;padding-top:19px;border-top:1px solid #304558}
+.gh-availability h3{font-size:1.05rem;color:#fff;text-align:center;margin:0 0 6px}
+.gh-availability p{color:#c1d0dc;font-size:.83rem;text-align:center;margin:0 0 18px}
+.gh-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.gh-day{background:#1b2939;border:1px solid #35485a;border-radius:10px;text-align:center;padding:13px 5px}
+.gh-day strong{display:block;font-size:.78rem;color:#edf7fd;margin-bottom:7px}
+.gh-day span{font-size:.68rem;color:#79e1b9}
+.gh-day.partial span{color:#ffc88b}
+.gh-legend{text-align:center!important;font-size:.75rem!important;color:#aac2d7!important;margin:15px 0 0!important}
+.gh-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px auto 0}
+.gh-cta a{display:inline-flex;justify-content:center;align-items:center;background:#77e1bd;color:#112b28;border-radius:999px;padding:12px 21px;font-size:.84rem;font-weight:700;transition:transform .2s}
+.gh-cta a:hover{transform:translateY(-2px)}
+.gh-cta a.secondary{background:transparent;color:#d7e7f5;border:1px solid #66849b}
+@media(max-width:760px){.global-hours{padding:55px 0}.gh-clocks{grid-template-columns:repeat(2,minmax(0,1fr))}.gh-week{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:410px){.gh-clock{padding:17px 5px}.gh-clock time{font-size:1.18rem}.gh-week{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 </style>
 </head>
 <body>
@@ -2786,6 +2816,43 @@ body{
     </div>
   </section>
 
+
+  <section id="availability" class="global-hours" aria-labelledby="gh-title">
+    <div class="shell"><div class="gh-wrap">
+      <p class="gh-eyebrow">Worldwide collaboration · Real-time coverage</p>
+      <h2 id="gh-title">Let’s work together.</h2>
+      <p class="gh-lead">Working across time zones to keep your outreach, campaigns, and customer operations moving. Check my local time and availability below.</p>
+      <div class="gh-panel">
+        <div class="gh-clocks" aria-label="Live international clocks">
+          <div class="gh-clock"><div class="gh-region">Philippines · PHT</div><time data-zone="Asia/Manila">--:--:--</time><div class="gh-sub">Operational Days Active</div></div>
+          <div class="gh-clock"><div class="gh-region">US Pacific · PT</div><time data-zone="America/Los_Angeles">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">US Mountain · MT</div><time data-zone="America/Denver">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">US Central · CT</div><time data-zone="America/Chicago">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">US Eastern · ET</div><time data-zone="America/New_York">--:--:--</time><div class="gh-sub">US Client Interface</div></div>
+          <div class="gh-clock"><div class="gh-region">Australia · AEST/AEDT</div><time data-zone="Australia/Sydney">--:--:--</time><div class="gh-sub">AU Market Coverage</div></div>
+        </div>
+        <div class="gh-availability">
+          <h3>My weekly availability</h3>
+          <p>Schedule displayed in US Central Time (CST/CDT), with daylight saving handled automatically.</p>
+          <div class="gh-week" aria-label="Weekly availability">
+            <div class="gh-day"><strong>Mon</strong><span>Full shift</span></div>
+            <div class="gh-day"><strong>Tue</strong><span>Full shift</span></div>
+            <div class="gh-day partial"><strong>Wed</strong><span>Partial</span></div>
+            <div class="gh-day"><strong>Thu</strong><span>Full shift</span></div>
+            <div class="gh-day"><strong>Fri</strong><span>Full shift</span></div>
+            <div class="gh-day partial"><strong>Sat</strong><span>Partial</span></div>
+            <div class="gh-day partial"><strong>Sun</strong><span>Partial</span></div>
+          </div>
+          <p class="gh-legend">Partial days: unavailable 12:00 PM–10:00 PM CT; other hours open. Full-shift days: available for scheduling.</p>
+        </div>
+      </div>
+      <div class="gh-cta">
+        <a href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener noreferrer">Book a strategy session ↗</a>
+        <a class="secondary" href="mailto:lqfalsario@gmail.com">Send me an email ↗</a>
+      </div>
+    </div></div>
+  </section>
+
   <section id="contact" class="contact-section">
     <div class="shell contact-grid">
       <div class="contact-copy">
@@ -2904,6 +2971,18 @@ if (linkedinSlides.length) {
   showLinkedinSlide(0);
   startLinkedinAutoplay();
 }
+
+
+(function initGlobalClocks(){
+  const clocks = document.querySelectorAll('.gh-clock time[data-zone]');
+  if (!clocks.length) return;
+  const formatters = new Map();
+  clocks.forEach(node => formatters.set(node.dataset.zone, new Intl.DateTimeFormat('en-US',{
+    timeZone:node.dataset.zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true
+  })));
+  function refresh(){const now=new Date();clocks.forEach(node=>{node.textContent=formatters.get(node.dataset.zone).format(now);node.dateTime=now.toISOString()})}
+  refresh();setInterval(refresh,1000);
+})();
 
 </script>
 </body>
