@@ -2004,6 +2004,139 @@ body{
   }
 }
 
+
+/* Editorial skills matrix: practical strengths, without invented rating percentages */
+.skills-section{
+  background:#f7f5f2;
+  border-top:1px solid rgba(0,0,0,.07);
+  padding:88px 0 90px;
+}
+.skills-section-head{
+  grid-template-columns:150px minmax(0,860px);
+  margin-bottom:35px;
+}
+.skills-section-head h2{max-width:790px}
+.skills-intro{
+  max-width:650px;
+  margin-top:18px;
+  color:#6a6a6a;
+  font-size:.96rem;
+  line-height:1.7;
+}
+.skills-matrix{
+  border-top:1px solid rgba(127,111,96,.24);
+}
+.skills-group{
+  display:grid;
+  grid-template-columns:minmax(240px,.83fr) minmax(0,1.42fr);
+  gap:clamp(24px,4.5vw,76px);
+  align-items:center;
+  padding:31px 2px;
+  border-bottom:1px solid rgba(127,111,96,.24);
+}
+.skills-index{
+  display:block;
+  color:#7f6f60;
+  font-size:.67rem;
+  font-weight:700;
+  letter-spacing:.17em;
+}
+.skills-category h3{
+  font:600 clamp(1.9rem,2.5vw,2.65rem)/1 "Cormorant Garamond",serif;
+  letter-spacing:-.025em;
+  margin-top:10px;
+}
+.skills-category p{
+  max-width:390px;
+  margin-top:10px;
+  color:#6a6a6a;
+  font-size:.82rem;
+  line-height:1.65;
+}
+.skills-list{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.skills-list li{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-height:39px;
+  padding:9px 14px;
+  background:#fff;
+  border:1px solid rgba(127,111,96,.28);
+  border-radius:999px;
+  color:#3d3731;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.4;
+  transition:border-color .2s ease,background-color .2s ease,transform .2s ease;
+}
+.skills-list li::before{
+  content:"";
+  flex:0 0 5px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#7f6f60;
+}
+@media(hover:hover){
+  .skills-list li:hover{
+    border-color:#7f6f60;
+    background:#fffdfb;
+    transform:translateY(-2px);
+  }
+}
+.skills-endnote{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-top:23px;
+}
+.skills-endnote p{
+  color:#6a6a6a;
+  font-size:.84rem;
+  max-width:620px;
+}
+.skills-work-link{
+  font-size:.82rem;
+  font-weight:700;
+  color:#201d1a;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  white-space:nowrap;
+}
+.skills-work-link:hover{color:#7f6f60}
+.site-header nav{gap:clamp(16px,2.2vw,30px)}
+@media(max-width:950px){
+  .skills-section{padding:72px 0}
+  .skills-section-head{grid-template-columns:1fr;gap:12px}
+  .skills-group{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:27px 0;
+  }
+}
+@media(max-width:650px){
+  .skills-section{padding:60px 0}
+  .skills-section-head{margin-bottom:27px}
+  .skills-section-head h2{font-size:clamp(2.6rem,12vw,4rem)}
+  .skills-list{gap:8px}
+  .skills-list li{min-height:36px;padding:8px 12px;font-size:.72rem}
+  .skills-endnote{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  .skills-list li{transition:none}
+  .skills-list li:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -2016,6 +2149,7 @@ body{
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
@@ -2185,10 +2319,94 @@ body{
     </article>
   </section>
 
+
+  <section id="skills" class="section skills-section" aria-labelledby="skills-title">
+    <div class="shell">
+      <div class="section-top skills-section-head">
+        <div class="section-label">04 / CORE SKILLS</div>
+        <div>
+          <h2 id="skills-title">The skills behind stronger outreach.</h2>
+          <p class="skills-intro">Practical, detail-oriented work across prospect research, personalized outreach, email campaigns, and organized sales operations.</p>
+        </div>
+      </div>
+
+      <div class="skills-matrix">
+        <article class="skills-group">
+          <div class="skills-category">
+            <span class="skills-index">01 / RESEARCH</span>
+            <h3>Lead Generation</h3>
+            <p>Finding the right prospects and preparing accurate, outreach-ready lead data.</p>
+          </div>
+          <ul class="skills-list">
+            <li>B2B &amp; B2C Prospecting</li>
+            <li>Ideal Customer Profile Targeting</li>
+            <li>Decision-Maker Research</li>
+            <li>Contact Verification</li>
+            <li>Data Enrichment &amp; Deduplication</li>
+            <li>Qualified Lead List Building</li>
+          </ul>
+        </article>
+
+        <article class="skills-group">
+          <div class="skills-category">
+            <span class="skills-index">02 / CONVERSATIONS</span>
+            <h3>LinkedIn &amp; Outreach</h3>
+            <p>Turning researched contacts into focused outreach and consistent follow-up.</p>
+          </div>
+          <ul class="skills-list">
+            <li>LinkedIn Prospect Research</li>
+            <li>Personalized Outreach Messaging</li>
+            <li>Audience Segmentation</li>
+            <li>Lead Qualification</li>
+            <li>Follow-up Coordination</li>
+            <li>Outreach Tracking</li>
+          </ul>
+        </article>
+
+        <article class="skills-group">
+          <div class="skills-category">
+            <span class="skills-index">03 / CAMPAIGNS</span>
+            <h3>Email Marketing</h3>
+            <p>Helping brands prepare, launch, and maintain organized email communication.</p>
+          </div>
+          <ul class="skills-list">
+            <li>Email Campaign Setup</li>
+            <li>Email Copy &amp; Newsletters</li>
+            <li>List Management &amp; Segmentation</li>
+            <li>Automation Flow Support</li>
+            <li>Landing Pages &amp; Sign-up Forms</li>
+            <li>Campaign Reporting</li>
+          </ul>
+        </article>
+
+        <article class="skills-group">
+          <div class="skills-category">
+            <span class="skills-index">04 / SYSTEMS</span>
+            <h3>CRM &amp; Operations</h3>
+            <p>Keeping prospect records, project details, and campaign activities structured.</p>
+          </div>
+          <ul class="skills-list">
+            <li>CRM &amp; Pipeline Updates</li>
+            <li>Google Sheets Management</li>
+            <li>Database Cleanup</li>
+            <li>Sales Follow-up Organization</li>
+            <li>Workflow Documentation</li>
+            <li>Remote Team Communication</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="skills-endnote">
+        <p>From first prospect to follow-up, I focus on accuracy, consistency, and clear communication.</p>
+        <a href="#work" class="skills-work-link">Explore selected work <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="tools" class="section tools-section">
     <div class="shell">
       <div class="section-top compact">
-        <div class="section-label light">04 / TOOLBOX</div>
+        <div class="section-label light">05 / TOOLBOX</div>
         <h2>A practical stack for research, campaigns, and workflow management.</h2>
       </div>
       <div class="tool-groups">
@@ -2253,7 +2471,7 @@ body{
 
   <section class="section shell process-section">
     <div class="section-top">
-      <div class="section-label">05 / PROCESS</div>
+      <div class="section-label">06 / PROCESS</div>
       <h2>Two workflows. One organized system.</h2>
       <p class="section-intro">A practical process for building qualified lead lists and running focused email campaigns from setup through follow-up.</p>
     </div>
@@ -2299,7 +2517,7 @@ body{
 
   <section id="experience" class="section shell experience-section">
     <div class="section-top">
-      <div class="section-label">06 / EXPERIENCE</div>
+      <div class="section-label">07 / EXPERIENCE</div>
       <h2>Hands-on experience across prospecting, email campaigns, and training.</h2>
       <p class="section-intro">Selected recent roles that reflect how I work with lead data, outreach systems, email campaigns, and team support.</p>
     </div>
@@ -2359,7 +2577,7 @@ body{
 
   <section id="testimonials" class="section shell testimonial-section">
     <div class="section-top">
-      <div class="section-label">07 / TESTIMONIALS</div>
+      <div class="section-label">08 / TESTIMONIALS</div>
       <h2>What people I’ve worked with say.</h2>
       <p class="section-intro">Recommendations highlighting my lead generation, database management, content, communication, and reliability.</p>
     </div>
