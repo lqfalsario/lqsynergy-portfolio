@@ -2928,18 +2928,6 @@ body{
             <div class="gh-day partial"><strong>Sat</strong><span>Partial</span></div>
             <div class="gh-day partial"><strong>Sun</strong><span>Partial</span></div>
           </div>
-          <div class="gh-schedule-details" id="gh-schedule-note" aria-label="Weekly schedule details">
-            <div class="gh-schedule-detail">
-              <strong>Partial days · Wed, Sat &amp; Sun</strong>
-              <span>US Time · Unavailable: <b>1:00 PM–10:00 PM</b></span>
-              <span class="gh-pht">Philippine Time: <b id="gh-pht-hours">Automatically adjusting</b> (next day)</span>
-              <small>Available outside these hours.</small>
-            </div>
-            <div class="gh-schedule-detail">
-              <strong>Full shifts · Mon, Tue, Thu &amp; Fri</strong>
-              <span>Available for scheduling.</span>
-            </div>
-          </div>
         </div>
       </div>
       <div class="gh-cta">
@@ -3094,9 +3082,6 @@ if (linkedinSlides.length) {
     const now=new Date();
     clocks.forEach(node=>{node.textContent=formatters.get(node.dataset.zone).format(now);node.dateTime=now.toISOString()});
     // Update the schedule's Central Time label and Philippine-time equivalent.
-    const centralOffset=utcOffsetMinutes('America/Chicago',now);
-    const phtHours=document.getElementById('gh-pht-hours');
-    if(phtHours) phtHours.textContent=centralOffset===-300?'2:00 AM–11:00 AM':'3:00 AM–12:00 PM';
     labels.forEach(label=>{
       const zone=label.dataset.tzLabel;
       const [standard,daylight]=abbreviations[zone];
