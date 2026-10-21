@@ -1,4 +1,4 @@
-# MICHELLE — Website
+# ZETTY — Website
 
 Live website: https://zetty-penalosa-portfolio.vercel.app/
 
@@ -8,7 +8,7 @@ The legacy path `/zetty/` redirects to this branded URL, preserving the browser 
 
 ## About this portfolio
 
-A responsive, accessible, premium-styled static website built for Michelle. It uses an aubergine-and-champagne editorial design inspired by the existing Lawrence Falsario / LQ Synergy portfolio, but highlights lead generation and sales operations instead of email marketing.
+A responsive, accessible, premium-styled static website for Zetty, with Michelle as the public-facing personal name used in her introduction and photo caption. It uses an aubergine-and-champagne editorial design inspired by the existing Lawrence Falsario / LQ Synergy portfolio, but highlights lead generation and sales operations instead of email marketing.
 
 ## What is included
 

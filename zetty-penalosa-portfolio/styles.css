@@ -209,35 +209,36 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 }
 
 
-/* Single-name identity: MICHELLE. No surname or secondary portfolio label. */
-.brand {gap:0;}
-.brand-label {display:block;line-height:1;}
+/* Zetty brand identity: preserve the original Z. mark without a subtitle. */
+.brand {gap:12px;}
+.brand-label {display:block;line-height:1.1;}
 .brand-label strong {
   display:block;
-  font-family:var(--head);
-  font-weight:700;
-  font-size:31px;
-  line-height:1;
+  font-family:var(--body);
+  font-size:12px;
+  line-height:1.3;
+  font-weight:800;
   letter-spacing:.13em;
   white-space:nowrap;
   color:var(--dark);
 }
 .footer-brand {
-  font-family:var(--head);
-  font-size:32px;
+  font-family:var(--body);
+  font-size:20px;
   font-weight:700;
-  letter-spacing:.13em;
+  letter-spacing:.15em;
   line-height:1.1;
 }
 .portrait-footer span:first-child {font-size:14px;letter-spacing:.16em;}
 @media (max-width:760px) {
-  .brand-label strong {font-size:28px;letter-spacing:.11em;}
-  .footer-brand {font-size:29px;}
+  .brand-label strong {font-size:11px;letter-spacing:.10em;}
+  .footer-brand {font-size:19px;}
 }
 @media (max-width:450px) {
-  .brand-label strong {font-size:25px;letter-spacing:.08em;}
+  .brand {gap:8px;}
+  .brand-label strong {font-size:11px;letter-spacing:.09em;}
   .portrait-footer span:first-child {font-size:11px;letter-spacing:.12em;}
 }
 @media (max-width:360px) {
-  .brand-label strong {font-size:23px;letter-spacing:.06em;}
+  .brand-label strong {font-size:10px;}
 }
