@@ -242,3 +242,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @media (max-width:360px) {
   .brand-label strong {font-size:10px;}
 }
+
+/* Live PHT/ET seconds: prevent number shifts and line wrapping in the time cards. */
+.timecard [data-clock] {
+  display: block;
+  font-size: clamp(25px, 2.5vw, 34px);
+  line-height: 1.24;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  min-height: 1.25em;
+}

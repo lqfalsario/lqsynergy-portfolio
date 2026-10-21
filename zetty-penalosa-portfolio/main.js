@@ -21,18 +21,35 @@
       if (nav.classList.contains('is-open') && !nav.contains(event.target) && !toggle.contains(event.target)) closeNav();
     });
   }
-  const clockEls = document.querySelectorAll('[data-clock]');
+  // Keep both time-zone clocks visibly ticking and correct after switching tabs.
+  const clockEls = [...document.querySelectorAll('[data-clock]')];
+  const clockFormatters = new Map();
+  clockEls.forEach(el => {
+    try {
+      clockFormatters.set(el, new Intl.DateTimeFormat('en-US', {
+        timeZone: el.dataset.clock,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      }));
+    } catch (_) {
+      el.textContent = 'Time unavailable';
+    }
+  });
   const updateClocks = () => {
-    clockEls.forEach(el => {
-      try {
-        const fmt = new Intl.DateTimeFormat('en-US', {timeZone: el.dataset.clock, hour:'2-digit',minute:'2-digit',hour12:true});
-        el.textContent = fmt.format(new Date());
-      } catch (_) { el.textContent = 'Time unavailable'; }
+    const now = new Date();
+    clockFormatters.forEach((formatter, el) => {
+      el.textContent = formatter.format(now);
     });
   };
-  if (clockEls.length) {
+  if (clockFormatters.size) {
     updateClocks();
-    setInterval(updateClocks, 60000);
+    window.setInterval(updateClocks, 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) updateClocks();
+    });
+    window.addEventListener('pageshow', updateClocks);
   }
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
