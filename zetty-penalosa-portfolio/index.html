@@ -474,14 +474,14 @@
         </div>
         <div class="timecards" aria-label="Live Philippines and U.S. Eastern clocks">
           <div class="timecard">
-            <span>PHILIPPINES / PHT</span>
-            <strong data-clock="Asia/Manila" aria-label="Current time in the Philippines">--:--:--</strong>
+            <div class="clock-heading"><span class="clock-label">PHILIPPINES / PHT</span><span class="clock-status" data-clock-status>SYNCING</span></div>
+            <strong data-clock="Asia/Manila" role="timer" aria-live="off" aria-label="Current time in the Philippines">--:--:--</strong>
             <small class="timecard-date" data-clock-date="Asia/Manila">Date loading</small>
             <small class="timecard-context">My local time</small>
           </div>
           <div class="timecard">
-            <span>U.S. EASTERN / <span data-eastern-zone>ET</span></span>
-            <strong data-clock="America/New_York" aria-label="Current U.S. Eastern time">--:--:--</strong>
+            <div class="clock-heading"><span class="clock-label">U.S. EASTERN / <span data-eastern-zone>ET</span></span><span class="clock-status" data-clock-status>SYNCING</span></div>
+            <strong data-clock="America/New_York" role="timer" aria-live="off" aria-label="Current U.S. Eastern time">--:--:--</strong>
             <small class="timecard-date" data-clock-date="America/New_York">Date loading</small>
             <small class="timecard-context">U.S. client reference</small>
           </div>
@@ -502,6 +502,6 @@
   </main>
 
   <footer class="site-footer"><div class="shell footer-grid"><a class="footer-brand" href="#home">ZETTY<span>.</span></a><p>Thoughtful prospect research. Organized growth support.</p><div class="footer-links"><a href="resume.html">Résumé</a><a href="https://www.linkedin.com/in/michelle-lizette-pe%C3%B1alosa-1288b81a5/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div><div class="shell footer-bottom"><span>© <span id="year">2026</span> Michelle. All rights reserved.</span></div></footer>
-  <script src="main.js?v=clock-wtb-v3" defer></script>
+  <script src="main.js?v=clock-live-v4" defer></script>
 </body>
 </html>

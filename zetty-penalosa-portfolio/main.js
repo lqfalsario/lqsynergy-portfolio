@@ -67,13 +67,29 @@
       }
     }
   };
-  if (clockFormatters.size) {
+  // Reschedule against the next wall-clock second instead of drifting with setInterval.
+  // If a tab was suspended, visibility/pageshow immediately re-syncs both clocks.
+  let clockTimerId = null;
+  const clockStatuses = [...document.querySelectorAll('[data-clock-status]')];
+  const tickClocks = () => {
     updateClocks();
-    window.setInterval(updateClocks, 1000);
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) updateClocks();
+    clockStatuses.forEach(el => {
+      if (el.textContent !== 'LIVE') el.textContent = 'LIVE';
+      el.classList.add('is-live');
+      el.setAttribute('title', 'Updating every second');
     });
-    window.addEventListener('pageshow', updateClocks);
+    if (clockTimerId !== null) window.clearTimeout(clockTimerId);
+    clockTimerId = window.setTimeout(tickClocks, 1000 - (Date.now() % 1000) + 25);
+  };
+  if (clockFormatters.size) {
+    tickClocks();
+    const resyncClocks = () => {
+      if (!document.hidden) tickClocks();
+    };
+    document.addEventListener('visibilitychange', resyncClocks);
+    window.addEventListener('pageshow', resyncClocks);
+  } else {
+    clockStatuses.forEach(el => { el.textContent = 'OFFLINE'; });
   }
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
