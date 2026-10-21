@@ -6,7 +6,7 @@ This site is published under a branded subdirectory of the existing `lqfalsario/
 
 The legacy path `/zetty/` redirects to this branded URL, preserving the browser URL fragment (e.g., `#work`).
 
-# Zetty Peñalosa — Lead Generation Portfolio
+## About this portfolio
 
 A responsive, accessible, premium-styled static portfolio built for Michelle Lizette “Zetty” Peñalosa. It uses an aubergine-and-champagne editorial design inspired by the existing Lawrence Falsario / LQ Synergy portfolio, but highlights lead generation and sales operations instead of email marketing.
 
