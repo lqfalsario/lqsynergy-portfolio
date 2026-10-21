@@ -1,14 +1,14 @@
-# Zetty Peñalosa Portfolio — GitHub Pages
+# MICHELLE — Website
 
-Live portfolio: https://lqfalsario.github.io/lqsynergy-portfolio/zetty-penalosa-portfolio/
+Live website: https://zetty-penalosa-portfolio.vercel.app/
 
-This site is published under a branded subdirectory of the existing `lqfalsario/lqsynergy-portfolio` repository because the currently connected GitHub integration does not offer repository creation. To host it on its own repository at `https://lqfalsario.github.io/zetty-penalosa-portfolio/`, create `lqfalsario/zetty-penalosa-portfolio`, move these files to its repository root, and enable GitHub Pages in Settings > Pages. To put `zetty-penalosa` in the GitHub domain, an account or custom domain owned by Zetty is required.
+This site is published under a branded subdirectory of the existing `lqfalsario/lqsynergy-portfolio` repository because the currently connected GitHub integration does not offer repository creation. To host it on its own repository at `https://lqfalsario.github.io/zetty-penalosa-portfolio/`, create `lqfalsario/zetty-penalosa-portfolio`, move these files to its repository root, and enable GitHub Pages in Settings > Pages. To put `zetty-penalosa` in the GitHub domain, an account or custom domain owned by Michelle is required.
 
 The legacy path `/zetty/` redirects to this branded URL, preserving the browser URL fragment (e.g., `#work`).
 
 ## About this portfolio
 
-A responsive, accessible, premium-styled static portfolio built for Michelle Lizette “Zetty” Peñalosa. It uses an aubergine-and-champagne editorial design inspired by the existing Lawrence Falsario / LQ Synergy portfolio, but highlights lead generation and sales operations instead of email marketing.
+A responsive, accessible, premium-styled static website built for Michelle. It uses an aubergine-and-champagne editorial design inspired by the existing Lawrence Falsario / LQ Synergy portfolio, but highlights lead generation and sales operations instead of email marketing.
 
 ## What is included
 

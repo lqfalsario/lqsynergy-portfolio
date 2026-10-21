@@ -36,7 +36,7 @@
     const heads=['Example Account','Segment','Target Role','ICP Fit','Research Status','Next Step','Source URL','Verification Date','Notes'];
     const rows=[heads,...examples.map(r=>[r.company,r.segment,r.role,r.fit,labels[r.status],r.next,'','','FICTIONAL DEMONSTRATION'])];
     const contents='\uFEFF'+rows.map(row=>row.map(cell=>'"'+String(cell).replace(/"/g,'""')+'"').join(',')).join('\r\n');
-    const blob=new Blob([contents],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='zetty-fictional-lead-tracker-sample.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const blob=new Blob([contents],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='michelle-fictional-lead-tracker-sample.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   render();
 })();

@@ -207,3 +207,37 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
   .hero-notes .tiny-lead-grid {grid-template-columns: repeat(2, 8px); gap: 2px;}
   .hero-notes .tiny-lead-grid i {width: 8px; height: 8px;}
 }
+
+
+/* Single-name identity: MICHELLE. No surname or secondary portfolio label. */
+.brand {gap:0;}
+.brand-label {display:block;line-height:1;}
+.brand-label strong {
+  display:block;
+  font-family:var(--head);
+  font-weight:700;
+  font-size:31px;
+  line-height:1;
+  letter-spacing:.13em;
+  white-space:nowrap;
+  color:var(--dark);
+}
+.footer-brand {
+  font-family:var(--head);
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:.13em;
+  line-height:1.1;
+}
+.portrait-footer span:first-child {font-size:14px;letter-spacing:.16em;}
+@media (max-width:760px) {
+  .brand-label strong {font-size:28px;letter-spacing:.11em;}
+  .footer-brand {font-size:29px;}
+}
+@media (max-width:450px) {
+  .brand-label strong {font-size:25px;letter-spacing:.08em;}
+  .portrait-footer span:first-child {font-size:11px;letter-spacing:.12em;}
+}
+@media (max-width:360px) {
+  .brand-label strong {font-size:23px;letter-spacing:.06em;}
+}
