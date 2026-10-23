@@ -2369,7 +2369,11 @@ body{
 .lq-chat-whatsapp:hover,.lq-chat-whatsapp:focus-visible{background:#e2f0e4;border-color:#6fa47a;color:#194a2c}
 .lq-chat-whatsapp svg{width:19px;height:19px;fill:currentColor;flex-shrink:0}
 .lq-chat-footer{font-size:10px;color:#85796e;text-align:center;padding:0 12px 10px;line-height:1.5}
-@media(max-width:480px){.lq-chat-toggle{right:13px;bottom:13px}.lq-chat-panel{right:10px;bottom:72px}}
+.lq-chat-panel{height:min(580px,calc(100dvh - 105px))}
+.lq-chat-messages{flex:1 1 auto;min-height:72px}
+.lq-chat-head,.lq-chat-chips,.lq-chat-form,.lq-chat-whatsapp,.lq-chat-footer{flex-shrink:0}
+@media(max-width:480px){.lq-chat-toggle{right:13px;bottom:13px}.lq-chat-panel{right:10px;bottom:72px;max-height:calc(100dvh - 85px);height:min(580px,calc(100dvh - 85px))}}
+@media(max-height:470px){.lq-chat-messages{min-height:45px}.lq-chat-chips{padding-bottom:5px}.lq-chat-head{padding:10px 14px}}
 </style>
 </head>
 <body>
