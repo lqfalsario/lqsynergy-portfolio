@@ -2359,6 +2359,14 @@ body{
 .gh-schedule-detail .gh-pht{color:#6c5c4d}
 @media(max-width:650px){.gh-schedule-details{grid-template-columns:1fr}.gh-week{gap:8px}}
 
+
+/* LQ Synergy portfolio assistant */
+.lq-chat-toggle{position:fixed;right:22px;bottom:22px;z-index:9997;display:flex;align-items:center;gap:9px;background:#7f6f60;color:white;border:0;border-radius:100px;padding:13px 18px;box-shadow:0 9px 32px rgba(39,30,24,.22);font:700 13px 'DM Sans',sans-serif;cursor:pointer}
+.lq-chat-toggle:hover{background:#625448}.lq-chat-panel{position:fixed;right:22px;bottom:83px;width:min(370px,calc(100vw - 30px));max-height:min(560px,calc(100dvh - 105px));z-index:9998;background:#fff;border:1px solid #ded8d0;border-radius:18px;box-shadow:0 19px 60px rgba(35,28,24,.18);display:flex;flex-direction:column;overflow:hidden;font:13px/1.55 'DM Sans',sans-serif;color:#342e29}.lq-chat-panel[hidden]{display:none}
+.lq-chat-head{display:flex;align-items:center;justify-content:space-between;background:#7f6f60;color:#fff;padding:16px 18px}.lq-chat-head strong{font-size:14px}.lq-chat-head small{display:block;font-size:11px;opacity:.9}.lq-chat-close{background:transparent;border:0;color:white;font-size:22px;cursor:pointer;line-height:1}
+.lq-chat-messages{padding:18px;min-height:190px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}.lq-chat-message{max-width:88%;padding:11px 13px;border-radius:13px;background:#f4f0eb;white-space:pre-wrap;overflow-wrap:anywhere}.lq-chat-message.user{align-self:flex-end;background:#7f6f60;color:white}.lq-chat-message.bot{align-self:flex-start}
+.lq-chat-chips{display:flex;gap:7px;flex-wrap:wrap;padding:0 16px 13px}.lq-chat-chips button{border:1px solid #d8cec4;color:#6e5947;background:white;border-radius:999px;padding:7px 10px;font-size:11px;cursor:pointer}.lq-chat-form{display:flex;gap:8px;border-top:1px solid #eee9e4;padding:11px}.lq-chat-form input{flex:1;min-width:0;border:1px solid #ddd3ca;padding:11px;border-radius:9px;font:inherit}.lq-chat-form button{border:0;background:#7f6f60;color:white;padding:0 14px;border-radius:9px;font-weight:700;cursor:pointer}.lq-chat-footer{font-size:10px;color:#85796e;text-align:center;padding:0 12px 10px}
+@media(max-width:480px){.lq-chat-toggle{right:13px;bottom:13px}.lq-chat-panel{right:10px;bottom:72px}}
 </style>
 </head>
 <body>
@@ -3119,5 +3127,51 @@ if (linkedinSlides.length) {
 })();
 
 </script>
-</body>
+
+<div id="lq-chat-widget">
+  <button type="button" class="lq-chat-toggle" id="lq-chat-toggle" aria-controls="lq-chat-panel" aria-expanded="false">✦ Ask LQ Synergy</button>
+  <section class="lq-chat-panel" id="lq-chat-panel" role="dialog" aria-label="LQ Synergy portfolio assistant" hidden>
+    <div class="lq-chat-head"><div><strong>LQ Synergy Assistant</strong><small>Portfolio information &amp; booking help</small></div><button class="lq-chat-close" type="button" id="lq-chat-close" aria-label="Close chat">×</button></div>
+    <div id="lq-chat-messages" class="lq-chat-messages" role="log" aria-live="polite"><div class="lq-chat-message bot">Hi! Welcome to LQ Synergy. I can help you explore Lawrence's services, work samples, availability, and booking options. What would you like to know?</div></div>
+    <div class="lq-chat-chips" id="lq-chat-chips"><button type="button" data-q="What services do you offer?">Services</button><button type="button" data-q="Show me work samples">Work samples</button><button type="button" data-q="What is your availability?">Availability</button><button type="button" data-q="How can I book a meeting?">Book a call</button></div>
+    <form id="lq-chat-form" class="lq-chat-form"><input id="lq-chat-input" aria-label="Your question" placeholder="Ask about services, availability..." maxlength="350" required autocomplete="off"><button type="submit">Send</button></form>
+    <div class="lq-chat-footer">Automated FAQ assistant · No conversations are recorded</div>
+  </section>
+</div>
+<script>
+(function initLQAssistant(){
+  // Add an approved GA4 Measurement ID here to enable private visitor analytics.
+  // Without a connected property, no visits or conversations are collected.
+  const analyticsId='';
+  function track(name, params){
+    if(typeof window.gtag==='function')window.gtag('event',name,params||{});
+  }
+  if(/^G-[A-Z0-9]+$/.test(analyticsId)){
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){window.dataLayer.push(arguments)};
+    window.gtag('js',new Date());window.gtag('config',analyticsId);
+    const t=document.createElement('script');t.async=true;t.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(analyticsId);document.head.appendChild(t);
+  }
+  const toggle=document.getElementById('lq-chat-toggle'), panel=document.getElementById('lq-chat-panel'), close=document.getElementById('lq-chat-close'), input=document.getElementById('lq-chat-input'), form=document.getElementById('lq-chat-form'), messages=document.getElementById('lq-chat-messages');
+  function show(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){track('chat_open');input.focus()}else{toggle.focus()}}
+  toggle.addEventListener('click',()=>show(panel.hidden));close.addEventListener('click',()=>show(false));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)show(false)});
+  function reply(q){
+    const s=q.toLowerCase();
+    if(/book|call|meeting|calendar|schedule/.test(s))return 'You can book a strategy session here: https://calendly.com/lqfalsario/strategy-session';
+    if(/available|availability|hours|time|timezone|time zone|shift/.test(s))return 'Lawrence offers flexible full shifts on Monday, Tuesday, Thursday and Friday, with tentative availability Wednesday, Saturday and Sunday. Live international clocks and the current weekly schedule are at: https://lqfalsario.github.io/lqsynergy-portfolio/#availability';
+    if(/sample|portfolio|work|project|report|campaign|case study/.test(s))return 'Explore selected lead generation, LinkedIn outreach and email marketing projects here: https://lqfalsario.github.io/lqsynergy-portfolio/#work\nSample email campaign performance report: https://lqfalsario.github.io/lqsynergy-portfolio/email-campaign-performance-sample.html';
+    if(/resume|résumé|cv|experience|background/.test(s))return 'View Lawrence’s résumé: https://docs.google.com/document/d/1n-ZZVjRnowJSUbzqi5QXJMcz27RSLzr9buOiKVQCews/edit';
+    if(/whatsapp|email|contact|message|reach/.test(s))return 'You can email Lawrence at lqfalsario@gmail.com or message on WhatsApp: https://wa.me/639959763871';
+    if(/service|offer|lead|marketing|outreach|crm|research/.test(s))return 'LQ Synergy supports B2B/B2C lead generation, prospect research, verified lead databases, LinkedIn outreach, email marketing, campaign reporting, segmentation, and CRM organization. See: https://lqfalsario.github.io/lqsynergy-portfolio/#services';
+    if(/hello|hey|hi|good morning/.test(s))return 'Hello! I can tell you about services, portfolio samples, experience, availability and booking. What would you like to explore?';
+    return 'I can help with services, work samples, Lawrence’s experience, availability, and booking. For another question, please email lqfalsario@gmail.com.';
+  }
+  function add(text,kind){const el=document.createElement('div');el.className='lq-chat-message '+kind;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight}
+  function send(q){q=q.trim();if(!q)return;add(q,'user');add(reply(q),'bot');track('chat_question',{category:/book|meeting/.test(q.toLowerCase())?'booking':/service|lead/.test(q.toLowerCase())?'services':'general'});}
+  form.addEventListener('submit',e=>{e.preventDefault();send(input.value);input.value='';input.focus()});
+  document.querySelectorAll('#lq-chat-chips button').forEach(b=>b.addEventListener('click',()=>send(b.dataset.q)));
+  document.querySelectorAll('a[href*="calendly.com/lqfalsario/"]').forEach(a=>a.addEventListener('click',()=>track('booking_link_click')));
+  document.querySelectorAll('a[href^="mailto:"],a[href*="wa.me/"]').forEach(a=>a.addEventListener('click',()=>track('contact_link_click',{method:a.href.startsWith('mailto:')?'email':'whatsapp'})));
+})();
+</script></body>
 </html>
