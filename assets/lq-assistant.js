@@ -229,14 +229,13 @@
   var input=document.getElementById('lq-chat-input');
   var form=document.getElementById('lq-chat-form');
   var messages=document.getElementById('lq-chat-messages');
-  var langSelect=document.getElementById('lq-chat-language');
   var nudge=document.getElementById('lq-chat-nudge');
   var nudgeText=document.getElementById('lq-chat-nudge-text');
   var subtitle=document.getElementById('lq-chat-subtitle');
   var welcome=document.getElementById('lq-chat-welcome');
   var whatsappText=document.getElementById('lq-chat-whatsapp-text');
   var footer=document.getElementById('lq-chat-footer');
-  if(!toggle||!panel||!close||!input||!form||!messages||!langSelect)return;
+  if(!toggle||!panel||!close||!input||!form||!messages)return;
   function track(name,params){
     if(typeof window.gtag==='function')window.gtag('event',name,params||{});
     if(typeof window.lqNotionTrack==='function')window.lqNotionTrack(name,params||{});
@@ -247,8 +246,14 @@
     return Object.prototype.hasOwnProperty.call(locales,code)?code:null;
   }
   function browserLang(){
+    // Choose the first browser-preferred language supported by the offline FAQ.
+    // Location and timezone do not reliably identify a visitor's language.
     var list=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en']);
-    return normalizedLang(list[0])||'en';
+    for(var i=0;i<list.length;i++){
+      var found=normalizedLang(list[i]);
+      if(found)return found;
+    }
+    return 'en';
   }
   var language=browserLang();
   var welcomeSeen=false;
@@ -294,21 +299,36 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)show(false);});
   document.getElementById('lq-chat-nudge-open')?.addEventListener('click',function(){show(true);});
   document.getElementById('lq-chat-nudge-dismiss')?.addEventListener('click',hideNudge);
-  langSelect.addEventListener('change',function(){
-    language=langSelect.value==='auto'?browserLang():(normalizedLang(langSelect.value)||'en');
-    updateUI();
-  });
   function detectMessageLanguage(text){
-    if(/[\u3040-\u30ff]/.test(text))return 'ja';
-    if(/[\u0600-\u06ff]/.test(text))return 'ar';
-    if(/[\u3400-\u9fff]/.test(text))return 'zh';
-    if(/\b(kumusta|magandang|paano|salamat|pwede|maaari|serbisyo|trabaho|kailan|available ba|oras mo|ano ang|mga|pakita)\b/i.test(text))return 'tl';
-    if(/\b(hola|gracias|quiero|cu[aá]ndo|c[oó]mo|muestras|disponibilidad|reuni[oó]n|cita|servicios|proyectos|ofreces|cu[aá]les|necesito)\b/i.test(text))return 'es';
-    if(/\b(bonjour|merci|rendez-vous|disponibilit[eé]|r[eé]alisations|montrer|comment faire|quels|quelles|offrez|proposez)\b/i.test(text))return 'fr';
-    if(/\b(ol[aá]|obrigad[oa]|agendar|disponibilidade|trabalhos|voc[eê]|hor[aá]rios|servi[cç]os|quais|preciso|projetos)\b/i.test(text))return 'pt';
-    if(/\b(hallo|guten|danke|termin|verf[uü]gbarkeit|arbeitsproben|dienstleistungen)\b/i.test(text))return 'de';
-    if(/\b(halo|terima kasih|bagaimana|layanan|pekerjaan|jadwal|ketersediaan)\b/i.test(text))return 'id';
-    return null;
+    // Detect language from a visitor's own words; no translation service or
+    // visitor message is sent to a server. Short ambiguous messages stay in
+    // the last known/browser language rather than switching unpredictably.
+    var input=String(text||'').trim();
+    if(!input)return null;
+    if(/[\u3040-\u30ff]/.test(input))return 'ja';
+    if(/[\u0600-\u06ff]/.test(input))return 'ar';
+    if(/[\u3400-\u9fff]/.test(input))return language==='ja'?'ja':'zh';
+    var s=input.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    var rules=[
+      ['tl',/\b(kumusta|magandang|paano|salamat|pwede|maaari|serbisyo|trabaho|kailan|ano ang|mga|pakita|po ba|meron|oras mo|gusto ko|makita|anong)\b/g],
+      ['es',/\b(hola|gracias|quiero|cuando|cual|cuales|como|muestras|disponibilidad|reunion|cita|servicios|proyectos|ofreces|necesito|tienes|puedo|reservar|donde|cuentame)\b/g],
+      ['fr',/\b(bonjour|merci|rendez-vous|disponibilite|disponibilites|realisations|montrez|montrer|comment|quels|quelles|offrez|proposez|pouvez|votre|vos|travail|prendre)\b/g],
+      ['de',/\b(hallo|guten|danke|termin|verfugbarkeit|verfugbar|arbeitsproben|dienstleistungen|welche|welchen|konnen|zeigen|bewerbung|buchung|beispiele)\b/g],
+      ['pt',/\b(ola|obrigado|obrigada|agendar|disponibilidade|trabalhos|voce|horarios|servicos|quais|preciso|projetos|gostaria|poderia|reuniao|marcar)\b/g],
+      ['id',/\b(halo|terima kasih|bagaimana|layanan|pekerjaan|jadwal|ketersediaan|tolong|tunjukkan|contoh|apa saja|bisa|saya|kapan|pesan)\b/g],
+      ['en',/\b(hello|hey|what|which|how|where|when|please|could you|can you|show me|tell me|i want|i need|do you|your|services|availability|book a|work samples|resume|portfolio)\b/g]
+    ];
+    var best=null, bestScore=0;
+    rules.forEach(function(rule){
+      var matches=s.match(rule[1]);
+      if(!matches)return;
+      var score=matches.length;
+      // Prefer the visitor's already-established language on a tie.
+      if(score>bestScore||(score===bestScore&&rule[0]===language)){
+        best=rule[0];bestScore=score;
+      }
+    });
+    return bestScore>0?best:null;
   }
   function detectIntent(q){
     var s=q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
@@ -368,7 +388,8 @@
   function send(q,forcedIntent){
     q=String(q||'').trim();
     if(!q)return;
-    if(langSelect.value==='auto'){
+    // Suggested FAQ chips are already in the active language.
+    if(!forcedIntent){
       var detected=detectMessageLanguage(q);
       if(detected&&detected!==language){language=detected;updateUI();}
     }
