@@ -302,10 +302,10 @@
     if(/[\u3040-\u30ff]/.test(text))return 'ja';
     if(/[\u0600-\u06ff]/.test(text))return 'ar';
     if(/[\u3400-\u9fff]/.test(text))return 'zh';
-    if(/\b(kumusta|magandang|paano|salamat|pwede|maaari|serbisyo|trabaho|kailan|available ba|oras mo)\b/i.test(text))return 'tl';
-    if(/\b(hola|gracias|quiero|cu[aá]ndo|c[oó]mo|muestras|disponibilidad|reuni[oó]n|cita)\b/i.test(text))return 'es';
-    if(/\b(bonjour|merci|rendez-vous|disponibilit[eé]|r[eé]alisations|montrer|comment faire)\b/i.test(text))return 'fr';
-    if(/\b(ol[aá]|obrigad[oa]|agendar|disponibilidade|trabalhos|voc[eê]|hor[aá]rios)\b/i.test(text))return 'pt';
+    if(/\b(kumusta|magandang|paano|salamat|pwede|maaari|serbisyo|trabaho|kailan|available ba|oras mo|ano ang|mga|pakita)\b/i.test(text))return 'tl';
+    if(/\b(hola|gracias|quiero|cu[aá]ndo|c[oó]mo|muestras|disponibilidad|reuni[oó]n|cita|servicios|proyectos|ofreces|cu[aá]les|necesito)\b/i.test(text))return 'es';
+    if(/\b(bonjour|merci|rendez-vous|disponibilit[eé]|r[eé]alisations|montrer|comment faire|quels|quelles|offrez|proposez)\b/i.test(text))return 'fr';
+    if(/\b(ol[aá]|obrigad[oa]|agendar|disponibilidade|trabalhos|voc[eê]|hor[aá]rios|servi[cç]os|quais|preciso|projetos)\b/i.test(text))return 'pt';
     if(/\b(hallo|guten|danke|termin|verf[uü]gbarkeit|arbeitsproben|dienstleistungen)\b/i.test(text))return 'de';
     if(/\b(halo|terima kasih|bagaimana|layanan|pekerjaan|jadwal|ketersediaan)\b/i.test(text))return 'id';
     return null;
@@ -313,10 +313,10 @@
   function detectIntent(q){
     var s=q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
     if(/whats\s?app|real person|human|live agent|talk to lawrence|speak with lawrence|personal reply|kausap|tao|hablar.*lawrence|persona real|parler.*lawrence|sprechen.*lawrence|falar.*lawrence|本人|人との|人工|真人|联系本人|شخص|تحدث|berbicara langsung/.test(s))return 'person';
-    if(/\b(book|booking|call|meeting|calendar|calendly|schedule|appointment|reserve|appointment setting|agendar|reservar|reunion|cita|llamada|rendez-vous|reserver|termin|buchen|agendamento|reuniao|mag-book|meeting|pesan|janji|sesi)\b|予約|面談|会议|预约|حجز|موعد|مكالمة/.test(s))return 'booking';
+    if(/\b(book|booking|call|meeting|calendar|calendly|appointment|reserve|appointment setting|agendar|reservar|reunion|cita|llamada|rendez-vous|reserver|termin|buchen|agendamento|reuniao|mag-book|meeting|pesan|janji|sesi)\b|予約|面談|会议|预约|حجز|موعد|مكالمة/.test(s))return 'booking';
     if(/\b(available|availability|hours|time zone|timezone|schedule|shift|disponibilidad|horario|disponibilite|disponibilites|verfugbarkeit|verfugbar|arbeitszeit|disponibilidade|horarios|kailan|oras|sif|jadwal|ketersediaan)\b|対応時間|空き|工作时间|时间安排|التوافر|مواعيد|أوقات/.test(s))return 'availability';
     if(/\b(resume|résumé|curriculum|curriculo|cv|experience|background|experience|lebenslauf|履歴書|简历|السيرة الذاتية|karanasan|karier|erfahrung)\b|履歴|履历|経歴/.test(s))return 'resume';
-    if(/\b(sample|samples|portfolio|work|projects|case stud|report|campaign|project|muestra|muestras|trabajo|proyecto|portafolio|realisation|realisation|realisations|projets|arbeitsprobe|arbeiten|projekte|trabalhos|projetos|portofolio|contoh|pekerjaan|trabaho|sample)\b|実績|作品|仕事|案例|项目|作品集|نماذج|الأعمال|مشاريع/.test(s))return 'work';
+    if(/\b(sample|samples|portfolio|work|projects|case stud|report|campaign|project|muestra|muestras|trabajo|proyecto|proyectos|portafolio|realisation|realisation|realisations|projets|arbeitsprobe|arbeiten|projekte|trabalhos|projetos|portofolio|contoh|pekerjaan|trabaho|sample)\b|実績|作品|仕事|案例|项目|作品集|نماذج|الأعمال|مشاريع/.test(s))return 'work';
     if(/\b(service|services|offer|lead|marketing|outreach|crm|research|servicio|servicios|servico|servicos|dienstleistungen|angebote|leistungen|serbisyo|layanan|leistung|marketing|prospect)\b|サービス|服务|服务项目|الخدمات|خدمات/.test(s))return 'services';
     if(/\b(contact|email|e-mail|reach|message|mensaje|correo|contacto|contactez|kontakt|contato|mensagem|makipag|hubungi|e mail)\b|メール|联系|聯絡|تواصل|بريد/.test(s))return 'contact';
     if(/^(hi|hello|hey|good morning|good evening|kumusta|hola|bonjour|hallo|ola|halo|こんにちは|你好|مرحبا|السلام عليكم)([!?.\s]|$)/.test(s))return 'hello';
