@@ -85,14 +85,23 @@
     .tool-group{transition:transform .22s ease,border-color .22s ease}
     .tool-group:hover{transform:translateY(-3px);border-color:var(--taupe)}
 
-  </style>
+  
+    /* Match LQ Synergy's updated horizontal brand mark. */
+    .topbar .brand-wordmark{width:194px;height:auto;max-height:56px;object-fit:contain;object-position:left center;background:transparent;border-radius:0}
+    @media(max-width:900px){.topbar .brand span{display:none}}
+    @media(max-width:780px){
+      .topbar .brand-wordmark{width:min(155px,42vw);height:auto;max-height:53px}
+      .topbar-inner{gap:9px}
+      .top-actions .btn{font-size:.73rem;padding:9px 10px}
+    }
+</style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="index.html"><img src="assets/lq-synergy-logo.svg" alt="LQ Virtual Assistant Synergy logo"><span>Lawrence Falsario</span></a>
+      <a class="brand" href="index.html"><img class="brand-wordmark" src="assets/lq-synergy-wordmark.svg" width="194" height="54" alt="LQ Virtual Assistant Synergy logo"><span>Lawrence Falsario</span></a>
       <div class="top-actions">
         <a class="btn" href="index.html">← Back to portfolio</a>
         <button class="btn dark" type="button" onclick="window.print()">Print / Save PDF</button>
