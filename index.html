@@ -2395,6 +2395,30 @@ body{
 .lq-chat-nudge-open:hover,.lq-chat-nudge-open:focus-visible,.lq-chat-nudge-dismiss:hover,.lq-chat-nudge-dismiss:focus-visible{background:#f6f1ed}
 .lq-chat-panel[dir=rtl] .lq-chat-message.bot{text-align:right}
 @media(max-width:480px){.lq-chat-nudge{right:13px;bottom:73px}.lq-chat-head{padding:12px}.lq-chat-head-actions{gap:5px}}
+
+/* Shared LQ Virtual Assistant Synergy identity: horizontal wordmark on the header.
+   Keep the square logo as a compact favicon for browser tabs. */
+.site-header .brand{min-width:0;max-width:100%}
+.site-header .brand-wordmark{
+  display:block;
+  width:clamp(200px,15.4vw,235px);
+  height:auto;
+  max-height:72px;
+  object-fit:contain;
+  object-position:left center;
+  background:transparent;
+  border:0;
+  border-radius:0;
+}
+@media(max-width:1199px){
+  .site-header .brand-wordmark{width:min(220px,31vw);max-height:62px}
+}
+@media(max-width:700px){
+  .site-header .brand-wordmark{width:min(185px,42vw);max-height:53px}
+}
+@media(max-width:360px){
+  .site-header .brand-wordmark{width:min(158px,41vw)}
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -2403,7 +2427,7 @@ body{
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="#home" aria-label="LQ Synergy home">
-    <img class="brand-logo" src="assets/lq-synergy-logo.svg" alt="LQ Virtual Assistant Synergy logo">
+    <img class="brand-wordmark" src="assets/lq-synergy-wordmark.svg" width="235" height="66" alt="LQ Virtual Assistant Synergy — Reliable. Efficient. Notable.">
   </a>
   <nav aria-label="Main navigation">
     <a href="#about">About</a>
