@@ -2386,9 +2386,6 @@ body{
 /* Localized chatbot controls and unobtrusive automatic greeting. */
 .lq-chat-head .lq-chat-heading{flex:1;min-width:0}
 .lq-chat-head-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.lq-chat-language{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.42);border-radius:8px;padding:6px 4px;max-width:105px;min-width:0;font:600 11px 'DM Sans',sans-serif;cursor:pointer}
-.lq-chat-language option{background:#fff;color:#342e29}
-.lq-chat-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .lq-chat-message.bot a{color:#175c87;text-decoration:underline;text-decoration-thickness:1.4px;text-underline-offset:3px;font-weight:700;overflow-wrap:anywhere}
 .lq-chat-message.bot a:hover,.lq-chat-message.bot a:focus-visible{color:#0a3959;text-decoration-thickness:2px}
 .lq-chat-nudge{position:fixed;right:22px;bottom:82px;width:min(330px,calc(100vw - 30px));z-index:9996;display:flex;align-items:flex-start;border:1px solid #d9c9b7;border-radius:14px;background:#fff;box-shadow:0 9px 35px rgba(35,28,24,.16);color:#342e29;overflow:hidden;font:600 12px/1.5 'DM Sans',sans-serif}
@@ -2397,7 +2394,7 @@ body{
 .lq-chat-nudge-dismiss{flex-shrink:0;border:0;background:transparent;color:#7b7168;font:700 19px/1 'DM Sans',sans-serif;padding:12px 12px 9px 4px;cursor:pointer}
 .lq-chat-nudge-open:hover,.lq-chat-nudge-open:focus-visible,.lq-chat-nudge-dismiss:hover,.lq-chat-nudge-dismiss:focus-visible{background:#f6f1ed}
 .lq-chat-panel[dir=rtl] .lq-chat-message.bot{text-align:right}
-@media(max-width:480px){.lq-chat-nudge{right:13px;bottom:73px}.lq-chat-head{padding:12px}.lq-chat-language{max-width:91px}.lq-chat-head-actions{gap:5px}}
+@media(max-width:480px){.lq-chat-nudge{right:13px;bottom:73px}.lq-chat-head{padding:12px}.lq-chat-head-actions{gap:5px}}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -3172,11 +3169,6 @@ if (linkedinSlides.length) {
     <div class="lq-chat-head">
       <div class="lq-chat-heading"><strong>LQ Synergy Assistant</strong><small id="lq-chat-subtitle">Portfolio information &amp; booking help</small></div>
       <div class="lq-chat-head-actions">
-        <label><span class="lq-chat-sr-only">Chatbot language</span>
-          <select class="lq-chat-language" id="lq-chat-language" aria-label="Chatbot language">
-            <option value="auto">🌐 Auto</option><option value="en">English</option><option value="tl">Filipino</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="id">Bahasa Indonesia</option><option value="ja">日本語</option><option value="zh">中文</option><option value="ar">العربية</option>
-          </select>
-        </label>
         <button class="lq-chat-close" type="button" id="lq-chat-close" aria-label="Close chat">×</button>
       </div>
     </div>
