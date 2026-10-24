@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#7f6f60">
+  <meta name="description" content="LQ Synergy site owner's management shortcuts.">
+  <title>Admin Workspace | LQ Synergy</title>
+  <link rel="icon" href="assets/lq-synergy-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--taupe:#7f6f60;--taupe-deep:#635448;--paper:#f8f6f3;--ink:#211d1a;--muted:#766e66;--line:#e6dfd7;--white:#fff;--dark:#24201d}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.65 "DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:3px solid #9c7e5f;outline-offset:3px}
+    .skip{position:absolute;left:16px;top:12px;transform:translateY(-150%);background:#fff;padding:9px 15px;border-radius:9px;z-index:1000}
+    .skip:focus{transform:none}
+    .wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+    .topbar{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+    .topbar-inner{height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.015em;font-size:16px;min-width:0}
+    .brand img{height:49px;width:49px;object-fit:contain;background:#fff;border-radius:50%}
+    .brand small{display:block;font-size:10px;letter-spacing:.15em;color:var(--taupe);line-height:1.5}
+    .top-link{border:1px solid #d2c7ba;border-radius:999px;padding:11px 18px;font-size:12px;font-weight:700;white-space:nowrap;transition:background .2s,color .2s}
+    .top-link:hover{background:var(--taupe);border-color:var(--taupe);color:white}
+    .hero{padding:64px 0 28px;display:flex;align-items:end;justify-content:space-between;gap:26px}
+    .eyebrow{font-size:10px;letter-spacing:.23em;font-weight:700;color:var(--taupe);text-transform:uppercase}
+    h1,h2,h3,p{margin:0}
+    h1{font-family:"Cormorant Garamond",serif;font-size:clamp(3.4rem,8vw,6.3rem);letter-spacing:-.045em;font-weight:600;line-height:.94;margin:14px 0 22px}
+    h1 em{font-weight:500;color:var(--taupe)}
+    .lead{color:var(--muted);font-size:15px;max-width:620px;line-height:1.8}
+    .hero-mark{font-family:"Cormorant Garamond",serif;font-size:150px;line-height:.8;color:#e2d9d0;font-weight:600;pointer-events:none;user-select:none}
+    .ribbon{margin-top:33px;display:flex;flex-wrap:wrap;gap:12px}
+    .ribbon span{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:7px 12px;font-size:11px;font-weight:700;color:#5e5349}
+    .ribbon span::before{content:"";width:6px;height:6px;border-radius:100%;background:#a9a08e}
+    .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin:50px 0 18px}
+    .section-head h2{font-family:"Cormorant Garamond",serif;font-size:38px;line-height:1;letter-spacing:-.03em;font-weight:600}
+    .section-head p{color:var(--muted);font-size:12px}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+    .card{display:flex;flex-direction:column;min-height:248px;padding:27px;border-radius:18px;border:1px solid var(--line);background:#fff;transition:border-color .18s,transform .18s,box-shadow .18s}
+    .card:hover{transform:translateY(-2px);border-color:#cdbeb0;box-shadow:0 9px 28px rgba(44,32,24,.06)}
+    .card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:23px}
+    .card-num{font-size:12px;font-weight:700;letter-spacing:.13em;color:var(--taupe)}
+    .card-category{font-size:10px;color:#8c7f74;text-transform:uppercase;letter-spacing:.13em}
+    .card h3{font-size:18px;letter-spacing:-.03em;line-height:1.3;margin-bottom:9px}
+    .card p{font-size:12px;color:var(--muted);line-height:1.75;flex:1}
+    .card-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:23px}
+    .action{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:var(--taupe-deep)}
+    .action svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8}
+    .action:hover{text-decoration:underline;text-underline-offset:3px}
+    .secondary{font-size:11px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    .secondary:hover{color:var(--ink)}
+    .operating{margin:56px 0 54px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}
+    .panel.dark{background:var(--dark);color:#fff;border-color:var(--dark)}
+    .panel .small{font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:var(--taupe);font-weight:700}
+    .panel.dark .small{color:#c9b9a6}
+    .panel h2{font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1.05;margin:14px 0 18px;font-weight:600}
+    .panel p,.panel li{font-size:12px;line-height:1.85;color:var(--muted)}
+    .panel.dark p,.panel.dark li{color:#d4ccc4}
+    .panel ol{margin:0;padding-left:19px}
+    .panel li+li{margin-top:7px}
+    .panel a{text-decoration:underline;text-underline-offset:3px}
+    .panel a:hover{color:#d1b89e}
+    .footer{background:#171512;color:#c9bfb6}
+    .footer-inner{padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:11px}
+    .footer a{text-decoration:underline;text-underline-offset:3px}
+    .footer a:hover{color:#fff}
+    @media(max-width:850px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-mark{display:none}.operating{grid-template-columns:1fr}}
+    @media(max-width:570px){.wrap{width:min(100% - 30px,1160px)}.topbar-inner{height:69px}.brand img{height:42px;width:42px}.brand{font-size:14px}.top-link{padding:9px 11px;font-size:11px}.hero{padding:45px 0 16px}.lead{font-size:14px}.cards{grid-template-columns:1fr}.card{min-height:220px;padding:24px}.section-head{margin-top:39px}.section-head h2{font-size:33px}.section-head p{display:none}.panel{padding:24px}.operating{margin-top:36px}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to dashboard</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="index.html" class="brand" aria-label="LQ Synergy portfolio home">
+        <img src="assets/lq-synergy-logo.svg" alt="">
+        <span>LQ Synergy<small>OWNER WORKSPACE</small></span>
+      </a>
+      <a href="index.html" class="top-link">← Back to website</a>
+    </div>
+  </header>
+  <main class="wrap" id="main">
+    <section class="hero" aria-labelledby="admin-title">
+      <div>
+        <p class="eyebrow">LQ Synergy · Administration</p>
+        <h1 id="admin-title">Your command <em>center.</em></h1>
+        <p class="lead">Quick access to manage your portfolio, multilingual chatbot, website traffic, inquiries and bookings—all from one place.</p>
+        <div class="ribbon" aria-label="Admin tool platforms"><span>GitHub Pages website</span><span>Automated portfolio FAQ</span><span>Google Analytics 4</span></div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">LQ.</div>
+    </section>
+    <section aria-labelledby="tools-title">
+      <div class="section-head">
+        <h2 id="tools-title">Management tools</h2>
+        <p>Each service opens in its own account</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><span class="card-num">01</span><span class="card-category">Portfolio</span></div>
+          <h3>Website content</h3>
+          <p>Edit your homepage text, links, images and portfolio details directly in the GitHub repository.</p>
+          <div class="card-actions">
+            <a class="action" href="https://github.com/lqfalsario/lqsynergy-portfolio/edit/main/index.html" target="_blank" rel="noopener noreferrer">Edit website <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></a>
+            <a class="secondary" href="https://github.com/lqfalsario/lqsynergy-portfolio" target="_blank" rel="noopener noreferrer">Repository</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">02</span><span class="card-category">Chatbot</span></div>
+          <h3>Chatbot replies</h3>
+          <p>Manage the greeting, automatic language responses, FAQ answers and chatbot links. Changes are published through GitHub.</p>
+          <div class="card-actions">
+            <a class="action" href="https://github.com/lqfalsario/lqsynergy-portfolio/edit/main/assets/lq-assistant.js" target="_blank" rel="noopener noreferrer">Edit chatbot <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></a>
+            <a class="secondary" href="index.html">Test chat</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">03</span><span class="card-category">Performance</span></div>
+          <h3>Visitor analytics</h3>
+          <p>Review website traffic, pages and engagement in Google Analytics. Select the property using measurement ID G-7XWFHVLHDG.</p>
+          <div class="card-actions">
+            <a class="action" href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer">Open analytics <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">04</span><span class="card-category">Appointments</span></div>
+          <h3>Meeting bookings</h3>
+          <p>Review upcoming meetings, adjust availability and manage your strategy-session scheduling in Calendly.</p>
+          <div class="card-actions">
+            <a class="action" href="https://calendly.com/app/scheduled_events" target="_blank" rel="noopener noreferrer">Manage meetings <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></a>
+            <a class="secondary" href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener noreferrer">Booking page</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">05</span><span class="card-category">Inquiries</span></div>
+          <h3>Email inquiries</h3>
+          <p>Check messages from prospective clients in your connected mailbox. Chatbot questions themselves are not forwarded or stored here.</p>
+          <div class="card-actions">
+            <a class="action" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener noreferrer">Open email <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">06</span><span class="card-category">Publishing</span></div>
+          <h3>Website deployments</h3>
+          <p>Confirm that edits have deployed to GitHub Pages. Use the latest successful workflow to verify publication.</p>
+          <div class="card-actions">
+            <a class="action" href="https://github.com/lqfalsario/lqsynergy-portfolio/actions" target="_blank" rel="noopener noreferrer">View deployments <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></a>
+            <a class="secondary" href="index.html">Live site</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="operating" aria-label="Admin guidance">
+      <div class="panel dark">
+        <p class="small">How updates work</p>
+        <h2>From edit to live site.</h2>
+        <ol>
+          <li>Open the relevant editor card and sign in to your own account.</li>
+          <li>Edit the content and commit changes to the GitHub main branch.</li>
+          <li>Check the publishing workflow and verify on the live site.</li>
+        </ol>
+      </div>
+      <div class="panel">
+        <p class="small">Access and privacy</p>
+        <h2>Your accounts stay protected.</h2>
+        <p>This page is an owner shortcut hub, not a private sign-in system. It is publicly reachable on GitHub Pages, but it does not display credentials, private visitor details or inbox contents. GitHub, Google, Gmail and Calendly require their own authenticated accounts to manage data.</p>
+        <p style="margin-top:14px">For a truly private dashboard with editable settings or saved chatbot conversations, a secure backend and sign-in service would be required.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> LQ Synergy. Owner workspace.</span><a href="index.html">Return to portfolio ↗</a></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
