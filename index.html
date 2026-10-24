@@ -2382,6 +2382,22 @@ body{
 .lq-chat-head,.lq-chat-chips,.lq-chat-form,.lq-chat-whatsapp,.lq-chat-footer{flex-shrink:0}
 @media(max-width:480px){.lq-chat-toggle{right:13px;bottom:13px}.lq-chat-panel{right:10px;bottom:72px;max-height:calc(100dvh - 85px);height:min(580px,calc(100dvh - 85px))}}
 @media(max-height:470px){.lq-chat-messages{min-height:45px}.lq-chat-chips{padding-bottom:5px}.lq-chat-head{padding:10px 14px}}
+
+/* Localized chatbot controls and unobtrusive automatic greeting. */
+.lq-chat-head .lq-chat-heading{flex:1;min-width:0}
+.lq-chat-head-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lq-chat-language{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.42);border-radius:8px;padding:6px 4px;max-width:105px;min-width:0;font:600 11px 'DM Sans',sans-serif;cursor:pointer}
+.lq-chat-language option{background:#fff;color:#342e29}
+.lq-chat-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.lq-chat-message.bot a{color:#175c87;text-decoration:underline;text-decoration-thickness:1.4px;text-underline-offset:3px;font-weight:700;overflow-wrap:anywhere}
+.lq-chat-message.bot a:hover,.lq-chat-message.bot a:focus-visible{color:#0a3959;text-decoration-thickness:2px}
+.lq-chat-nudge{position:fixed;right:22px;bottom:82px;width:min(330px,calc(100vw - 30px));z-index:9996;display:flex;align-items:flex-start;border:1px solid #d9c9b7;border-radius:14px;background:#fff;box-shadow:0 9px 35px rgba(35,28,24,.16);color:#342e29;overflow:hidden;font:600 12px/1.5 'DM Sans',sans-serif}
+.lq-chat-nudge[hidden]{display:none}
+.lq-chat-nudge-open{flex:1;border:0;background:transparent;text-align:start;padding:13px 10px 13px 15px;font:inherit;color:inherit;cursor:pointer}
+.lq-chat-nudge-dismiss{flex-shrink:0;border:0;background:transparent;color:#7b7168;font:700 19px/1 'DM Sans',sans-serif;padding:12px 12px 9px 4px;cursor:pointer}
+.lq-chat-nudge-open:hover,.lq-chat-nudge-open:focus-visible,.lq-chat-nudge-dismiss:hover,.lq-chat-nudge-dismiss:focus-visible{background:#f6f1ed}
+.lq-chat-panel[dir=rtl] .lq-chat-message.bot{text-align:right}
+@media(max-width:480px){.lq-chat-nudge{right:13px;bottom:73px}.lq-chat-head{padding:12px}.lq-chat-language{max-width:91px}.lq-chat-head-actions{gap:5px}}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -3146,45 +3162,30 @@ if (linkedinSlides.length) {
 </script>
 
 <div id="lq-chat-widget">
+  <div class="lq-chat-nudge" id="lq-chat-nudge" role="status" hidden>
+    <button type="button" class="lq-chat-nudge-open" id="lq-chat-nudge-open"><span id="lq-chat-nudge-text">Hello! 👋 Need help exploring this portfolio? Ask me!</span></button>
+    <button type="button" class="lq-chat-nudge-dismiss" id="lq-chat-nudge-dismiss" aria-label="Dismiss greeting">×</button>
+  </div>
   <button type="button" class="lq-chat-toggle" id="lq-chat-toggle" aria-controls="lq-chat-panel" aria-expanded="false">✦ Ask LQ Synergy</button>
   <section class="lq-chat-panel" id="lq-chat-panel" role="dialog" aria-label="LQ Synergy portfolio assistant" hidden>
-    <div class="lq-chat-head"><div><strong>LQ Synergy Assistant</strong><small>Portfolio information &amp; booking help</small></div><button class="lq-chat-close" type="button" id="lq-chat-close" aria-label="Close chat">×</button></div>
-    <div id="lq-chat-messages" class="lq-chat-messages" role="log" aria-live="polite"><div class="lq-chat-message bot">Hi! Welcome to LQ Synergy. I can help you explore Lawrence's services, work samples, availability, and booking options. What would you like to know?</div></div>
+    
+    <div class="lq-chat-head">
+      <div class="lq-chat-heading"><strong>LQ Synergy Assistant</strong><small id="lq-chat-subtitle">Portfolio information &amp; booking help</small></div>
+      <div class="lq-chat-head-actions">
+        <label><span class="lq-chat-sr-only">Chatbot language</span>
+          <select class="lq-chat-language" id="lq-chat-language" aria-label="Chatbot language">
+            <option value="auto">🌐 Auto</option><option value="en">English</option><option value="tl">Filipino</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="id">Bahasa Indonesia</option><option value="ja">日本語</option><option value="zh">中文</option><option value="ar">العربية</option>
+          </select>
+        </label>
+        <button class="lq-chat-close" type="button" id="lq-chat-close" aria-label="Close chat">×</button>
+      </div>
+    </div>
+    <div id="lq-chat-messages" class="lq-chat-messages" role="log" aria-live="polite"><div class="lq-chat-message bot" id="lq-chat-welcome">Hi! Welcome to LQ Synergy. I can help you explore Lawrence's services, work samples, availability, and booking options. What would you like to know?</div></div>
     <div class="lq-chat-chips" id="lq-chat-chips"><button type="button" data-q="What services do you offer?">Services</button><button type="button" data-q="Show me work samples">Work samples</button><button type="button" data-q="What is your availability?">Availability</button><button type="button" data-q="How can I book a meeting?">Book a call</button></div>
     <form id="lq-chat-form" class="lq-chat-form"><input id="lq-chat-input" aria-label="Your question" placeholder="Ask about services, availability..." maxlength="350" required autocomplete="off"><button type="submit">Send</button></form>
-    <a class="lq-chat-whatsapp" id="lq-chat-whatsapp" href="https://wa.me/639959763871?text=Hi%20Lawrence%2C%20I%20visited%20your%20LQ%20Synergy%20portfolio%20and%20would%20like%20to%20speak%20with%20you." target="_blank" rel="noopener noreferrer" aria-label="Chat with Lawrence on WhatsApp at +63 995 976 3871"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.86 9.86 0 0 0-8.52 14.82L2 22l5.33-1.4A9.98 9.98 0 0 0 12.04 22a10 10 0 0 0 0-20Zm0 18.18a8.15 8.15 0 0 1-4.15-1.14l-.3-.17-3.15.83.84-3.07-.2-.32a8.17 8.17 0 1 1 6.96 3.87Zm4.5-6.11c-.25-.12-1.47-.72-1.69-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.96-.15.17-.29.19-.54.07-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.39.11-.52.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31s-.86.84-.86 2.06.89 2.39 1.01 2.56c.12.16 1.75 2.68 4.25 3.76.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.08 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg><span>Chat with Lawrence on WhatsApp</span><span aria-hidden="true">↗</span></a>
-    <div class="lq-chat-footer">FAQ answers are automated. For a personal reply, message Lawrence on WhatsApp. Chat questions here aren't sent to him. Anonymous page views and button interaction counts may be logged for site analytics; question text is not stored.</div>
+    <a class="lq-chat-whatsapp" id="lq-chat-whatsapp" href="https://wa.me/639959763871?text=Hi%20Lawrence%2C%20I%20visited%20your%20LQ%20Synergy%20portfolio%20and%20would%20like%20to%20speak%20with%20you." target="_blank" rel="noopener noreferrer" aria-label="Chat with Lawrence on WhatsApp at +63 995 976 3871"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.86 9.86 0 0 0-8.52 14.82L2 22l5.33-1.4A9.98 9.98 0 0 0 12.04 22a10 10 0 0 0 0-20Zm0 18.18a8.15 8.15 0 0 1-4.15-1.14l-.3-.17-3.15.83.84-3.07-.2-.32a8.17 8.17 0 1 1 6.96 3.87Zm4.5-6.11c-.25-.12-1.47-.72-1.69-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.96-.15.17-.29.19-.54.07-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.39.11-.52.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31s-.86.84-.86 2.06.89 2.39 1.01 2.56c.12.16 1.75 2.68 4.25 3.76.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.08 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg><span id="lq-chat-whatsapp-text">Chat with Lawrence on WhatsApp</span><span aria-hidden="true">↗</span></a>
+    <div class="lq-chat-footer" id="lq-chat-footer">FAQ answers are automated. For a personal reply, message Lawrence on WhatsApp. Chat questions here aren't sent to him. Anonymous page views and button interaction counts may be logged for site analytics; question text is not stored.</div>
   </section>
 </div>
-<script>
-(function initLQAssistant(){
-  // Only anonymous interaction categories are sent to Analytics; visitor question text stays in this browser.
-  function track(name, params){
-    if(typeof window.gtag==='function') window.gtag('event', name, params || {});
-    if(typeof window.lqNotionTrack==='function') window.lqNotionTrack(name, params || {});
-  }
-  const toggle=document.getElementById('lq-chat-toggle'), panel=document.getElementById('lq-chat-panel'), close=document.getElementById('lq-chat-close'), input=document.getElementById('lq-chat-input'), form=document.getElementById('lq-chat-form'), messages=document.getElementById('lq-chat-messages');
-  function show(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){track('chat_open');input.focus()}else{toggle.focus()}}
-  toggle.addEventListener('click',()=>show(panel.hidden));close.addEventListener('click',()=>show(false));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)show(false)});
-  function reply(q){
-    const s=q.toLowerCase();
-    if(/(talk|speak|chat|reply).*(lawrence|person|human|you)|real person|live agent|whatsapp|personal message|personal reply/.test(s))return 'Want to speak with Lawrence personally? Select "Chat with Lawrence on WhatsApp" below. You can send a message directly and Lawrence can reply when available. Messages typed into this FAQ assistant are not forwarded automatically.';
-    if(/book|call|meeting|calendar|schedule/.test(s))return 'You can book a strategy session here: https://calendly.com/lqfalsario/strategy-session';
-    if(/available|availability|hours|time|timezone|time zone|shift/.test(s))return 'Lawrence offers flexible full shifts on Monday, Tuesday, Thursday and Friday, with tentative availability Wednesday, Saturday and Sunday. Live international clocks and the current weekly schedule are at: https://lqfalsario.github.io/lqsynergy-portfolio/#availability';
-    if(/sample|portfolio|work|project|report|campaign|case study/.test(s))return 'Explore selected lead generation, LinkedIn outreach and email marketing projects here: https://lqfalsario.github.io/lqsynergy-portfolio/#work\nSample email campaign performance report: https://lqfalsario.github.io/lqsynergy-portfolio/email-campaign-performance-sample.html';
-    if(/resume|résumé|cv|experience|background/.test(s))return 'View Lawrence’s résumé: https://docs.google.com/document/d/1n-ZZVjRnowJSUbzqi5QXJMcz27RSLzr9buOiKVQCews/edit';
-    if(/whatsapp|email|contact|message|reach/.test(s))return 'You can email Lawrence at lqfalsario@gmail.com or message on WhatsApp: https://wa.me/639959763871';
-    if(/service|offer|lead|marketing|outreach|crm|research/.test(s))return 'LQ Synergy supports B2B/B2C lead generation, prospect research, verified lead databases, LinkedIn outreach, email marketing, campaign reporting, segmentation, and CRM organization. See: https://lqfalsario.github.io/lqsynergy-portfolio/#services';
-    if(/hello|hey|hi|good morning/.test(s))return 'Hello! I can tell you about services, portfolio samples, experience, availability and booking. What would you like to explore?';
-    return 'I can help with services, work samples, Lawrence’s experience, availability, and booking. For another question, please email lqfalsario@gmail.com.';
-  }
-  function add(text,kind){const el=document.createElement('div');el.className='lq-chat-message '+kind;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight}
-  function send(q){q=q.trim();if(!q)return;add(q,'user');add(reply(q),'bot');track('chat_question',{category:/book|meeting/.test(q.toLowerCase())?'booking':/service|lead/.test(q.toLowerCase())?'services':'general'});}
-  form.addEventListener('submit',e=>{e.preventDefault();send(input.value);input.value='';input.focus()});
-  document.querySelectorAll('#lq-chat-chips button').forEach(b=>b.addEventListener('click',()=>send(b.dataset.q)));
-  document.getElementById('lq-chat-whatsapp')?.addEventListener('click',()=>track('whatsapp_handoff_click'));
-  document.querySelectorAll('a[href*="calendly.com/lqfalsario/"]').forEach(a=>a.addEventListener('click',()=>track('booking_link_click')));
-  document.querySelectorAll('a[href^="mailto:"],a[href*="wa.me/"]').forEach(a=>a.addEventListener('click',()=>track('contact_link_click',{method:a.href.startsWith('mailto:')?'email':'whatsapp'})));
-})();
-</script></body>
+<script defer src="assets/lq-assistant.js"></script></body>
 </html>
