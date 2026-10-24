@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+<title id="title">LQ Virtual Assistant Synergy</title>
+<desc id="desc">LQ Synergy virtual assistant logo</desc>
+<rect width="500" height="500" fill="#ffffff"/>
+<defs><path id="synergyArc" d="M95 338 Q250 452 405 338" fill="none"/></defs>
+<g fill="#211f1d" text-anchor="middle">
+  <text x="250" y="145" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="400" letter-spacing="38">LQ</text>
+  <text x="250" y="264" font-family="'Segoe Script','Brush Script MT','Bradley Hand',cursive" font-size="62" font-weight="400">Virtual assistant</text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="36" letter-spacing="21">
+    <textPath href="#synergyArc" startOffset="50%">SYNERGY</textPath>
+  </text>
+</g>
+</svg>
