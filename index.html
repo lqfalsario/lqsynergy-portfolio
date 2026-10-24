@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: one tag per page -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7XWFHVLHDG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7XWFHVLHDG');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Lawrence Falsario is a Lead Generation & Email Marketing Specialist focused on verified prospect databases, B2B/B2C targeting, LinkedIn outreach, CRM organization, and email campaign execution.">
@@ -3148,17 +3156,9 @@ if (linkedinSlides.length) {
 </div>
 <script>
 (function initLQAssistant(){
-  // Add an approved GA4 Measurement ID here to enable private visitor analytics.
-  // Without a connected property, no visits or conversations are collected.
-  const analyticsId='';
+  // Only anonymous interaction categories are sent to Analytics; visitor question text stays in this browser.
   function track(name, params){
-    if(typeof window.gtag==='function')window.gtag('event',name,params||{});
-  }
-  if(/^G-[A-Z0-9]+$/.test(analyticsId)){
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){window.dataLayer.push(arguments)};
-    window.gtag('js',new Date());window.gtag('config',analyticsId);
-    const t=document.createElement('script');t.async=true;t.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(analyticsId);document.head.appendChild(t);
+    if(typeof window.gtag==='function') window.gtag('event', name, params || {});
   }
   const toggle=document.getElementById('lq-chat-toggle'), panel=document.getElementById('lq-chat-panel'), close=document.getElementById('lq-chat-close'), input=document.getElementById('lq-chat-input'), form=document.getElementById('lq-chat-form'), messages=document.getElementById('lq-chat-messages');
   function show(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){track('chat_open');input.focus()}else{toggle.focus()}}
