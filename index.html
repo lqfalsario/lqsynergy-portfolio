@@ -3146,6 +3146,48 @@ body{
     margin-bottom:0 !important;
   }
 }
+
+/* Shared editorial hero statement */
+.hero.hero-reference .hero-statement{
+  max-width:760px;
+  margin:0;
+  font-size:clamp(3.7rem,5.15vw,5.65rem);
+  line-height:.99;
+  letter-spacing:-.035em;
+}
+.hero.hero-reference .hero-statement > span{
+  display:block;
+  color:#090807;
+  font-style:normal;
+}
+.hero.hero-reference .hero-statement .hero-greeting{
+  margin-bottom:8px;
+  color:var(--taupe);
+  font-style:italic;
+}
+.hero.hero-reference .hero-statement em{
+  color:var(--taupe);
+  font-weight:400;
+  font-style:italic;
+}
+.hero.hero-reference .hero-lead{
+  max-width:660px;
+  margin-top:28px;
+}
+@media(max-width:980px){
+  .hero.hero-reference .hero-statement{
+    font-size:clamp(3.2rem,6vw,4.55rem);
+  }
+}
+@media(max-width:760px){
+  .hero.hero-reference .hero-statement{
+    font-size:clamp(2.7rem,11vw,3.75rem);
+    line-height:1;
+  }
+  .hero.hero-reference .hero-statement .hero-greeting{
+    margin-bottom:6px;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -3173,9 +3215,12 @@ body{
   <div id="home"></div>
   <section class="hero shell hero-reference">
     <div class="hero-copy">
-      <p class="kicker">LEAD GENERATION · EMAIL MARKETING</p>
-      <h1>Hello, I’m <span>Lawrence.</span></h1>
-      <p class="hero-lead">I build verified prospect databases, targeted B2B/B2C outreach, and email campaigns across LinkedIn, CRM, and email platforms—helping teams move from research to organized follow-up.</p>
+      <h1 class="hero-statement">
+        <span class="hero-greeting">Hello, I’m Lawrence.</span>
+        <span>I find the <em>right people.</em></span>
+        <span>I build the <em>right systems.</em></span>
+      </h1>
+      <p class="hero-lead">From identifying qualified prospects to organizing every follow-up, I help teams turn scattered lead data into a clear, consistent outreach workflow.</p>
       <div class="hero-actions">
         <a class="btn dark" href="#work">View my work</a>
         <a class="btn outline" href="https://docs.google.com/document/d/1n-ZZVjRnowJSUbzqi5QXJMcz27RSLzr9buOiKVQCews/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">View résumé</a>
