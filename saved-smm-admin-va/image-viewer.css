@@ -1,0 +1,61 @@
+/* Reusable, on-site work-sample viewer. Its scroll area never includes controls. */
+.sample-image-link {
+  display: block;
+  cursor: zoom-in;
+}
+a[data-image-viewer] img {
+  cursor: zoom-in;
+}
+
+dialog.lq-image-viewer {
+  position: fixed;
+  inset: 0;
+  width: min(1180px, calc(100vw - 40px));
+  height: calc(100vh - 40px);
+  height: min(88dvh, 900px);
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--lq-stone, #c0bbb3);
+  border-radius: 22px;
+  background: var(--lq-white, #fff);
+  color: var(--lq-black, #000);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, .24);
+  font-family: var(--lq-body, "DM Sans", sans-serif);
+}
+.lq-image-viewer::backdrop {
+  background: rgba(23, 21, 18, .85);
+}
+.lq-image-viewer [hidden] {
+  display: none !important;
+}
+.lq-image-viewer .lq-image-viewer__surface {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.lq-image-viewer .lq-image-viewer__toolbar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--lq-stone, #c0bbb3);
+  background: var(--lq-white, #fff);
+}
+.lq-image-viewer .lq-image-viewer__heading {
+  min-width: 0;
+}
+.lq-image-viewer .lq-image-viewer__eyebrow {
+  margin: 0 0 4px;
+  color: var(--lq-taupe, #7f6f60);
+  font: 700 .63rem/1.4 var(--lq-body, "DM Sans", sans-serif);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.lq-image-vi¶»§q«^
