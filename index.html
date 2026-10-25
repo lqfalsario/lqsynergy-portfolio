@@ -2420,6 +2420,14 @@ body{
 @media(max-width:360px){
   .site-header .brand-wordmark{width:min(158px,41vw)}
 }
+
+/* About portrait */
+#about .about-content-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,330px);gap:48px;align-items:start}
+#about .about-text-column{min-width:0}
+#about .about-portrait-card{margin:0;overflow:hidden;border:1px solid rgba(192,187,179,.55);border-radius:28px;background:var(--paper);box-shadow:0 24px 56px rgba(0,0,0,.15);aspect-ratio:4/5}
+#about .about-portrait-card img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+@media(max-width:980px){#about .about-content-grid{grid-template-columns:1fr}.about-portrait-card{width:min(100%,420px);justify-self:center}}
+@media(max-width:560px){#about .about-content-grid{gap:30px}#about .about-portrait-card{border-radius:22px}}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -2473,12 +2481,17 @@ body{
 
   <section id="about" class="section shell about-grid">
     <div class="section-label">01 / ABOUT</div>
-    <div>
-      <h2>Research, targeting, and campaigns—organized into one reliable workflow.</h2>
-      <div class="about-copy">
-        <p>I’m a Lead Generation and Email Marketing Specialist focused on building verified prospect databases, identifying the right decision-makers, and preparing outreach-ready data for LinkedIn, email, and CRM workflows.</p>
-        <p>My work spans B2B/B2C targeting, contact validation, segmentation, campaign execution, database maintenance, and workflow documentation—keeping outreach organized from research through follow-up.</p>
+    <div class="about-content-grid">
+      <div class="about-text-column">
+        <h2>Research, targeting, and campaigns—organized into one reliable workflow.</h2>
+        <div class="about-copy">
+          <p>I’m a Lead Generation and Email Marketing Specialist focused on building verified prospect databases, identifying the right decision-makers, and preparing outreach-ready data for LinkedIn, email, and CRM workflows.</p>
+          <p>My work spans B2B/B2C targeting, contact validation, segmentation, campaign execution, database maintenance, and workflow documentation—keeping outreach organized from research through follow-up.</p>
+        </div>
       </div>
+      <figure class="about-portrait-card">
+        <img src="assets/about-portrait.webp" width="360" height="450" alt="Professional portrait of Lawrence Falsario" loading="lazy" decoding="async">
+      </figure>
     </div>
   </section>
 
