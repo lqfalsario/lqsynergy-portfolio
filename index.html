@@ -3117,6 +3117,23 @@ body{
     min-height:470px !important;
   }
 }
+
+/* Move the dark stats band lower on desktop, per final markup. */
+@media (min-width:981px){
+  .hero.hero-reference{
+    min-height:760px !important;
+    padding-top:64px !important;
+    padding-bottom:76px !important;
+    align-items:center !important;
+  }
+  .hero.hero-reference .hero-copy{
+    align-self:center !important;
+  }
+  .hero-reference-visual{
+    min-height:480px !important;
+    align-self:center !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
