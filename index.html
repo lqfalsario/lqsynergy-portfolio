@@ -3396,6 +3396,53 @@ body{
     margin-top:0;
   }
 }
+
+/* Standardized hero portrait sizing */
+.hero-reference-visual{
+  min-height:430px !important;
+}
+.hero-reference-photo{
+  width:min(100%,300px) !important;
+}
+.hero-reference-shape{
+  width:282px !important;
+  height:352px !important;
+  transform:translate(44px,-6px) rotate(5deg) !important;
+}
+.hero-reference-note{
+  left:0 !important;
+  bottom:16px !important;
+}
+@media(max-width:980px){
+  .hero-reference-visual{
+    min-height:390px !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,275px) !important;
+  }
+  .hero-reference-shape{
+    width:258px !important;
+    height:322px !important;
+    transform:translate(38px,-5px) rotate(5deg) !important;
+  }
+}
+@media(max-width:760px){
+  .hero-reference-visual{
+    min-height:345px !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,245px) !important;
+  }
+  .hero-reference-shape{
+    width:230px !important;
+    height:288px !important;
+    transform:translate(32px,-4px) rotate(5deg) !important;
+  }
+  .hero-reference-note{
+    left:6px !important;
+    bottom:6px !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
