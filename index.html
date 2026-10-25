@@ -2946,6 +2946,152 @@ body{
     padding-bottom:64px !important;
   }
 }
+
+/* Approved editorial About layout */
+#about.about-editorial{
+  background:#fbf8f2 !important;
+  color:#171411 !important;
+  padding:104px 0 112px !important;
+}
+#about.about-editorial .about-editorial-top{
+  display:grid;
+  grid-template-columns:auto minmax(80px,1fr) auto;
+  align-items:center;
+  gap:22px;
+  margin-bottom:58px;
+}
+#about.about-editorial .section-label,
+#about.about-editorial .about-editorial-aside{
+  margin:0;
+  padding:0;
+  color:#8c7767 !important;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+#about.about-editorial .about-editorial-rule{
+  display:block;
+  height:1px;
+  background:#b9aa9d;
+  opacity:.72;
+}
+#about.about-editorial .about-editorial-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.86fr);
+  gap:9%;
+  align-items:start;
+}
+#about.about-editorial .about-editorial-headline h2{
+  margin:0;
+  max-width:760px;
+  color:#080706 !important;
+  font-size:clamp(3.9rem,5.6vw,6rem);
+  line-height:.93;
+  letter-spacing:-.042em;
+  font-weight:500;
+}
+#about.about-editorial .about-editorial-headline h2 em{
+  color:#9a8778 !important;
+  font-weight:400;
+  font-style:italic;
+}
+#about.about-editorial .about-editorial-swish{
+  display:block;
+  width:86px;
+  height:1px;
+  margin-top:34px;
+  background:#9a8778;
+  transform:rotate(-5deg);
+  transform-origin:left center;
+}
+#about.about-editorial .about-editorial-copy{
+  max-width:590px;
+  padding-top:4px;
+}
+#about.about-editorial .about-editorial-copy p{
+  margin:0 0 28px;
+  color:#59565a !important;
+  font-size:1.02rem;
+  line-height:1.85;
+}
+#about.about-editorial .about-editorial-copy p:last-of-type{
+  margin-bottom:0;
+}
+#about.about-editorial .about-editorial-signature{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-top:42px;
+  color:#9a8778;
+}
+#about.about-editorial .about-editorial-signature strong{
+  color:#9a8778 !important;
+  font-family:var(--serif);
+  font-size:2.25rem;
+  font-weight:400;
+  font-style:italic;
+  line-height:1;
+}
+#about.about-editorial .about-editorial-signature > span{
+  width:1px;
+  height:32px;
+  background:#a99686;
+}
+#about.about-editorial .about-editorial-signature small{
+  color:#9a8778 !important;
+  font-size:.64rem;
+  font-weight:700;
+  letter-spacing:.2em;
+}
+@media(max-width:980px){
+  #about.about-editorial{
+    padding:86px 0 92px !important;
+  }
+  #about.about-editorial .about-editorial-top{
+    margin-bottom:44px;
+  }
+  #about.about-editorial .about-editorial-grid{
+    gap:48px;
+  }
+  #about.about-editorial .about-editorial-headline h2{
+    font-size:clamp(3.3rem,7vw,4.9rem);
+  }
+}
+@media(max-width:760px){
+  #about.about-editorial{
+    padding:64px 0 70px !important;
+  }
+  #about.about-editorial .about-editorial-top{
+    grid-template-columns:auto 1fr;
+    gap:14px;
+    margin-bottom:34px;
+  }
+  #about.about-editorial .about-editorial-aside{
+    grid-column:1/-1;
+    white-space:normal;
+  }
+  #about.about-editorial .about-editorial-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+  #about.about-editorial .about-editorial-headline h2{
+    font-size:clamp(2.8rem,12vw,4rem);
+  }
+  #about.about-editorial .about-editorial-copy{
+    max-width:none;
+  }
+  #about.about-editorial .about-editorial-copy p{
+    font-size:.95rem;
+    line-height:1.78;
+  }
+  #about.about-editorial .about-editorial-signature{
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:34px;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -3001,15 +3147,28 @@ body{
     <div><b>5,800+</b><span>Campaign Recipients Supported</span></div>
   </section>
 
-  <section id="about" class="section shell about-grid about-reference">
-    <div class="section-label">01 / ABOUT</div>
-    <div class="about-content-grid">
-      <div class="about-text-column">
-        <h2>Research, targeting, and campaigns—organized into one reliable workflow.</h2>
+  <section id="about" class="section about-editorial">
+    <div class="shell">
+      <div class="about-editorial-top">
+        <div class="section-label">01 / ABOUT</div>
+        <span class="about-editorial-rule" aria-hidden="true"></span>
+        <div class="about-editorial-aside">MORE THAN A LEAD LIST</div>
       </div>
-      <div class="about-copy">
-        <p>I’m a Lead Generation and Email Marketing Specialist focused on building verified prospect databases, identifying the right decision-makers, and preparing outreach-ready data for LinkedIn, email, and CRM workflows.</p>
-        <p>My work spans B2B/B2C targeting, contact validation, segmentation, campaign execution, database maintenance, and workflow documentation—keeping outreach organized from research through follow-up.</p>
+      <div class="about-editorial-grid">
+        <div class="about-editorial-headline">
+          <h2>Lead generation<br>works best when<br><em>research, process,</em><br>and follow-through<br>align.</h2>
+          <span class="about-editorial-swish" aria-hidden="true"></span>
+        </div>
+        <div class="about-editorial-copy">
+          <p>I help businesses find and connect with the right people through targeted lead generation and strategic email marketing. From building verified prospect databases to crafting outreach-ready lists, I focus on quality, accuracy, and relevance.</p>
+          <p>My process includes B2B and B2C targeting, contact validation, campaign preparation, and organized outreach workflows. I also set up and manage CRM systems to keep everything structured and easy to follow.</p>
+          <p>Whether you’re starting from scratch or need to improve an existing process, I help turn research into real conversations by making sure every step—from list building to follow-up—is done with purpose.</p>
+          <div class="about-editorial-signature">
+            <strong>LQ Synergy.</strong>
+            <span aria-hidden="true"></span>
+            <small>PEOPLE. PROCESS. PROGRESS.</small>
+          </div>
+        </div>
       </div>
     </div>
   </section>
