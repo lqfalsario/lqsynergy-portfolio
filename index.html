@@ -2883,6 +2883,69 @@ body{
     margin-bottom:28px !important;
   }
 }
+
+/* Final proportion adjustment based on Zetty reference. */
+.hero.hero-reference{
+  min-height:570px !important;
+  padding-top:46px !important;
+  padding-bottom:42px !important;
+  gap:clamp(40px,6vw,88px) !important;
+}
+.hero.hero-reference .hero-copy{
+  padding-block:10px;
+}
+.hero-reference-visual{
+  min-height:420px !important;
+}
+.hero-reference-photo{
+  width:min(100%,320px) !important;
+}
+.hero-reference-shape{
+  width:300px !important;
+  height:370px !important;
+}
+.hero-reference-note{
+  bottom:14px !important;
+}
+#about.about-reference{
+  padding-top:80px !important;
+  padding-bottom:90px !important;
+}
+#about.about-reference .section-label{
+  margin-bottom:36px !important;
+}
+@media(max-width:980px){
+  .hero.hero-reference{
+    min-height:520px !important;
+    padding-top:42px !important;
+    padding-bottom:40px !important;
+    gap:34px !important;
+  }
+  .hero-reference-visual{
+    min-height:390px !important;
+  }
+  #about.about-reference{
+    padding-top:70px !important;
+    padding-bottom:78px !important;
+  }
+}
+@media(max-width:760px){
+  .hero.hero-reference{
+    min-height:auto !important;
+    padding-top:34px !important;
+    padding-bottom:40px !important;
+  }
+  .hero.hero-reference .hero-copy{
+    padding-block:0;
+  }
+  .hero-reference-visual{
+    min-height:350px !important;
+  }
+  #about.about-reference{
+    padding-top:56px !important;
+    padding-bottom:64px !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
