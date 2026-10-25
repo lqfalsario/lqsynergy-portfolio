@@ -3188,6 +3188,79 @@ body{
     margin-bottom:6px;
   }
 }
+
+/* Refined editorial About proportions */
+#about.about-editorial{
+  padding:82px 0 86px !important;
+}
+#about.about-editorial .about-editorial-top{
+  margin-bottom:42px !important;
+}
+#about.about-editorial .about-editorial-grid{
+  grid-template-columns:minmax(0,1fr) minmax(0,.92fr) !important;
+  gap:6.5% !important;
+  align-items:start !important;
+}
+#about.about-editorial .about-editorial-headline h2{
+  max-width:650px !important;
+  font-size:clamp(3.45rem,4.7vw,5.15rem) !important;
+  line-height:.95 !important;
+  letter-spacing:-.038em !important;
+}
+#about.about-editorial .about-editorial-swish{
+  margin-top:26px !important;
+}
+#about.about-editorial .about-editorial-copy{
+  max-width:560px !important;
+  padding-top:2px !important;
+}
+#about.about-editorial .about-editorial-copy p{
+  margin-bottom:22px !important;
+  font-size:.98rem !important;
+  line-height:1.78 !important;
+}
+#about.about-editorial .about-editorial-signature{
+  margin-top:30px !important;
+}
+#about.about-editorial .about-editorial-signature strong{
+  font-size:2rem !important;
+}
+@media(max-width:980px){
+  #about.about-editorial{
+    padding:72px 0 76px !important;
+  }
+  #about.about-editorial .about-editorial-top{
+    margin-bottom:34px !important;
+  }
+  #about.about-editorial .about-editorial-grid{
+    gap:38px !important;
+  }
+  #about.about-editorial .about-editorial-headline h2{
+    font-size:clamp(3rem,6.3vw,4.35rem) !important;
+  }
+}
+@media(max-width:760px){
+  #about.about-editorial{
+    padding:58px 0 62px !important;
+  }
+  #about.about-editorial .about-editorial-top{
+    margin-bottom:28px !important;
+  }
+  #about.about-editorial .about-editorial-grid{
+    gap:28px !important;
+  }
+  #about.about-editorial .about-editorial-headline h2{
+    font-size:clamp(2.55rem,11vw,3.55rem) !important;
+    line-height:.98 !important;
+  }
+  #about.about-editorial .about-editorial-copy p{
+    font-size:.93rem !important;
+    line-height:1.72 !important;
+  }
+  #about.about-editorial .about-editorial-signature{
+    margin-top:26px !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
