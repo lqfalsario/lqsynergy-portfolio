@@ -1,0 +1,52 @@
+/*
+ * Shared LQ Synergy identity.
+ * Reference: https://lqfalsario.github.io/lqsynergy-portfolio/#home
+ * Exact reference tokens: taupe, black, gray, stone, white, paper, ink-soft,
+ * footer surface, Cormorant Garamond display type, and DM Sans body type.
+ * Adaptation: retain this portfolio's responsive layouts and page-specific
+ * navigation. Sunday Supply artwork and operational status colors are scoped
+ * separately in the original styles and intentionally remain unchanged.
+ */
+:root {
+  --lq-taupe: #7f6f60;
+  --lq-black: #000000;
+  --lq-gray: #6a6a6a;
+  --lq-stone: #c0bbb3;
+  --lq-white: #ffffff;
+  --lq-paper: #f7f5f2;
+  --lq-ink-soft: #201d1a;
+  --lq-line: rgba(0, 0, 0, .12);
+  --lq-footer: #171512;
+  --lq-display: "Cormorant Garamond", Georgia, serif;
+  --lq-body: "DM Sans", system-ui, sans-serif;
+}
+
+body.lq-brand-page {
+  --ink: var(--lq-black);
+  --muted: var(--lq-gray);
+  --paper: var(--lq-white);
+  --cream: var(--lq-paper);
+  --white: var(--lq-white);
+  --line: var(--lq-line);
+  --taupe: var(--lq-taupe);
+  --forest: var(--lq-black);
+  --forest2: var(--lq-taupe);
+  font-family: var(--lq-body);
+  background: var(--lq-white);
+  color: var(--lq-black);
+}
+
+.lq-brand-page :focus-visible {
+  outline: 3px solid var(--lq-taupe);
+  outline-offset: 4px;
+}
+.lq-brand-page ::selection {
+  background: var(--lq-stone);
+  color: var(--lq-black);
+}
+.lq-brand-page .skip-link {
+  background: var(--lq-black);
+  color: var(--lq-white);
+}
+
+/* White mastheads and taupe outline actions mat¶»§q«^
