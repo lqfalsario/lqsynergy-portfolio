@@ -2524,6 +2524,100 @@ body{
   #about .about-content-grid{gap:24px}
   #about .about-portrait-card{border-radius:20px}
 }
+
+/* Zetty-inspired About rhythm: more breathing room, clearer hierarchy. */
+#about.section{
+  padding:96px max(28px,calc((100vw - var(--content))/2)) 100px !important;
+}
+#about.about-grid{
+  display:block !important;
+}
+#about .section-label{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin:0 0 42px;
+  padding:0;
+}
+#about .section-label::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:rgba(192,187,179,.24);
+}
+#about .about-content-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(260px,310px);
+  gap:8%;
+  align-items:start;
+}
+#about h2{
+  max-width:700px !important;
+  margin:0;
+  font-size:clamp(3.2rem,4.15vw,4.55rem);
+  line-height:.99;
+}
+#about .about-copy{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:32px;
+  max-width:760px;
+  margin-top:30px;
+  padding-top:24px;
+}
+#about .about-copy p{
+  font-size:.94rem;
+  line-height:1.82;
+}
+#about .about-portrait-card{
+  width:100%;
+  max-width:310px;
+  justify-self:end;
+  align-self:start;
+  border-radius:24px;
+  box-shadow:0 18px 42px rgba(0,0,0,.11);
+}
+@media(max-width:980px){
+  #about.section{
+    padding-top:82px !important;
+    padding-bottom:86px !important;
+  }
+  #about .section-label{margin-bottom:34px}
+  #about .about-content-grid{
+    grid-template-columns:minmax(0,1fr) minmax(240px,290px);
+    gap:46px;
+  }
+  #about .about-copy{
+    grid-template-columns:1fr;
+    gap:16px;
+    max-width:620px;
+  }
+}
+@media(max-width:760px){
+  #about.section{
+    padding:64px 16px 68px !important;
+  }
+  #about .section-label{
+    margin-bottom:28px;
+    gap:14px;
+  }
+  #about .about-content-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+  #about h2{
+    font-size:clamp(2.7rem,11.5vw,3.7rem);
+  }
+  #about .about-copy{
+    margin-top:24px;
+    padding-top:20px;
+  }
+  #about .about-portrait-card{
+    width:min(100%,340px);
+    max-width:none;
+    justify-self:center;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
