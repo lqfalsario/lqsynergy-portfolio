@@ -2421,28 +2421,108 @@ body{
   .site-header .brand-wordmark{width:min(158px,41vw)}
 }
 
-/* About portrait */
-#about .about-content-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,330px);gap:48px;align-items:start}
+/* Refined spacing: About portrait + text-only hero */
+#about.section{
+  padding:68px max(28px,calc((100vw - var(--content))/2)) 72px !important;
+}
+#about.about-grid{
+  grid-template-columns:130px minmax(0,1fr);
+  gap:30px;
+  align-items:start;
+}
+#about .section-label{padding-top:6px}
+#about .about-content-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(250px,310px);
+  gap:36px;
+  align-items:center;
+}
 #about .about-text-column{min-width:0}
-#about .about-portrait-card{margin:0;overflow:hidden;border:1px solid rgba(192,187,179,.55);border-radius:28px;background:var(--paper);box-shadow:0 24px 56px rgba(0,0,0,.15);aspect-ratio:4/5}
-#about .about-portrait-card img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
-@media(max-width:980px){#about .about-content-grid{grid-template-columns:1fr}.about-portrait-card{width:min(100%,420px);justify-self:center}}
-@media(max-width:560px){#about .about-content-grid{gap:30px}#about .about-portrait-card{border-radius:22px}}
-
-/* Text-only hero: portrait now lives in About. */
+#about h2{
+  max-width:760px !important;
+  font-size:clamp(3rem,3.8vw,4.2rem);
+  line-height:.98;
+}
+#about .about-copy{
+  gap:28px;
+  max-width:800px;
+  margin-top:24px;
+  padding-top:20px;
+}
+#about .about-copy p{
+  font-size:.92rem;
+  line-height:1.68;
+}
+#about .about-portrait-card{
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(192,187,179,.55);
+  border-radius:24px;
+  background:var(--paper);
+  box-shadow:0 18px 42px rgba(0,0,0,.12);
+  aspect-ratio:4/5;
+}
+#about .about-portrait-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+}
 .hero.hero-text-only{
   grid-template-columns:minmax(0,1fr) !important;
   justify-items:start;
+  min-height:auto;
+  padding-top:54px;
+  padding-bottom:54px;
 }
 .hero.hero-text-only .hero-copy{
   width:100%;
-  max-width:820px;
+  max-width:780px;
 }
 @media (min-width:1200px){
   .hero.hero-text-only{
-    min-height:560px;
+    min-height:490px;
     align-items:center;
   }
+}
+@media(max-width:1199px){
+  #about.about-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  #about .section-label{padding-top:0}
+}
+@media(max-width:900px){
+  #about .about-content-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  #about .about-portrait-card{
+    width:min(100%,360px);
+    justify-self:center;
+  }
+}
+@media(max-width:760px){
+  #about.section{
+    padding:52px 16px 58px !important;
+  }
+  #about h2{
+    font-size:clamp(2.55rem,11.5vw,3.7rem);
+  }
+  #about .about-copy{
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-top:22px;
+    padding-top:18px;
+  }
+  .hero.hero-text-only{
+    padding-top:38px;
+    padding-bottom:40px;
+  }
+}
+@media(max-width:560px){
+  #about .about-content-grid{gap:24px}
+  #about .about-portrait-card{border-radius:20px}
 }
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
