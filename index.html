@@ -2618,6 +2618,142 @@ body{
     justify-self:center;
   }
 }
+
+/* Final Zetty-reference layout: portrait in hero, text-only About. */
+.hero.hero-reference{
+  display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(340px,.78fr) !important;
+  align-items:center;
+  gap:clamp(44px,7vw,104px);
+  min-height:590px;
+  padding:54px 0 60px;
+}
+.hero.hero-reference .hero-copy{
+  max-width:720px;
+}
+.hero-reference-visual{
+  position:relative;
+  min-height:470px;
+  display:grid;
+  place-items:center;
+  isolation:isolate;
+}
+.hero-reference-shape{
+  position:absolute;
+  width:310px;
+  height:390px;
+  border-radius:48% 48% 44% 44% / 44% 44% 56% 56%;
+  background:#ddd5cd;
+  transform:translate(54px,-10px) rotate(5deg);
+  z-index:-2;
+}
+.hero-reference-photo{
+  width:min(100%,330px);
+  aspect-ratio:4/5;
+  margin:0;
+  border:7px solid #fff;
+  border-radius:48% 48% 26px 26px / 35% 35% 26px 26px;
+  overflow:hidden;
+  background:#eee8e1;
+  box-shadow:0 28px 60px rgba(27,20,15,.16);
+}
+.hero-reference-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 16%;
+}
+.hero-reference-note{
+  position:absolute;
+  left:12px;
+  bottom:22px;
+  margin:0;
+  padding:14px 17px;
+  min-width:205px;
+  border:1px solid var(--stone);
+  border-radius:16px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 16px 34px rgba(0,0,0,.08);
+}
+.hero-reference-note strong,
+.hero-reference-note span{display:block}
+.hero-reference-note strong{font-size:.82rem}
+.hero-reference-note span{margin-top:3px;color:var(--gray);font-size:.66rem;letter-spacing:.03em}
+
+#about.about-reference{
+  padding-top:104px !important;
+  padding-bottom:108px !important;
+}
+#about.about-reference .section-label{
+  margin-bottom:46px;
+}
+#about.about-reference .about-content-grid{
+  grid-template-columns:minmax(0,1.08fr) minmax(0,.82fr);
+  gap:10%;
+  align-items:start;
+}
+#about.about-reference h2{
+  max-width:690px !important;
+  font-size:clamp(3.25rem,4.35vw,4.7rem);
+  line-height:.98;
+}
+#about.about-reference .about-copy{
+  display:block;
+  max-width:520px;
+  margin:0;
+  padding:2px 0 0;
+  border:0;
+}
+#about.about-reference .about-copy p{
+  margin:0 0 18px;
+  color:#d2ccc6;
+  font-size:.95rem;
+  line-height:1.9;
+}
+#about.about-reference .about-copy p:last-child{margin-bottom:0}
+
+@media(max-width:980px){
+  .hero.hero-reference{
+    grid-template-columns:minmax(0,1fr) minmax(280px,.72fr) !important;
+    gap:36px;
+    min-height:540px;
+  }
+  .hero-reference-photo{width:min(100%,290px)}
+  .hero-reference-shape{width:275px;height:345px}
+  .hero-reference-note{left:0;bottom:16px}
+  #about.about-reference .about-content-grid{gap:52px}
+}
+@media(max-width:760px){
+  .hero.hero-reference{
+    grid-template-columns:1fr !important;
+    gap:34px;
+    min-height:auto;
+    padding:44px 0 50px;
+    text-align:left;
+  }
+  .hero.hero-reference .hero-copy{max-width:100%}
+  .hero-reference-visual{
+    min-height:390px;
+    width:min(100%,420px);
+    margin-inline:auto;
+  }
+  .hero-reference-photo{width:min(100%,280px)}
+  .hero-reference-shape{width:260px;height:325px;transform:translate(44px,-8px) rotate(5deg)}
+  .hero-reference-note{left:8px;bottom:8px}
+  #about.about-reference{
+    padding-top:72px !important;
+    padding-bottom:76px !important;
+  }
+  #about.about-reference .section-label{margin-bottom:32px}
+  #about.about-reference .about-content-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  #about.about-reference h2{
+    font-size:clamp(2.75rem,11.5vw,3.8rem);
+  }
+  #about.about-reference .about-copy{max-width:100%}
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -2643,7 +2779,7 @@ body{
 
 <main id="main-content">
   <div id="home"></div>
-  <section class="hero shell hero-text-only">
+  <section class="hero shell hero-reference">
     <div class="hero-copy">
       <p class="kicker">LEAD GENERATION · EMAIL MARKETING</p>
       <h1>Hello, I’m <span>Lawrence.</span></h1>
@@ -2657,6 +2793,13 @@ body{
         <span>Verified Lead Lists</span><span>B2B/B2C Targeting</span><span>Email Campaigns</span><span>CRM & Tracking</span>
       </div>
     </div>
+    <div class="hero-reference-visual" aria-label="Professional portrait of Lawrence Falsario">
+      <div class="hero-reference-shape" aria-hidden="true"></div>
+      <figure class="hero-reference-photo">
+        <img src="assets/about-portrait.webp" width="360" height="450" alt="Professional portrait of Lawrence Falsario" loading="eager" fetchpriority="high" decoding="async">
+      </figure>
+      <p class="hero-reference-note"><strong>Lawrence Falsario</strong><span>Research · Outreach · Operations</span></p>
+    </div>
   </section>
 
   <section class="stat-strip" aria-label="Professional focus">
@@ -2666,19 +2809,16 @@ body{
     <div><b>5,800+</b><span>Campaign Recipients Supported</span></div>
   </section>
 
-  <section id="about" class="section shell about-grid">
+  <section id="about" class="section shell about-grid about-reference">
     <div class="section-label">01 / ABOUT</div>
     <div class="about-content-grid">
       <div class="about-text-column">
         <h2>Research, targeting, and campaigns—organized into one reliable workflow.</h2>
-        <div class="about-copy">
-          <p>I’m a Lead Generation and Email Marketing Specialist focused on building verified prospect databases, identifying the right decision-makers, and preparing outreach-ready data for LinkedIn, email, and CRM workflows.</p>
-          <p>My work spans B2B/B2C targeting, contact validation, segmentation, campaign execution, database maintenance, and workflow documentation—keeping outreach organized from research through follow-up.</p>
-        </div>
       </div>
-      <figure class="about-portrait-card">
-        <img src="assets/about-portrait.webp" width="360" height="450" alt="Professional portrait of Lawrence Falsario" loading="lazy" decoding="async">
-      </figure>
+      <div class="about-copy">
+        <p>I’m a Lead Generation and Email Marketing Specialist focused on building verified prospect databases, identifying the right decision-makers, and preparing outreach-ready data for LinkedIn, email, and CRM workflows.</p>
+        <p>My work spans B2B/B2C targeting, contact validation, segmentation, campaign execution, database maintenance, and workflow documentation—keeping outreach organized from research through follow-up.</p>
+      </div>
     </div>
   </section>
 
