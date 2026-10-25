@@ -3443,6 +3443,48 @@ body{
     bottom:6px !important;
   }
 }
+
+/* Hero portrait scale matched to Zetty reference */
+@media (min-width:981px){
+  .hero-reference-visual{
+    min-height:550px !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,380px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero-reference-shape{
+    width:355px !important;
+    height:455px !important;
+    transform:translate(48px,-8px) rotate(5deg) !important;
+  }
+  .hero-reference-note{
+    left:-8px !important;
+    bottom:26px !important;
+  }
+}
+@media (min-width:761px) and (max-width:980px){
+  .hero-reference-visual{
+    min-height:485px !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,335px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero-reference-shape{
+    width:315px !important;
+    height:405px !important;
+  }
+}
+@media (max-width:760px){
+  .hero-reference-photo{
+    width:min(100%,285px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero-reference-visual{
+    min-height:405px !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
