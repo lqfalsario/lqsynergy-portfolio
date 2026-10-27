@@ -3668,6 +3668,74 @@ body{
     width:100%;
   }
 }
+
+/* Availability CTA row matched to supplied dark three-button reference */
+.gh-cta.gh-cta-reference{
+  width:max-content;
+  max-width:100%;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px !important;
+  margin:24px auto 0 !important;
+  padding:14px 16px !important;
+  border-radius:18px;
+  background:#201c19;
+}
+.gh-cta.gh-cta-reference a{
+  min-height:48px !important;
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  padding:12px 22px !important;
+  border-radius:999px !important;
+  font-size:.82rem !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  text-decoration:none !important;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease !important;
+}
+.gh-cta.gh-cta-reference a:hover{
+  transform:translateY(-2px);
+}
+.gh-cta.gh-cta-reference .gh-email{
+  background:#8d7866 !important;
+  color:#fff !important;
+  border:1px solid #8d7866 !important;
+}
+.gh-cta.gh-cta-reference .gh-email:hover{
+  background:#a08b79 !important;
+  border-color:#a08b79 !important;
+}
+.gh-cta.gh-cta-reference .gh-call{
+  background:#fff !important;
+  color:#151310 !important;
+  border:1px solid #fff !important;
+}
+.gh-cta.gh-cta-reference .gh-call:hover{
+  background:#f0ece8 !important;
+  border-color:#f0ece8 !important;
+}
+.gh-cta.gh-cta-reference .gh-whatsapp{
+  background:transparent !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.68) !important;
+}
+.gh-cta.gh-cta-reference .gh-whatsapp:hover{
+  background:rgba(255,255,255,.08) !important;
+  border-color:#fff !important;
+}
+@media(max-width:560px){
+  .gh-cta.gh-cta-reference{
+    width:min(100%,340px);
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .gh-cta.gh-cta-reference a{
+    width:100%;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -4283,10 +4351,10 @@ body{
           <p class="gh-legend">Tentative availability · Wed, Sat &amp; Sun &nbsp; | &nbsp; Flexible full shifts · Mon, Tue, Thu &amp; Fri</p>
         </div>
       </div>
-      <div class="gh-cta">
-        <a href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener noreferrer">Book a strategy session </a>
-        <a class="secondary" href="mailto:lqfalsario@gmail.com">Email · lqfalsario@gmail.com</a>
-        <a class="secondary" href="https://wa.me/639959763871" target="_blank" rel="noopener noreferrer">WhatsApp · +63 995 976 3871</a>
+      <div class="gh-cta gh-cta-reference" aria-label="Availability contact actions">
+        <a class="gh-email" href="mailto:lqfalsario@gmail.com">Email me</a>
+        <a class="gh-call" href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a class="gh-whatsapp" href="https://wa.me/639959763871" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
     </div></div>
   </section>
