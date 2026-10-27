@@ -3940,6 +3940,86 @@ body{
     bottom:24px !important;
   }
 }
+
+/* Lead Gen hero matched directly to the SMM/Admin hero reference */
+@media (min-width:981px){
+  .hero.hero-reference{
+    grid-template-columns:1.08fr .92fr !important;
+    gap:24px !important;
+    min-height:740px !important;
+    padding-top:60px !important;
+    padding-bottom:72px !important;
+    align-items:center !important;
+    margin-bottom:110px !important;
+  }
+  .hero.hero-reference .hero-copy{
+    width:100% !important;
+    max-width:760px !important;
+    align-self:center !important;
+  }
+  .hero.hero-reference .hero-statement{
+    max-width:760px !important;
+    margin:0 !important;
+    font-size:clamp(3.7rem,5.15vw,5.65rem) !important;
+    line-height:.99 !important;
+    letter-spacing:-.035em !important;
+  }
+  .hero.hero-reference .hero-lead{
+    max-width:660px !important;
+    margin-top:28px !important;
+  }
+  .hero.hero-reference .hero-actions{
+    gap:12px !important;
+    margin-top:30px !important;
+  }
+  .hero.hero-reference .mini-proof{
+    gap:19px !important;
+    margin-top:33px !important;
+  }
+  .hero.hero-reference .hero-reference-visual{
+    width:100% !important;
+    max-width:420px !important;
+    min-height:525px !important;
+    justify-self:center !important;
+    align-self:center !important;
+  }
+  .hero.hero-reference .hero-reference-photo{
+    width:min(100%,360px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero.hero-reference .hero-reference-photo img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center 16% !important;
+  }
+  .hero.hero-reference .hero-reference-shape{
+    width:340px !important;
+    height:440px !important;
+    transform:translate(42px,-6px) rotate(5deg) !important;
+  }
+  .hero.hero-reference .hero-reference-note{
+    left:-6px !important;
+    bottom:24px !important;
+  }
+}
+@media (min-width:761px) and (max-width:980px){
+  .hero.hero-reference{
+    margin-bottom:0 !important;
+  }
+  .hero.hero-reference .hero-statement{
+    font-size:clamp(3.2rem,6vw,4.55rem) !important;
+  }
+}
+@media (max-width:760px){
+  .hero.hero-reference{
+    margin-bottom:0 !important;
+  }
+  .hero.hero-reference .hero-statement{
+    font-size:clamp(2.7rem,11vw,3.75rem) !important;
+    line-height:1 !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
