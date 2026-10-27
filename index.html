@@ -3782,6 +3782,63 @@ body{
     width:100%;
   }
 }
+
+/* Final hero portrait fix — preserve scale and natural framing */
+@media (min-width:981px){
+  .hero.hero-reference{
+    grid-template-columns:minmax(0,1.05fr) minmax(360px,.78fr) !important;
+  }
+  .hero-reference-visual{
+    width:100% !important;
+    max-width:440px !important;
+    min-height:560px !important;
+    justify-self:center !important;
+    align-self:center !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,380px) !important;
+    aspect-ratio:4/5 !important;
+  }
+  .hero-reference-photo img{
+    object-fit:cover !important;
+    object-position:center 12% !important;
+  }
+  .hero-reference-shape{
+    width:360px !important;
+    height:455px !important;
+    transform:translate(44px,-6px) rotate(5deg) !important;
+  }
+  .hero-reference-note{
+    left:-10px !important;
+    bottom:24px !important;
+  }
+}
+@media (min-width:761px) and (max-width:980px){
+  .hero-reference-visual{
+    max-width:390px !important;
+    min-height:500px !important;
+    margin-inline:auto !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,335px) !important;
+    aspect-ratio:4/5 !important;
+  }
+  .hero-reference-photo img{
+    object-position:center 12% !important;
+  }
+}
+@media (max-width:760px){
+  .hero-reference-visual{
+    min-height:390px !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,285px) !important;
+    aspect-ratio:4/5 !important;
+  }
+  .hero-reference-photo img{
+    object-position:center 12% !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
