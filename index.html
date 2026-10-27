@@ -3898,6 +3898,48 @@ body{
     object-position:center 16% !important;
   }
 }
+
+/* Lead Gen hero visual matched exactly to SMM/Admin reference proportions */
+@media (min-width:981px){
+  .hero.hero-reference{
+    grid-template-columns:1.08fr .92fr !important;
+    gap:24px !important;
+    min-height:740px !important;
+    padding-top:60px !important;
+    padding-bottom:72px !important;
+    align-items:center !important;
+  }
+  .hero.hero-reference .hero-copy{
+    align-self:center !important;
+    max-width:700px !important;
+  }
+  .hero-reference-visual{
+    width:100% !important;
+    max-width:420px !important;
+    min-height:525px !important;
+    justify-self:center !important;
+    align-self:center !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,360px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero-reference-photo img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center 16% !important;
+  }
+  .hero-reference-shape{
+    width:340px !important;
+    height:440px !important;
+    transform:translate(42px,-6px) rotate(5deg) !important;
+  }
+  .hero-reference-note{
+    left:-6px !important;
+    bottom:24px !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
