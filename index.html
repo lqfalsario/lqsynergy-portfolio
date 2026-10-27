@@ -3736,6 +3736,52 @@ body{
     width:100%;
   }
 }
+
+/* Final placement: contact CTAs belong in the bottom contact/footer area only. */
+.gh-cta.gh-cta-reference{display:none !important}
+.contact-simple-social .contact-primary-actions{
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:32px auto 0;
+}
+.contact-simple-social .contact-pill{
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 22px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:700;
+  line-height:1;
+}
+.contact-simple-social .contact-email{
+  background:#8d7866;
+  color:#fff;
+  border:1px solid #8d7866;
+}
+.contact-simple-social .contact-call{
+  background:#fff;
+  color:#151310;
+  border:1px solid #fff;
+}
+.contact-simple-social .contact-whatsapp{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.68);
+}
+@media(max-width:560px){
+  .contact-simple-social .contact-primary-actions{
+    width:min(100%,320px);
+    flex-direction:column;
+  }
+  .contact-simple-social .contact-pill{
+    width:100%;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
@@ -4351,11 +4397,6 @@ body{
           <p class="gh-legend">Tentative availability · Wed, Sat &amp; Sun &nbsp; | &nbsp; Flexible full shifts · Mon, Tue, Thu &amp; Fri</p>
         </div>
       </div>
-      <div class="gh-cta gh-cta-reference" aria-label="Availability contact actions">
-        <a class="gh-email" href="mailto:lqfalsario@gmail.com">Email me</a>
-        <a class="gh-call" href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener noreferrer">Book a call</a>
-        <a class="gh-whatsapp" href="https://wa.me/639959763871" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      </div>
     </div></div>
   </section>
 
@@ -4365,6 +4406,12 @@ body{
         <p class="kicker dark-kicker">LET'S WORK TOGETHER</p>
         <h2>Need a cleaner prospecting or email marketing workflow?</h2>
         <p>Tell me who you want to reach and what you want to achieve. I can help with prospect research, verified lead lists, segmentation, email campaigns, CRM organization, and follow-up.</p>
+
+        <div class="contact-primary-actions" aria-label="Contact Lawrence Falsario">
+          <a class="contact-pill contact-email" href="mailto:lqfalsario@gmail.com">Email me</a>
+          <a class="contact-pill contact-call" href="https://calendly.com/lqfalsario/strategy-session" target="_blank" rel="noopener noreferrer">Book a call</a>
+          <a class="contact-pill contact-whatsapp" href="https://wa.me/639959763871" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
 
         <div class="contact-socials" aria-label="Social media profiles">
           <span class="contact-socials-label">CONNECT WITH ME</span>
