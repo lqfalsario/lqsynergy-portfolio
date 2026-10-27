@@ -3839,6 +3839,65 @@ body{
     object-position:center 12% !important;
   }
 }
+
+/* Unified hero portrait treatment across both LQ Synergy sites */
+@media (min-width:981px){
+  .hero.hero-reference{
+    grid-template-columns:minmax(0,1.06fr) minmax(340px,.74fr) !important;
+  }
+  .hero-reference-visual{
+    width:100% !important;
+    max-width:420px !important;
+    min-height:525px !important;
+    justify-self:center !important;
+    align-self:center !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,360px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero-reference-photo img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center 16% !important;
+  }
+  .hero-reference-shape{
+    width:340px !important;
+    height:440px !important;
+    transform:translate(42px,-6px) rotate(5deg) !important;
+  }
+  .hero-reference-note{
+    left:-6px !important;
+    bottom:24px !important;
+  }
+}
+@media (min-width:761px) and (max-width:980px){
+  .hero-reference-visual{
+    max-width:370px !important;
+    min-height:465px !important;
+    margin-inline:auto !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,320px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero-reference-photo img{
+    object-position:center 16% !important;
+  }
+}
+@media (max-width:760px){
+  .hero-reference-visual{
+    min-height:390px !important;
+  }
+  .hero-reference-photo{
+    width:min(100%,280px) !important;
+    aspect-ratio:3/4 !important;
+  }
+  .hero-reference-photo img{
+    object-position:center 16% !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
