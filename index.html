@@ -3485,6 +3485,63 @@ body{
     min-height:405px !important;
   }
 }
+
+/* Final header proportion pass */
+@media (min-width:1200px){
+  body{
+    padding-top:80px !important;
+  }
+  .site-header{
+    height:80px !important;
+    padding-inline:max(28px,calc((100vw - 1200px)/2)) !important;
+    grid-template-columns:minmax(210px,1fr) auto minmax(130px,1fr) !important;
+    column-gap:18px !important;
+    box-shadow:0 6px 22px rgba(0,0,0,.028) !important;
+  }
+  .site-header .brand-wordmark{
+    width:218px !important;
+    max-height:58px !important;
+  }
+  .site-header nav{
+    gap:27px !important;
+  }
+  .site-header nav a{
+    font-size:.79rem !important;
+    line-height:1 !important;
+  }
+  .header-cta{
+    min-width:112px !important;
+    min-height:42px !important;
+    padding:9px 17px !important;
+    font-size:.78rem !important;
+  }
+}
+@media (min-width:981px) and (max-width:1199px){
+  body{
+    padding-top:76px !important;
+  }
+  .site-header{
+    height:76px !important;
+    padding-inline:24px !important;
+    grid-template-columns:minmax(190px,1fr) auto minmax(120px,1fr) !important;
+    column-gap:14px !important;
+  }
+  .site-header .brand-wordmark{
+    width:200px !important;
+    max-height:55px !important;
+  }
+  .site-header nav{
+    gap:20px !important;
+  }
+  .site-header nav a{
+    font-size:.75rem !important;
+  }
+  .header-cta{
+    min-width:106px !important;
+    padding:8px 15px !important;
+    font-size:.75rem !important;
+  }
+}
 </style>
   <!-- Anonymous site activity counts for the private Notion dashboard. -->
   <script defer src="assets/notion-events.js"></script>
